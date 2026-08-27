@@ -1,0 +1,190 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" path="res://scripts/investigation/clue.gd" id="2_clue"]
+
+[sub_resource type="StandardMaterial3D" id="Material_aged_iron"]
+albedo_color = Color(0.12, 0.135, 0.145, 1)
+metallic = 0.78
+roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="Material_cavity"]
+albedo_color = Color(0.035, 0.045, 0.05, 1)
+metallic = 0.58
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_worn_detail"]
+albedo_color = Color(0.21, 0.225, 0.23, 1)
+metallic = 0.82
+roughness = 0.62
+
+[sub_resource type="BoxMesh" id="Mesh_tray"]
+material = SubResource("Material_aged_iron")
+size = Vector3(1.8, 0.16, 1.18)
+
+[sub_resource type="BoxMesh" id="Mesh_rim_long"]
+material = SubResource("Material_aged_iron")
+size = Vector3(1.98, 0.22, 0.12)
+
+[sub_resource type="BoxMesh" id="Mesh_rim_short"]
+material = SubResource("Material_aged_iron")
+size = Vector3(0.12, 0.22, 1.18)
+
+[sub_resource type="BoxMesh" id="Mesh_handle"]
+material = SubResource("Material_aged_iron")
+size = Vector3(0.46, 0.16, 0.42)
+
+[sub_resource type="SphereMesh" id="Mesh_grub_cavity"]
+material = SubResource("Material_cavity")
+radius = 0.5
+height = 1.0
+radial_segments = 16
+rings = 8
+
+[sub_resource type="BoxMesh" id="Mesh_segment_groove"]
+material = SubResource("Material_worn_detail")
+size = Vector3(0.028, 0.018, 0.25)
+
+[sub_resource type="BoxMesh" id="Mesh_emblem_plate"]
+material = SubResource("Material_worn_detail")
+size = Vector3(0.36, 0.035, 0.31)
+
+[sub_resource type="SphereMesh" id="Mesh_mole_head"]
+material = SubResource("Material_aged_iron")
+radius = 0.5
+height = 1.0
+radial_segments = 12
+rings = 6
+
+[sub_resource type="PrismMesh" id="Mesh_mole_nose"]
+material = SubResource("Material_aged_iron")
+size = Vector3(0.12, 0.055, 0.13)
+
+[sub_resource type="BoxShape3D" id="Shape_honeygrub_mold"]
+size = Vector3(2.45, 0.5, 1.48)
+
+[node name="HoneygrubMold" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+target_type = 1
+
+[node name="MainMetalTray" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("Mesh_tray")
+
+[node name="Rim" type="Node3D" parent="."]
+
+[node name="Front" type="MeshInstance3D" parent="Rim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.59)
+mesh = SubResource("Mesh_rim_long")
+
+[node name="Back" type="MeshInstance3D" parent="Rim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.59)
+mesh = SubResource("Mesh_rim_long")
+
+[node name="Left" type="MeshInstance3D" parent="Rim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93, 0.25, 0)
+mesh = SubResource("Mesh_rim_short")
+
+[node name="Right" type="MeshInstance3D" parent="Rim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 0.25, 0)
+mesh = SubResource("Mesh_rim_short")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, 0.17, 0)
+mesh = SubResource("Mesh_handle")
+
+[node name="HoneygrubCavities" type="Node3D" parent="."]
+
+[node name="CavityTopLeft" type="MeshInstance3D" parent="HoneygrubCavities"]
+transform = Transform3D(0.62, 0, 0, 0, 0.055, 0, 0, 0, 0.28, -0.46, 0.245, -0.29)
+mesh = SubResource("Mesh_grub_cavity")
+
+[node name="CavityTopRight" type="MeshInstance3D" parent="HoneygrubCavities"]
+transform = Transform3D(0.62, 0, 0, 0, 0.055, 0, 0, 0, 0.28, 0.38, 0.245, -0.29)
+mesh = SubResource("Mesh_grub_cavity")
+
+[node name="CavityBottomLeft" type="MeshInstance3D" parent="HoneygrubCavities"]
+transform = Transform3D(0.62, 0, 0, 0, 0.055, 0, 0, 0, 0.28, -0.46, 0.245, 0.29)
+mesh = SubResource("Mesh_grub_cavity")
+
+[node name="CavityBottomRight" type="MeshInstance3D" parent="HoneygrubCavities"]
+transform = Transform3D(0.62, 0, 0, 0, 0.055, 0, 0, 0, 0.28, 0.38, 0.245, 0.29)
+mesh = SubResource("Mesh_grub_cavity")
+
+[node name="SegmentGrooves" type="Node3D" parent="HoneygrubCavities"]
+
+[node name="TopLeft1" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="TopLeft2" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="TopLeft3" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="TopRight1" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="TopRight2" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="TopRight3" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.276, -0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomLeft1" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomLeft2" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomLeft3" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomRight1" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomRight2" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="BottomRight3" type="MeshInstance3D" parent="HoneygrubCavities/SegmentGrooves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.276, 0.29)
+mesh = SubResource("Mesh_segment_groove")
+
+[node name="MoleEmblem" type="Node3D" parent="."]
+
+[node name="RaisedPlate" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17, 0.27, 0)
+mesh = SubResource("Mesh_emblem_plate")
+
+[node name="MoleHead" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(0.23, 0, 0, 0, 0.035, 0, 0, 0, 0.17, 1.14, 0.31, 0)
+mesh = SubResource("Mesh_mole_head")
+
+[node name="PointedNose" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.45, 0, 0, 0, 1, 1.31, 0.322, 0)
+mesh = SubResource("Mesh_mole_nose")
+
+[node name="Collision" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"honeygrub_mold"
+clue_category = 2
+reveals_candidate_ids = Array[StringName]([&"motive_recipe_theft"])
+display_name = "Honeygrub Mold"
+observation = "An old baking mold shaped specifically for Honeygrubs. A small Mole family emblem is worked into the metal. This must be one of the original Honeygrub molds — probably worth quite a penny."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.25, 0)
+shape = SubResource("Shape_honeygrub_mold")

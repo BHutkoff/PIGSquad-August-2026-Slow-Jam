@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc3m7c05puodx"]
+
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="2_clue"]
+[ext_resource type="PackedScene" uid="uid://0cut68ewym03" path="res://assets/Prototype GLB format/hat-hard.glb" id="3_helmet"]
+
+[sub_resource type="StandardMaterial3D" id="Material_insignia"]
+albedo_color = Color(0.38, 0.3, 0.2, 1)
+roughness = 0.72
+
+[sub_resource type="SphereMesh" id="Mesh_beaver_head"]
+material = SubResource("Material_insignia")
+radial_segments = 12
+rings = 6
+
+[sub_resource type="BoxMesh" id="Mesh_tooth"]
+material = SubResource("Material_insignia")
+size = Vector3(0.014, 0.026, 0.008)
+
+[sub_resource type="BoxShape3D" id="Shape_helmet"]
+size = Vector3(0.42, 0.24, 0.34)
+
+[node name="BennysHelmet" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+
+[node name="OriginalHardHat" parent="." instance=ExtResource("3_helmet")]
+
+[node name="ImpactDent" type="Node3D" parent="."]
+
+[node name="BeaverInsignia" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065, 0.092, -0.122)
+
+[node name="Head" type="MeshInstance3D" parent="BeaverInsignia"]
+transform = Transform3D(-1.39876e-09, 0, 0.008, 0, 0.028, 0, -0.032, 0, -3.49691e-10, 0.00537207, 0, 0.123885)
+mesh = SubResource("Mesh_beaver_head")
+
+[node name="LeftTooth" type="MeshInstance3D" parent="BeaverInsignia"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00477382, -0.0213918, 0.116842)
+mesh = SubResource("Mesh_tooth")
+
+[node name="RightTooth" type="MeshInstance3D" parent="BeaverInsignia"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00376248, -0.0213424, 0.132183)
+mesh = SubResource("Mesh_tooth")
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"benny_dented_helmet"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_dented_work_helmet", &"motive_unpaid_work"])
+display_name = "Benny's Dented Work Helmet"
+observation = "A heavy contractor's helmet marked with a Beaver insignia. One side is badly dented, as though it took a significant impact."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.11, 0)
+shape = SubResource("Shape_helmet")

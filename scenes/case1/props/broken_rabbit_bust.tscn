@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://cclqhihyold5p"]
+
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="2_clue"]
+
+[sub_resource type="StandardMaterial3D" id="Material_ceramic"]
+albedo_color = Color(0.55, 0.57, 0.58, 1)
+roughness = 0.82
+
+[sub_resource type="SphereMesh" id="Mesh_round"]
+material = SubResource("Material_ceramic")
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CapsuleMesh" id="Mesh_ear"]
+material = SubResource("Material_ceramic")
+radius = 0.15
+height = 0.72
+radial_segments = 12
+rings = 6
+
+[sub_resource type="BoxMesh" id="Mesh_base"]
+material = SubResource("Material_ceramic")
+size = Vector3(0.92, 0.34, 0.64)
+
+[sub_resource type="StandardMaterial3D" id="Material_branding"]
+albedo_color = Color(0.38, 0.4, 0.41, 1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="Mesh_emblem_plate"]
+material = SubResource("Material_branding")
+size = Vector3(0.42, 0.25, 0.035)
+
+[sub_resource type="BoxShape3D" id="Shape_broken_bust"]
+size = Vector3(1.9, 1.75, 1.05)
+
+[node name="BrokenRabbitBust" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+
+[node name="UpperHeadPiece" type="Node3D" parent="."]
+transform = Transform3D(0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, 0, 1, -0.28, 0.05, 0.04)
+
+[node name="Head" type="MeshInstance3D" parent="UpperHeadPiece"]
+transform = Transform3D(0.779906, 0.0111836, 0, -0.0121156, 0.719913, 0, 0, 0, 0.68, 0.114926, 0.778215, 0)
+mesh = SubResource("Mesh_round")
+
+[node name="LeftEar" type="MeshInstance3D" parent="UpperHeadPiece"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.0776622, 1.45814, 0)
+mesh = SubResource("Mesh_ear")
+
+[node name="RightEar" type="MeshInstance3D" parent="UpperHeadPiece"]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.362338, 1.38186, 0)
+mesh = SubResource("Mesh_ear")
+
+[node name="Nose" type="MeshInstance3D" parent="UpperHeadPiece"]
+transform = Transform3D(0.159981, 0.00186394, 0, -0.00248525, 0.119986, 0, 0, 0, 0.13, 0.0235746, 0.729634, -0.38)
+mesh = SubResource("Mesh_round")
+
+[node name="LowerBasePiece" type="Node3D" parent="."]
+transform = Transform3D(0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 0, 1, 0.38, 0.02, -0.02)
+
+[node name="Pedestal" type="MeshInstance3D" parent="LowerBasePiece"]
+transform = Transform3D(0.998814, -0.0486929, 0, 0.0486929, 0.998814, 0, 0, 0, 1, 0.00501538, 0.200245, 0)
+mesh = SubResource("Mesh_base")
+
+[node name="RabbitBranding" type="Node3D" parent="LowerBasePiece"]
+
+[node name="RaisedPlate" type="MeshInstance3D" parent="LowerBasePiece/RabbitBranding"]
+transform = Transform3D(0.998814, -0.0486929, 0, 0.0486929, 0.998814, 0, 0, 0, 1, 0.00501538, 0.230245, -0.34)
+mesh = SubResource("Mesh_emblem_plate")
+
+[node name="RabbitHead" type="MeshInstance3D" parent="LowerBasePiece/RabbitBranding"]
+transform = Transform3D(0.179786, -0.00633007, 0, 0.00876472, 0.129846, 0, 0, 0, 0.035, 0.000902768, 0.240044, -0.365)
+mesh = SubResource("Mesh_round")
+
+[node name="LeftEar" type="MeshInstance3D" parent="LowerBasePiece/RabbitBranding"]
+transform = Transform3D(0.349585, -0.013634, 0, 0.0170425, 0.279668, 0, 0, 0, 0.2, -0.0632446, 0.400086, -0.365)
+mesh = SubResource("Mesh_ear")
+
+[node name="RightEar" type="MeshInstance3D" parent="LowerBasePiece/RabbitBranding"]
+transform = Transform3D(0.349585, -0.013634, 0, 0.0170425, 0.279668, 0, 0, 0, 0.2, 0.0667554, 0.400086, -0.365)
+mesh = SubResource("Mesh_ear")
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"ruby_broken_bust"
+reveals_candidate_ids = Array[StringName]([&"weapon_broken_rabbit_bust", &"motive_business_control"])
+display_name = "Broken Rabbit Bust"
+observation = "A heavy promotional bust shaped like a rabbit, broken cleanly into two large pieces. The design appears to have been intended for the bakery, and the damage suggests it was rejected rather violently."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.875, 0)
+shape = SubResource("Shape_broken_bust")

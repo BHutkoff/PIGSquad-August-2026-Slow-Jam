@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb4ti2p5pwym8"
+path="res://.godot/imported/water_walk_b_v1.wav-991c651e8386272071ce633fd604eb34.sample"
+
+[deps]
+
+source_file="res://soundEffects/Sound Effects/water_walk_b_v1.wav"
+dest_files=["res://.godot/imported/water_walk_b_v1.wav-991c651e8386272071ce633fd604eb34.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" path="res://scripts/investigation/clue.gd" id="2_clue"]
+[ext_resource type="PackedScene" path="res://assets/Food GLB format/frying-pan.glb" id="3_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_interaction"]
+size = Vector3(0.76, 0.26, 1.14)
+
+[node name="FryingPan" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+
+[node name="OriginalModel" parent="." instance=ExtResource("3_model")]
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"red_herring_frying_pan"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_frying_pan"])
+display_name = "Frying Pan"
+observation = "A heavy frying pan from the bakery kitchen. Its solid weight makes it a plausible blunt weapon."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.2)
+shape = SubResource("Shape_interaction")

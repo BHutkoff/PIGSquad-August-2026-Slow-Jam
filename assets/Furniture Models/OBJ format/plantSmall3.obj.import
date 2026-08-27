@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://br7k2o1soci4o"
+path="res://.godot/imported/plantSmall3.obj-3cb02b8cf791cb7a8a827b2691494140.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plantSmall3.obj-3cb02b8cf791cb7a8a827b2691494140.mesh"]
+
+source_file="res://assets/Furniture Models/OBJ format/plantSmall3.obj"
+dest_files=["res://.godot/imported/plantSmall3.obj-3cb02b8cf791cb7a8a827b2691494140.mesh", "res://.godot/imported/plantSmall3.obj-3cb02b8cf791cb7a8a827b2691494140.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

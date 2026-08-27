@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CaseData" load_steps=3 format=3 uid="uid://c3gefi28l7ppe"]
+
+[ext_resource type="Script" path="res://scripts/case/deduction_candidate.gd" id="1_2y6ql"]
+[ext_resource type="Script" uid="uid://6boai6ebxcps" path="res://scripts/case/case_data.gd" id="1_case_data"]
+
+[resource]
+script = ExtResource("1_case_data")
+case_id = &"moved_chair"
+case_title = "The Moved Chair"
+case_objective = "Find out what happened in the room."
+case_question = "What happened in this room?"
+required_clue_ids = Array[StringName]([&"chair_scratches", &"cleaning_bucket"])
+deduction_candidates = Array[ExtResource("1_2y6ql")]([])

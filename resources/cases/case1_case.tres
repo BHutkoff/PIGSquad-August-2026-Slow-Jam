@@ -1,0 +1,287 @@
+[gd_resource type="Resource" script_class="CaseData" load_steps=21 format=3 uid="uid://ctq42yhs6rgvn"]
+
+[ext_resource type="Script" uid="uid://6boai6ebxcps" path="res://scripts/case/case_data.gd" id="1_case_data"]
+[ext_resource type="Script" uid="uid://cwy8maw5r1jng" path="res://scripts/case/deduction_candidate.gd" id="2_candidate"]
+
+[sub_resource type="Resource" id="Candidate_weapon_golden_whisk"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_golden_whisk"
+display_name = "Golden Whisk Trophy"
+description = "A heavy competition trophy awarded to Bramble Bear for his most recent solo victory. One side shows visible impact damage."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"golden_whisk_damage", &"trophy_display_history"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_bakers_mallet"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_bakers_mallet"
+display_name = "Baker's Mallet"
+description = "A heavy wooden baking mallet belonging to Baxter Badger."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"baxter_mallet_located"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_broken_rabbit_bust"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_broken_rabbit_bust"
+display_name = "Broken Rabbit Bust"
+description = "A heavy stone promotional bust associated with Ruby Rabbit's proposed bakery branding."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"ruby_broken_bust"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([&"motive_business_control"])
+
+[sub_resource type="Resource" id="Candidate_weapon_dented_work_helmet"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_dented_work_helmet"
+display_name = "Dented Work Helmet"
+description = "A heavy contractor's helmet with a severe impact dent along one side."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"benny_dented_helmet"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([&"motive_unpaid_work"])
+
+[sub_resource type="Resource" id="Candidate_weapon_maintenance_wrench"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_maintenance_wrench"
+display_name = "Maintenance Wrench"
+description = "A large, heavy maintenance wrench. Rust around the jaws and handle suggests it has seen repeated use in water."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"benny_maintenance_wrench"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_cooking_knife"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_cooking_knife"
+display_name = "Cooking Knife"
+description = "A sharp, sturdy cooking knife from the bakery kitchen."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"red_herring_cooking_knife"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_rolling_pin"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_rolling_pin"
+display_name = "Rolling Pin"
+description = "A solid wooden rolling pin heavy enough to serve as a blunt weapon."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"red_herring_rolling_pin"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_frying_pan"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_frying_pan"
+display_name = "Frying Pan"
+description = "A heavy frying pan whose solid weight makes it a plausible blunt weapon."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"red_herring_frying_pan"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_professional_betrayal"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_professional_betrayal"
+display_name = "Professional Betrayal"
+description = "Bramble and Fiona once competed successfully as partners, but Bramble's newest victory was his alone."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"trophy_display_history"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([&"weapon_golden_whisk"])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_recipe_theft_revenge"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_recipe_theft_revenge"
+display_name = "Revenge for the Stolen Recipe"
+description = "The Honeygrub recipe appears to have belonged to the Mole family long before the Bear bakery became famous for it. Someone connected to that history may have wanted revenge for what was taken."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"mole_family_cookbook"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_recipe_theft"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_recipe_theft"
+display_name = "Steal the Honeygrub Secret"
+description = "The original Honeygrub recipe and equipment could be extremely valuable. Someone may have wanted to steal the secret and profit from it themselves."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"honeygrub_mold"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_business_control"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_business_control"
+display_name = "Business Control"
+description = "A serious disagreement over the future direction and identity of the bakery may have created conflict between Bramble and Ruby."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"ruby_broken_bust"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([&"weapon_broken_rabbit_bust"])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_unpaid_work"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_unpaid_work"
+display_name = "Unpaid Work"
+description = "Bramble still owed payment for maintenance work performed inside the cave, creating a financial dispute with his contractor."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"benny_dented_helmet"])
+species = ""
+relationship_to_victim = ""
+reason_for_visit = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([&"weapon_dented_work_helmet"])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_suspect_milo_mole"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_milo_mole"
+display_name = "Milo Mole"
+description = ""
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([])
+species = "Mole"
+relationship_to_victim = "Member of a family with an old connection to the Bear family's bakery."
+reason_for_visit = "Milo says he visited Bramble to discuss a private family matter."
+known_information = "Milo met privately with Bramble on the day of the murder to discuss a personal matter involving their families. He claims the conversation ended and he left the cave shortly afterward."
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_suspect_fiona_fox"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_fiona_fox"
+display_name = "Fiona Fox"
+description = ""
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([])
+species = "Fox"
+relationship_to_victim = "Former baking partner."
+reason_for_visit = "Fiona visited Bramble regarding bakery and competition business."
+known_information = "Fiona met with Bramble on the day of the murder to discuss matters involving their former baking partnership and Bramble's recent competition success. She claims she left after their conversation."
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_suspect_baxter_badger"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_baxter_badger"
+display_name = "Baxter Badger"
+description = ""
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([&"baxter_mallet_located"])
+species = "Badger"
+relationship_to_victim = "Former Bear Bakery employee."
+reason_for_visit = "Baxter says he returned to the bakery to retrieve belongings after being fired."
+known_information = "Baxter returned to the bakery on the day of the murder to retrieve personal belongings and baking equipment that remained there after his employment ended. He claims he collected what he came for and left."
+connected_weapon_ids = Array[StringName]([&"weapon_bakers_mallet"])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_suspect_ruby_rabbit"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_ruby_rabbit"
+display_name = "Ruby Rabbit"
+description = ""
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([&"ruby_broken_bust"])
+species = "Rabbit"
+relationship_to_victim = "Business partner and investor."
+reason_for_visit = "Ruby visited Bramble to discuss bakery business."
+known_information = "Ruby met with Bramble on the day of the murder to discuss their business partnership and the future of the bakery. She claims their meeting concluded and she left the cave afterward."
+connected_weapon_ids = Array[StringName]([&"weapon_broken_rabbit_bust"])
+connected_motive_ids = Array[StringName]([&"motive_business_control"])
+
+[sub_resource type="Resource" id="Candidate_suspect_benny_beaver"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_benny_beaver"
+display_name = "Benny Beaver"
+description = ""
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([])
+species = "Beaver"
+relationship_to_victim = "Cave maintenance contractor."
+reason_for_visit = "Benny says he visited Bramble early that morning regarding payment he was still owed for previous maintenance work within the cave. Earlier that week, he repaired pipes in another room for the Bears and plugged the drain pipe while he was working."
+known_information = "Benny met with Bramble early on the day of the murder to discuss payment he was still owed for maintenance work performed in the cave. Multiple witnesses confirm that Benny arrived early that morning."
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[resource]
+script = ExtResource("1_case_data")
+case_id = &"case1"
+case_title = "CASE: Bramble Bear"
+hud_case_title = "Bramble Bear"
+case_objective = "Investigate the cave."
+case_question = ""
+required_clue_ids = Array[StringName]([&"golden_whisk_damage", &"trophy_display_history", &"mole_family_cookbook"])
+deduction_candidates = Array[ExtResource("2_candidate")]([SubResource("Candidate_weapon_golden_whisk"), SubResource("Candidate_weapon_bakers_mallet"), SubResource("Candidate_weapon_broken_rabbit_bust"), SubResource("Candidate_weapon_dented_work_helmet"), SubResource("Candidate_weapon_maintenance_wrench"), SubResource("Candidate_weapon_cooking_knife"), SubResource("Candidate_weapon_rolling_pin"), SubResource("Candidate_weapon_frying_pan"), SubResource("Candidate_motive_professional_betrayal"), SubResource("Candidate_motive_recipe_theft_revenge"), SubResource("Candidate_motive_recipe_theft"), SubResource("Candidate_motive_business_control"), SubResource("Candidate_motive_unpaid_work"), SubResource("Candidate_suspect_milo_mole"), SubResource("Candidate_suspect_fiona_fox"), SubResource("Candidate_suspect_baxter_badger"), SubResource("Candidate_suspect_ruby_rabbit"), SubResource("Candidate_suspect_benny_beaver")])
+correct_weapon_id = &"weapon_golden_whisk"
+correct_motive_id = &"motive_recipe_theft_revenge"
+correct_suspect_id = &"suspect_milo_mole"

@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzles/safe_controller.gd" id="1_controller"]
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="3_target"]
+[ext_resource type="PackedScene" path="res://scenes/ui/safe_combination_ui.tscn" id="4_ui"]
+
+[sub_resource type="StandardMaterial3D" id="Material_body"]
+albedo_color = Color(0.095, 0.115, 0.13, 1)
+metallic = 0.75
+roughness = 0.32
+[sub_resource type="StandardMaterial3D" id="Material_trim"]
+albedo_color = Color(0.32, 0.37, 0.4, 1)
+metallic = 0.9
+roughness = 0.22
+[sub_resource type="BoxMesh" id="Mesh_side"]
+material = SubResource("Material_body")
+size = Vector3(0.22, 2, 1.8)
+[sub_resource type="BoxMesh" id="Mesh_horizontal"]
+material = SubResource("Material_body")
+size = Vector3(1.96, 0.22, 1.8)
+[sub_resource type="BoxMesh" id="Mesh_back"]
+material = SubResource("Material_body")
+size = Vector3(1.96, 1.56, 0.16)
+[sub_resource type="BoxShape3D" id="Shape_side"]
+size = Vector3(0.22, 2, 1.8)
+[sub_resource type="BoxShape3D" id="Shape_horizontal"]
+size = Vector3(1.96, 0.22, 1.8)
+[sub_resource type="BoxShape3D" id="Shape_back"]
+size = Vector3(1.96, 1.56, 0.16)
+[sub_resource type="BoxMesh" id="Mesh_door"]
+material = SubResource("Material_body")
+size = Vector3(2.18, 1.78, 0.18)
+[sub_resource type="BoxShape3D" id="Shape_door"]
+size = Vector3(2.18, 1.78, 0.18)
+[sub_resource type="CylinderMesh" id="Mesh_handle"]
+material = SubResource("Material_trim")
+top_radius = 0.12
+bottom_radius = 0.12
+height = 0.7
+[sub_resource type="BoxMesh" id="Mesh_keypad"]
+material = SubResource("Material_trim")
+size = Vector3(0.55, 0.42, 0.1)
+[node name="OfficeSafe" type="Node3D" node_paths=PackedStringArray("door_hinge", "combination_ui") groups=["interactable"]]
+script = ExtResource("1_controller")
+display_name = "Office Safe"
+door_hinge = NodePath("DoorHinge")
+combination_ui = NodePath("SafeCombinationUI")
+
+[node name="VisualTarget" type="Node3D" parent="." groups=["echolocation_target"]]
+script = ExtResource("3_target")
+target_type = 1
+
+[node name="LeftWall" type="MeshInstance3D" parent="VisualTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09, 1, 0)
+mesh = SubResource("Mesh_side")
+[node name="RightWall" type="MeshInstance3D" parent="VisualTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09, 1, 0)
+mesh = SubResource("Mesh_side")
+[node name="Top" type="MeshInstance3D" parent="VisualTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89, 0)
+mesh = SubResource("Mesh_horizontal")
+[node name="Bottom" type="MeshInstance3D" parent="VisualTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+mesh = SubResource("Mesh_horizontal")
+[node name="Back" type="MeshInstance3D" parent="VisualTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.82)
+mesh = SubResource("Mesh_back")
+
+[node name="SafeBody" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="LeftCollision" type="CollisionShape3D" parent="SafeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09, 1, 0)
+shape = SubResource("Shape_side")
+[node name="RightCollision" type="CollisionShape3D" parent="SafeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09, 1, 0)
+shape = SubResource("Shape_side")
+[node name="TopCollision" type="CollisionShape3D" parent="SafeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89, 0)
+shape = SubResource("Shape_horizontal")
+[node name="BottomCollision" type="CollisionShape3D" parent="SafeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+shape = SubResource("Shape_horizontal")
+[node name="BackCollision" type="CollisionShape3D" parent="SafeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.82)
+shape = SubResource("Shape_back")
+
+[node name="DoorHinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09, 1, -0.99)
+
+[node name="DoorTarget" type="Node3D" parent="DoorHinge" groups=["echolocation_target"]]
+script = ExtResource("3_target")
+target_type = 1
+
+[node name="Door" type="MeshInstance3D" parent="DoorHinge/DoorTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09, 0, 0)
+mesh = SubResource("Mesh_door")
+
+[node name="Handle" type="MeshInstance3D" parent="DoorHinge/DoorTarget"]
+transform = Transform3D(0, 0, 1, 1, 0, 0, 0, 1, 0, 1.52, 0, -0.16)
+mesh = SubResource("Mesh_handle")
+
+[node name="Keypad" type="MeshInstance3D" parent="DoorHinge/DoorTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54, 0.48, -0.14)
+mesh = SubResource("Mesh_keypad")
+
+[node name="DoorBody" type="StaticBody3D" parent="DoorHinge"]
+collision_layer = 5
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorHinge/DoorBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09, 0, 0)
+shape = SubResource("Shape_door")
+
+[node name="SafeCombinationUI" parent="." instance=ExtResource("4_ui")]

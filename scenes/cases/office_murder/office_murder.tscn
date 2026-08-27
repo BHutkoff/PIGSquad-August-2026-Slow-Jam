@@ -1,0 +1,1032 @@
+[gd_scene load_steps=20 format=3 uid="uid://byvur2kbr2yk1"]
+
+[ext_resource type="Script" uid="uid://b5728asulxwou" path="res://scripts/test_environment/test_room.gd" id="1_room"]
+[ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="3_target"]
+[ext_resource type="Script" uid="uid://xmje7taotj1x" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="5_clue"]
+[ext_resource type="Script" uid="uid://cv3obewt35dl6" path="res://scripts/case/case_manager.gd" id="6_case_manager"]
+[ext_resource type="Resource" uid="uid://dhsrx2ux5hneo" path="res://resources/cases/office_murder_case.tres" id="7_case_data"]
+
+[sub_resource type="Environment" id="Environment_black"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_energy = 0.0
+reflected_light_source = 2
+
+[sub_resource type="StandardMaterial3D" id="Material_room"]
+albedo_color = Color(0.18, 0.21, 0.24, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_wood"]
+albedo_color = Color(0.32, 0.16, 0.07, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Material_dark_wood"]
+albedo_color = Color(0.16, 0.07, 0.035, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Material_metal"]
+albedo_color = Color(0.3, 0.34, 0.38, 1)
+metallic = 0.7
+roughness = 0.35
+
+[sub_resource type="StandardMaterial3D" id="Material_mud"]
+albedo_color = Color(0.2, 0.12, 0.055, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_paper"]
+albedo_color = Color(0.7, 0.66, 0.55, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Material_victim"]
+albedo_color = Color(0.18, 0.22, 0.3, 1)
+roughness = 0.8
+
+[sub_resource type="BoxShape3D" id="Shape_victim_interaction"]
+size = Vector3(4.8, 1.3, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="Material_prop"]
+albedo_color = Color(0.25, 0.38, 0.32, 1)
+roughness = 0.75
+
+[sub_resource type="StyleBoxFlat" id="Style_help"]
+bg_color = Color(0.02, 0.02, 0.03, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="Label_help"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="OfficeMurder" type="Node3D"]
+script = ExtResource("1_room")
+debug_visibility_enabled = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_black")
+
+[node name="DebugLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+light_energy = 3.5
+shadow_enabled = true
+omni_range = 26.0
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(20, 0.2, 16)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = 0.11
+object_wavefront_intensity = null
+environment_wavefront_intensity = 1.5
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = 0.8
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Ceiling" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1, 0)
+use_collision = true
+size = Vector3(20, 0.2, 16)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="NorthWall" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -8)
+use_collision = true
+size = Vector3(20, 6, 0.25)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="WestWall" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
+use_collision = true
+size = Vector3(0.25, 6, 16)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="EastWall" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 0)
+use_collision = true
+size = Vector3(0.25, 6, 16)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="SouthWallLeft" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 3, 8)
+use_collision = true
+size = Vector3(7.5, 6, 0.25)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="SouthWallRight" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 3, 8)
+use_collision = true
+size = Vector3(7.5, 6, 0.25)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="DoorHeader" type="CSGBox3D" parent="Environment" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 8)
+use_collision = true
+size = Vector3(5, 1.5, 0.25)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="Desk" type="Node3D" parent="Furniture" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Top" type="CSGBox3D" parent="Furniture/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+use_collision = true
+size = Vector3(5.4, 0.3, 2.4)
+material = SubResource("Material_wood")
+
+[node name="LeftPedestal" type="CSGBox3D" parent="Furniture/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15, 0.7, 0)
+use_collision = true
+size = Vector3(0.75, 1.4, 2)
+material = SubResource("Material_dark_wood")
+
+[node name="RightPedestal" type="CSGBox3D" parent="Furniture/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 0.7, 0)
+use_collision = true
+size = Vector3(0.75, 1.4, 2)
+material = SubResource("Material_dark_wood")
+
+[node name="DeskChair" type="Node3D" parent="Furniture" groups=["echolocation_target"]]
+transform = Transform3D(0.939373, 0, -0.342898, 0, 1, 0, 0.342898, 0, 0.939373, 0.8, 0, -0.1)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Seat" type="CSGBox3D" parent="Furniture/DeskChair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+use_collision = true
+size = Vector3(1.5, 0.25, 1.5)
+material = SubResource("Material_wood")
+
+[node name="Back" type="CSGBox3D" parent="Furniture/DeskChair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0.65)
+use_collision = true
+size = Vector3(1.5, 1.6, 0.25)
+material = SubResource("Material_wood")
+
+[node name="Base" type="CSGCylinder3D" parent="Furniture/DeskChair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+radius = 0.55
+height = 1.0
+sides = 12
+material = SubResource("Material_metal")
+
+[node name="Bookshelf" type="Node3D" parent="Furniture" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, -3.6)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Frame" type="CSGBox3D" parent="Furniture/Bookshelf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+use_collision = true
+size = Vector3(2.5, 5, 1.1)
+material = SubResource("Material_dark_wood")
+
+[node name="Inner" type="CSGBox3D" parent="Furniture/Bookshelf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0.58)
+size = Vector3(2.05, 4.4, 0.15)
+material = SubResource("Material_wood")
+
+[node name="Cabinet" type="Node3D" parent="Furniture" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, 0, -3.2)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Body" type="CSGBox3D" parent="Furniture/Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+use_collision = true
+size = Vector3(3, 2.6, 1.5)
+material = SubResource("Material_dark_wood")
+
+[node name="Divider" type="Node3D" parent="Furniture" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0, 1.8)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Screen" type="CSGBox3D" parent="Furniture/Divider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+use_collision = true
+size = Vector3(0.35, 3.4, 4.2)
+material = SubResource("Material_wood")
+
+[node name="Evidence" type="Node3D" parent="."]
+
+[node name="HeavyBookend" type="CSGBox3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.902046, -0.190206, 0.387473, 0.246168, 0.964072, -0.0998334, -0.354563, 0.185438, 0.91646, 4.3, 0.68, -4.3)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.75, 1.1, 0.75)
+material = SubResource("Material_metal")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/HeavyBookend"]
+script = ExtResource("5_clue")
+clue_id = &"heavy_bookend"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_heavy_bookend"])
+display_name = "Heavy Bookend"
+observation = "The bookend is unusually heavy. One corner has a dark stain that doesn't match the metal."
+
+[node name="ImpactMark" type="CSGBox3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.025, -3.6)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.1, 0.05, 0.7)
+material = SubResource("Material_mud")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/ImpactMark"]
+script = ExtResource("5_clue")
+clue_id = &"impact_mark"
+clue_category = 1
+display_name = "Impact Mark"
+observation = "There's a fresh impact mark here. Whatever caused it was heavy and blunt."
+
+[node name="TornContract" type="CSGBox3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.939373, 0, 0.342898, 0, 1, 0, -0.342898, 0, 0.939373, -0.6, 1.64, -2.2)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.3, 0.06, 0.9)
+material = SubResource("Material_paper")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/TornContract"]
+script = ExtResource("5_clue")
+clue_id = &"torn_contract"
+clue_category = 2
+reveals_candidate_ids = Array[StringName]([&"motive_financial_revenge"])
+display_name = "Torn Contract"
+observation = "This contract was torn apart recently. It describes the victim removing a business partner from the company."
+
+[node name="ThreateningNote" type="CSGBox3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.965814, -0.0774303, -0.247404, 0.0799147, 0.996802, 0, 0.246613, -0.0197712, 0.968912, 8.7, 0.12, -1.8)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.9, 0.08, 0.65)
+material = SubResource("Material_paper")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/ThreateningNote"]
+script = ExtResource("5_clue")
+clue_id = &"threatening_note"
+clue_category = 2
+reveals_candidate_ids = Array[StringName]([&"motive_personal_grudge"])
+display_name = "Threatening Note"
+observation = "The note reads: \"You took everything from me. You won't get away with this.\""
+
+[node name="MuddyFootprint" type="CSGBox3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.955337, 0, 0.29552, 0, 1, 0, -0.29552, 0, 0.955337, -5.7, 0.025, 2.8)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.48, 0.05, 1.1)
+material = SubResource("Material_mud")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/MuddyFootprint"]
+script = ExtResource("5_clue")
+clue_id = &"muddy_footprint"
+clue_category = 3
+display_name = "Muddy Footprint"
+observation = "A muddy shoe print. The tread pattern is unusually narrow and sharply defined."
+
+[node name="SilverCufflink" type="CSGCylinder3D" parent="Evidence" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, -1, 0, 1, -3.61999e-06, 1.25, 0.16, -1.35)
+use_collision = true
+collision_layer = 5
+radius = 0.28
+height = 0.18
+sides = 16
+material = SubResource("Material_metal")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Evidence/SilverCufflink"]
+script = ExtResource("5_clue")
+clue_id = &"silver_cufflink"
+clue_category = 3
+display_name = "Silver Cufflink"
+observation = "A silver cufflink lies under the desk. It looks expensive and probably belongs to whoever was standing here."
+
+[node name="Victim" type="Node3D" parent="." groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.900447, 0, 0.434966, 0, 1, 0, -0.434966, 0, 0.900447, 2.7, 0, -5.6)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Torso" type="CSGCylinder3D" parent="Victim"]
+transform = Transform3D(-3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0, 1, 0, 0.55, 0)
+use_collision = true
+collision_layer = 5
+radius = 0.48
+height = 2.3
+sides = 16
+material = SubResource("Material_victim")
+
+[node name="Head" type="CSGSphere3D" parent="Victim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0)
+use_collision = true
+collision_layer = 5
+radius = 0.45
+material = SubResource("Material_victim")
+
+[node name="Legs" type="CSGBox3D" parent="Victim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 0.35, 0)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.8, 0.45, 1)
+material = SubResource("Material_victim")
+
+[node name="InteractionHitbox" type="StaticBody3D" parent="Victim" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Victim/InteractionHitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("Shape_victim_interaction")
+
+[node name="Clue" type="Node" parent="Victim/InteractionHitbox"]
+script = ExtResource("5_clue")
+clue_id = &"victim_injury"
+display_name = "Victim"
+observation = "The victim suffered a severe injury to the head. The wound suggests they were struck by a heavy blunt object."
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="CoffeeMug" type="CSGCylinder3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 1.87, -2.35)
+use_collision = true
+collision_layer = 5
+radius = 0.3
+height = 0.48
+sides = 18
+material = SubResource("Material_prop")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="Props/CoffeeMug"]
+script = ExtResource("4_interactable")
+display_name = "Coffee Mug"
+observation = "An ordinary coffee mug. Nothing unusual."
+
+[node name="TrashBin" type="CSGCylinder3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 0.55, -2.8)
+use_collision = true
+collision_layer = 5
+radius = 0.55
+height = 1.1
+sides = 16
+cone = true
+material = SubResource("Material_metal")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="Props/TrashBin"]
+script = ExtResource("4_interactable")
+display_name = "Trash Bin"
+observation = "Mostly discarded paper and dust. Nothing immediately useful."
+
+[node name="OrdinaryBooks" type="CSGBox3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35, 2.6, -2.95)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.7, 0.75, 0.6)
+material = SubResource("Material_paper")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="Props/OrdinaryBooks"]
+script = ExtResource("4_interactable")
+display_name = "Ordinary Books"
+observation = "A collection of business and history books. None seem disturbed."
+
+[node name="Plant" type="Node3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 0, 5.8)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Pot" type="CSGCylinder3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+use_collision = true
+collision_layer = 5
+radius = 0.65
+height = 1.1
+sides = 16
+cone = true
+material = SubResource("Material_prop")
+
+[node name="Leaves" type="CSGSphere3D" parent="Props/Plant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+use_collision = true
+collision_layer = 5
+radius = 1.0
+material = SubResource("Material_prop")
+
+[node name="Interactable" type="Node" parent="Props/Plant"]
+script = ExtResource("4_interactable")
+display_name = "Plant"
+observation = "A well-watered office plant. It has nothing to do with the crime."
+
+[node name="DeskLamp" type="Node3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.7, -2.2)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Stem" type="CSGCylinder3D" parent="Props/DeskLamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+use_collision = true
+collision_layer = 5
+radius = 0.1
+height = 1.1
+sides = 10
+material = SubResource("Material_metal")
+
+[node name="Shade" type="CSGCylinder3D" parent="Props/DeskLamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
+use_collision = true
+collision_layer = 5
+radius = 0.45
+height = 0.55
+sides = 14
+cone = true
+material = SubResource("Material_metal")
+
+[node name="Clue" type="Node" parent="Props/DeskLamp"]
+script = ExtResource("5_clue")
+clue_id = &"desk_lamp_examined"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_desk_lamp"])
+display_name = "Desk Lamp"
+observation = "The metal desk lamp is heavy enough to cause injury, though nothing obvious marks its surface."
+
+[node name="LetterOpener" type="CSGBox3D" parent="Props" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(0.955337, 0, 0.29552, 0, 1, 0, -0.29552, 0, 0.955337, 7.5, 2.65, -3.15)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.12, 0.08, 1)
+material = SubResource("Material_metal")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Clue" type="Node" parent="Props/LetterOpener"]
+script = ExtResource("5_clue")
+clue_id = &"letter_opener_examined"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_letter_opener"])
+display_name = "Letter Opener"
+observation = "A narrow metal letter opener rests on the cabinet. Its edge is dull, but the point is rigid."
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 5.5)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 5.5)
+move_speed = null
+acceleration = null
+gravity = null
+jump_velocity = null
+mouse_sensitivity = null
+max_look_angle = null
+
+[node name="CaseManager" type="Node" parent="." node_paths=PackedStringArray("investigation_state", "case_ui", "gameplay_audio", "ending_controller")]
+script = ExtResource("6_case_manager")
+case_data = ExtResource("7_case_data")
+investigation_state = NodePath("../Player/InvestigationState")
+case_ui = NodePath("../Player/CaseUI")
+gameplay_audio = NodePath("../Player/GameplayAudio")
+ending_controller = NodePath("../Player/EndingController")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HelpPanel" type="PanelContainer" parent="HUD"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 548.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("Style_help")
+
+[node name="Margin" type="MarginContainer" parent="HUD/HelpPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Instructions" type="Label" parent="HUD/HelpPanel/Margin"]
+layout_mode = 2
+text = "WASD  Move     Space  Jump     Mouse  Look     LMB  Interact     RMB  Echolocation
+C  Review case     Esc  Release mouse     F1  Toggle debug visibility"
+label_settings = SubResource("Label_help")
+
+[node name="DebugStatus" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 520.0
+offset_bottom = 142.0
+label_settings = SubResource("Label_help")
+
+[node name="Crosshair" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("Label_help")

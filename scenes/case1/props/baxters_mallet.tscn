@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://domt20x1u3qrm"]
+
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="2_clue"]
+[ext_resource type="PackedScene" uid="uid://c0sst204l4pyp" path="res://assets/Food GLB format/meat-tenderizer.glb" id="3_mallet"]
+
+[sub_resource type="BoxShape3D" id="Shape_mallet_interaction"]
+size = Vector3(0.68, 0.34, 0.4)
+
+[node name="BaxtersMallet" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+
+[node name="MalletVisual" parent="." instance=ExtResource("3_mallet")]
+
+[node name="BadgerEmblem" type="Node3D" parent="."]
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"baxter_mallet_located"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_bakers_mallet"])
+display_name = "Baxter's Baker's Mallet"
+observation = "A heavy wooden baker's mallet found inside Bramble's safe and marked with a small Badger emblem. Its shape matches the empty fitted slot in the Badger toolbox."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
+shape = SubResource("Shape_mallet_interaction")

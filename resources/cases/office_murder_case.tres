@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="CaseData" load_steps=12 format=3 uid="uid://dhsrx2ux5hneo"]
+
+[ext_resource type="Script" uid="uid://6boai6ebxcps" path="res://scripts/case/case_data.gd" id="1_case_data"]
+[ext_resource type="Script" path="res://scripts/case/deduction_candidate.gd" id="2_candidate"]
+
+[sub_resource type="Resource" id="Candidate_weapon_bookend"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_heavy_bookend"
+display_name = "Heavy Bookend"
+description = "A dense metal bookend found near the victim."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"heavy_bookend", &"victim_injury", &"impact_mark"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_lamp"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_desk_lamp"
+display_name = "Desk Lamp"
+description = "A substantial metal lamp from the victim's desk."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"desk_lamp_examined", &"victim_injury", &"impact_mark"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_weapon_opener"]
+script = ExtResource("2_candidate")
+candidate_id = &"weapon_letter_opener"
+display_name = "Letter Opener"
+description = "A rigid metal letter opener kept in the office."
+category = 0
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"letter_opener_examined", &"victim_injury"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_financial"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_financial_revenge"
+display_name = "Financial Revenge"
+description = "Someone may have retaliated over a serious business loss."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"torn_contract"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_grudge"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_personal_grudge"
+display_name = "Personal Grudge"
+description = "The crime may have grown from a personal grievance against the victim."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"threatening_note"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_motive_theft"]
+script = ExtResource("2_candidate")
+candidate_id = &"motive_financial_gain"
+display_name = "Theft / Financial Gain"
+description = "The killer may have expected to profit directly from the victim's death."
+category = 1
+known_at_start = false
+associated_evidence_ids = Array[StringName]([&"silver_cufflink"])
+relationship_to_victim = ""
+known_information = ""
+connected_weapon_ids = Array[StringName]([])
+connected_motive_ids = Array[StringName]([])
+
+[sub_resource type="Resource" id="Candidate_suspect_marcus"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_marcus_vale"
+display_name = "Marcus Vale"
+description = "A business partner with access to the office."
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([&"torn_contract", &"silver_cufflink"])
+relationship_to_victim = "Business partner"
+known_information = "Marcus worked closely with the victim and regularly visited this office."
+connected_weapon_ids = Array[StringName]([&"weapon_heavy_bookend", &"weapon_desk_lamp"])
+connected_motive_ids = Array[StringName]([&"motive_financial_revenge", &"motive_financial_gain"])
+
+[sub_resource type="Resource" id="Candidate_suspect_elena"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_elena_ward"
+display_name = "Elena Ward"
+description = "A former employee who left the company under tense circumstances."
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([&"threatening_note", &"muddy_footprint"])
+relationship_to_victim = "Former employee"
+known_information = "Elena recently argued with the victim after losing her position."
+connected_weapon_ids = Array[StringName]([&"weapon_letter_opener"])
+connected_motive_ids = Array[StringName]([&"motive_personal_grudge"])
+
+[sub_resource type="Resource" id="Candidate_suspect_julian"]
+script = ExtResource("2_candidate")
+candidate_id = &"suspect_julian_cross"
+display_name = "Julian Cross"
+description = "A relative who knew the victim's routines and finances."
+category = 2
+known_at_start = true
+associated_evidence_ids = Array[StringName]([&"muddy_footprint", &"silver_cufflink"])
+relationship_to_victim = "Family member"
+known_information = "Julian remained in contact with the victim and knew when the office would be empty."
+connected_weapon_ids = Array[StringName]([&"weapon_heavy_bookend"])
+connected_motive_ids = Array[StringName]([&"motive_financial_gain", &"motive_personal_grudge"])
+
+[resource]
+script = ExtResource("1_case_data")
+case_id = &"office_murder"
+case_title = "The Office Murder"
+case_objective = "Investigate the office and determine what happened."
+case_question = "What can the evidence tell us about the murder?"
+required_clue_ids = Array[StringName]([&"victim_injury", &"heavy_bookend", &"impact_mark", &"torn_contract", &"threatening_note", &"muddy_footprint", &"silver_cufflink"])
+deduction_candidates = Array[ExtResource("2_candidate")]([SubResource("Candidate_weapon_bookend"), SubResource("Candidate_weapon_lamp"), SubResource("Candidate_weapon_opener"), SubResource("Candidate_motive_financial"), SubResource("Candidate_motive_grudge"), SubResource("Candidate_motive_theft"), SubResource("Candidate_suspect_marcus"), SubResource("Candidate_suspect_elena"), SubResource("Candidate_suspect_julian")])
+correct_weapon_id = &"weapon_heavy_bookend"
+correct_motive_id = &"motive_financial_revenge"
+correct_suspect_id = &"suspect_marcus_vale"

@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Shader" path="res://shaders/cave_light_barrier.gdshader" id="1_fog_shader"]
+
+[sub_resource type="ShaderMaterial" id="Material_fog_core"]
+render_priority = 2
+shader = ExtResource("1_fog_shader")
+shader_parameter/fog_color = Color(0.72, 0.79, 0.84, 1)
+shader_parameter/opacity = 0.62
+shader_parameter/noise_scale = 5.5
+shader_parameter/drift_speed = 0.028
+shader_parameter/emission_strength = 1.2
+
+[sub_resource type="ShaderMaterial" id="Material_fog_depth"]
+render_priority = 1
+shader = ExtResource("1_fog_shader")
+shader_parameter/fog_color = Color(0.55, 0.64, 0.71, 1)
+shader_parameter/opacity = 0.3
+shader_parameter/noise_scale = 7.0
+shader_parameter/drift_speed = 0.018
+shader_parameter/emission_strength = 0.8
+
+[sub_resource type="ShaderMaterial" id="Material_light_ray"]
+render_priority = 3
+shader = ExtResource("1_fog_shader")
+shader_parameter/fog_color = Color(0.82, 0.86, 0.89, 1)
+shader_parameter/opacity = 0.2
+shader_parameter/noise_scale = 3.0
+shader_parameter/drift_speed = 0.012
+shader_parameter/emission_strength = 1.45
+
+[sub_resource type="QuadMesh" id="Mesh_fog_main"]
+material = SubResource("Material_fog_core")
+size = Vector2(9.6, 8.4)
+
+[sub_resource type="QuadMesh" id="Mesh_fog_depth"]
+material = SubResource("Material_fog_depth")
+size = Vector2(9.2, 8.0)
+
+[sub_resource type="QuadMesh" id="Mesh_light_ray_wide"]
+material = SubResource("Material_light_ray")
+size = Vector2(1.35, 8.1)
+
+[sub_resource type="QuadMesh" id="Mesh_light_ray_narrow"]
+material = SubResource("Material_light_ray")
+size = Vector2(0.72, 7.8)
+
+[sub_resource type="BoxShape3D" id="Shape_entrance_blocker"]
+size = Vector3(9.8, 8.6, 0.45)
+
+[node name="CaveLightBarrier" type="Node3D"]
+
+[node name="VisualVolume" type="Node3D" parent="."]
+
+[node name="BackMist" type="MeshInstance3D" parent="VisualVolume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0.32)
+mesh = SubResource("Mesh_fog_depth")
+cast_shadow = 0
+
+[node name="FrontMist" type="MeshInstance3D" parent="VisualVolume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, -0.08)
+mesh = SubResource("Mesh_fog_main")
+cast_shadow = 0
+
+[node name="LightRayLeft" type="MeshInstance3D" parent="VisualVolume"]
+transform = Transform3D(0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 0, 1, -2.65, 4.15, -0.13)
+mesh = SubResource("Mesh_light_ray_wide")
+cast_shadow = 0
+
+[node name="LightRayCenter" type="MeshInstance3D" parent="VisualVolume"]
+transform = Transform3D(0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0, 0, 1, 0.35, 4.25, -0.15)
+mesh = SubResource("Mesh_light_ray_narrow")
+cast_shadow = 0
+
+[node name="LightRayRight" type="MeshInstance3D" parent="VisualVolume"]
+transform = Transform3D(0.994522, -0.104528, 0, 0.104528, 0.994522, 0, 0, 0, 1, 2.9, 4.1, -0.12)
+mesh = SubResource("Mesh_light_ray_wide")
+cast_shadow = 0
+
+[node name="EntranceBlocker" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntranceBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+shape = SubResource("Shape_entrance_blocker")

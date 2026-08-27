@@ -1,0 +1,159 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_interactable"]
+
+[sub_resource type="StandardMaterial3D" id="Material_wood"]
+albedo_color = Color(0.17, 0.075, 0.035, 1)
+roughness = 0.88
+
+[sub_resource type="StandardMaterial3D" id="Material_iron"]
+albedo_color = Color(0.16, 0.17, 0.18, 1)
+metallic = 0.74
+roughness = 0.68
+
+[sub_resource type="StandardMaterial3D" id="Material_slot"]
+albedo_color = Color(0.028, 0.024, 0.022, 1)
+roughness = 0.96
+
+[sub_resource type="StandardMaterial3D" id="Material_badger_dark"]
+albedo_color = Color(0.055, 0.06, 0.065, 1)
+metallic = 0.42
+roughness = 0.76
+
+[sub_resource type="StandardMaterial3D" id="Material_badger_light"]
+albedo_color = Color(0.5, 0.51, 0.5, 1)
+metallic = 0.56
+roughness = 0.64
+
+[sub_resource type="BoxMesh" id="Mesh_body"]
+material = SubResource("Material_wood")
+size = Vector3(2.15, 0.18, 1.28)
+
+[sub_resource type="BoxMesh" id="Mesh_wall_long"]
+material = SubResource("Material_iron")
+size = Vector3(2.18, 0.38, 0.1)
+
+[sub_resource type="BoxMesh" id="Mesh_wall_short"]
+material = SubResource("Material_iron")
+size = Vector3(0.1, 0.38, 1.18)
+
+[sub_resource type="BoxMesh" id="Mesh_lid"]
+material = SubResource("Material_wood")
+size = Vector3(2.15, 0.1, 1.05)
+
+[sub_resource type="BoxMesh" id="Mesh_mallet_head_slot"]
+material = SubResource("Material_slot")
+size = Vector3(0.24, 0.035, 0.32)
+
+[sub_resource type="BoxMesh" id="Mesh_mallet_handle_slot"]
+material = SubResource("Material_slot")
+size = Vector3(0.52, 0.03, 0.09)
+
+[sub_resource type="CylinderMesh" id="Mesh_tool_handle"]
+material = SubResource("Material_wood")
+top_radius = 0.035
+bottom_radius = 0.035
+height = 0.48
+radial_segments = 10
+
+[sub_resource type="BoxMesh" id="Mesh_tool_head"]
+material = SubResource("Material_iron")
+size = Vector3(0.2, 0.07, 0.1)
+
+[sub_resource type="SphereMesh" id="Mesh_badger_head"]
+material = SubResource("Material_badger_dark")
+radius = 0.5
+height = 1.0
+radial_segments = 12
+rings = 6
+
+[sub_resource type="BoxMesh" id="Mesh_badger_stripe"]
+material = SubResource("Material_badger_light")
+size = Vector3(0.045, 0.3, 0.035)
+
+[sub_resource type="BoxShape3D" id="Shape_toolbox"]
+size = Vector3(2.35, 1.45, 1.5)
+
+[node name="BadgerToolbox" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+target_type = 1
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("Mesh_body")
+
+[node name="Interior" type="Node3D" parent="."]
+
+[node name="FrontWall" type="MeshInstance3D" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0.61)
+mesh = SubResource("Mesh_wall_long")
+
+[node name="BackWall" type="MeshInstance3D" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, -0.61)
+mesh = SubResource("Mesh_wall_long")
+
+[node name="LeftWall" type="MeshInstance3D" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0.28, 0)
+mesh = SubResource("Mesh_wall_short")
+
+[node name="RightWall" type="MeshInstance3D" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04, 0.28, 0)
+mesh = SubResource("Mesh_wall_short")
+
+[node name="MalletSlot" type="Node3D" parent="Interior"]
+
+[node name="HeadRecess" type="MeshInstance3D" parent="Interior/MalletSlot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67, 0.215, -0.18)
+mesh = SubResource("Mesh_mallet_head_slot")
+
+[node name="HandleChannel" type="MeshInstance3D" parent="Interior/MalletSlot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.215, -0.18)
+mesh = SubResource("Mesh_mallet_handle_slot")
+
+[node name="OtherBakingTools" type="Node3D" parent="Interior"]
+
+[node name="ToolHandle1" type="MeshInstance3D" parent="Interior/OtherBakingTools"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.28, 0.255, -0.23)
+mesh = SubResource("Mesh_tool_handle")
+
+[node name="ToolHead1" type="MeshInstance3D" parent="Interior/OtherBakingTools"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.255, -0.23)
+mesh = SubResource("Mesh_tool_head")
+
+[node name="ToolHandle2" type="MeshInstance3D" parent="Interior/OtherBakingTools"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.56, 0.255, 0.22)
+mesh = SubResource("Mesh_tool_handle")
+
+[node name="ToolHead2" type="MeshInstance3D" parent="Interior/OtherBakingTools"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32, 0.255, 0.22)
+mesh = SubResource("Mesh_tool_head")
+
+[node name="Lid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.77, -0.66)
+mesh = SubResource("Mesh_lid")
+
+[node name="BadgerEmblem" type="Node3D" parent="."]
+
+[node name="Head" type="MeshInstance3D" parent="BadgerEmblem"]
+transform = Transform3D(0.3, 0, 0, 0, 0.24, 0, 0, 0, 0.045, 0, 0.8, -0.59)
+mesh = SubResource("Mesh_badger_head")
+
+[node name="LeftStripe" type="MeshInstance3D" parent="BadgerEmblem"]
+transform = Transform3D(0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0, 0, 1, -0.075, 0.81, -0.535)
+mesh = SubResource("Mesh_badger_stripe")
+
+[node name="RightStripe" type="MeshInstance3D" parent="BadgerEmblem"]
+transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0.075, 0.81, -0.535)
+mesh = SubResource("Mesh_badger_stripe")
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_interactable")
+display_name = "Badger's Toolbox"
+observation = "A well-used baker's toolbox marked with a Badger emblem. Most of the tools are still in place, but one large mallet-shaped slot is conspicuously empty."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
+shape = SubResource("Shape_toolbox")

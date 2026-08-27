@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" path="res://scripts/investigation/clue.gd" id="2_clue"]
+
+[sub_resource type="StandardMaterial3D" id="Material_leather"]
+albedo_color = Color(0.16, 0.045, 0.022, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_pages"]
+albedo_color = Color(0.72, 0.64, 0.45, 1)
+roughness = 0.96
+
+[sub_resource type="StandardMaterial3D" id="Material_emblem"]
+albedo_color = Color(0.48, 0.27, 0.075, 1)
+metallic = 0.72
+roughness = 0.38
+
+[sub_resource type="BoxMesh" id="Mesh_cover"]
+material = SubResource("Material_leather")
+size = Vector3(1.24, 0.065, 0.9)
+
+[sub_resource type="BoxMesh" id="Mesh_pages"]
+material = SubResource("Material_pages")
+size = Vector3(1.1, 0.14, 0.78)
+
+[sub_resource type="BoxMesh" id="Mesh_spine"]
+material = SubResource("Material_leather")
+size = Vector3(0.15, 0.23, 0.9)
+
+[sub_resource type="BoxMesh" id="Mesh_border_long"]
+material = SubResource("Material_emblem")
+size = Vector3(0.96, 0.045, 0.035)
+
+[sub_resource type="BoxMesh" id="Mesh_border_short"]
+material = SubResource("Material_emblem")
+size = Vector3(0.035, 0.045, 0.65)
+
+[sub_resource type="SphereMesh" id="Mesh_mole_head"]
+material = SubResource("Material_emblem")
+radius = 0.3
+height = 0.6
+radial_segments = 12
+rings = 6
+
+[sub_resource type="SphereMesh" id="Mesh_mole_eye"]
+material = SubResource("Material_leather")
+radius = 0.055
+height = 0.11
+radial_segments = 8
+rings = 4
+
+[sub_resource type="PrismMesh" id="Mesh_mole_nose"]
+material = SubResource("Material_emblem")
+size = Vector3(0.18, 0.09, 0.19)
+
+[sub_resource type="SphereMesh" id="Mesh_mole_paw"]
+material = SubResource("Material_emblem")
+radius = 0.11
+height = 0.22
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxMesh" id="Mesh_claw"]
+material = SubResource("Material_emblem")
+size = Vector3(0.035, 0.055, 0.14)
+
+[sub_resource type="BoxShape3D" id="Shape_cookbook"]
+size = Vector3(1.4, 0.38, 1.04)
+
+[node name="MoleFamilyCookbook" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+target_type = 1
+
+[node name="BookBody" type="Node3D" parent="."]
+
+[node name="BackCover" type="MeshInstance3D" parent="BookBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0325, 0)
+mesh = SubResource("Mesh_cover")
+
+[node name="Pages" type="MeshInstance3D" parent="BookBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, 0.13, 0)
+mesh = SubResource("Mesh_pages")
+
+[node name="Cover" type="MeshInstance3D" parent="BookBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2325, 0)
+mesh = SubResource("Mesh_cover")
+
+[node name="Spine" type="MeshInstance3D" parent="BookBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57, 0.13, 0)
+mesh = SubResource("Mesh_spine")
+
+[node name="RaisedCoverBorder" type="Node3D" parent="."]
+
+[node name="Top" type="MeshInstance3D" parent="RaisedCoverBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.2875, 0.35)
+mesh = SubResource("Mesh_border_long")
+
+[node name="Bottom" type="MeshInstance3D" parent="RaisedCoverBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.2875, -0.35)
+mesh = SubResource("Mesh_border_long")
+
+[node name="Left" type="MeshInstance3D" parent="RaisedCoverBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44, 0.2875, 0)
+mesh = SubResource("Mesh_border_short")
+
+[node name="Right" type="MeshInstance3D" parent="RaisedCoverBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52, 0.2875, 0)
+mesh = SubResource("Mesh_border_short")
+
+[node name="MoleEmblem" type="Node3D" parent="."]
+
+[node name="Head" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.18, 0, 0, 0, 0.9, 0.04, 0.315, 0.035)
+mesh = SubResource("Mesh_mole_head")
+
+[node name="LeftEye" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.32, 0, 0, 0, 1, -0.075, 0.38, -0.055)
+mesh = SubResource("Mesh_mole_eye")
+
+[node name="RightEye" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.32, 0, 0, 0, 1, 0.155, 0.38, -0.055)
+mesh = SubResource("Mesh_mole_eye")
+
+[node name="PointedNose" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0.04, 0.375, -0.235)
+mesh = SubResource("Mesh_mole_nose")
+
+[node name="LeftPaw" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.8, -0.285, 0.355, 0.08)
+mesh = SubResource("Mesh_mole_paw")
+
+[node name="RightPaw" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.8, 0.365, 0.355, 0.08)
+mesh = SubResource("Mesh_mole_paw")
+
+[node name="LeftClawOuter" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -0.35, 0.39, -0.02)
+mesh = SubResource("Mesh_claw")
+
+[node name="LeftClawInner" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, -0.25, 0.39, -0.035)
+mesh = SubResource("Mesh_claw")
+
+[node name="RightClawInner" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0.33, 0.39, -0.035)
+mesh = SubResource("Mesh_claw")
+
+[node name="RightClawOuter" type="MeshInstance3D" parent="MoleEmblem"]
+transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 0.43, 0.39, -0.02)
+mesh = SubResource("Mesh_claw")
+
+[node name="Collision" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+display_name = "Old Mole Cookbook"
+observation = "An old, heavily worn cookbook. A Mole family emblem is embossed deeply into the cover. The recipes inside describe Honeygrubs in meticulous detail. This book appears considerably older than the Bear family's bakery."
+clue_id = &"mole_family_cookbook"
+clue_category = 0
+reveals_candidate_ids = Array[StringName]([&"motive_recipe_theft_revenge"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0)
+shape = SubResource("Shape_cookbook")

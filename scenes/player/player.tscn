@@ -1,0 +1,161 @@
+[gd_scene load_steps=15 format=3 uid="uid://c71ssqgb4e45v"]
+
+[ext_resource type="Script" uid="uid://cjlska5f4hgos" path="res://scripts/player/first_person_controller.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dlk56e2jmx8en" path="res://scripts/echolocation/echolocation_detector.gd" id="2_detector"]
+[ext_resource type="Script" uid="uid://cfqxvv7urppbs" path="res://scripts/interaction/interaction_detector.gd" id="3_interaction"]
+[ext_resource type="Script" uid="uid://dggraxt87oqty" path="res://scripts/investigation/investigation_state.gd" id="4_investigation"]
+[ext_resource type="Script" uid="uid://b7sevngajxhmd" path="res://scripts/ui/observation_display.gd" id="5_observation"]
+[ext_resource type="PackedScene" path="res://scenes/ui/case_ui.tscn" id="6_case_ui"]
+[ext_resource type="Script" uid="uid://c67ngx4uonnlb" path="res://scripts/audio/echolocation_audio.gd" id="8_echo_audio"]
+[ext_resource type="Script" uid="uid://c5wic5086kwvn" path="res://scripts/audio/gameplay_audio.gd" id="9_gameplay_audio"]
+[ext_resource type="PackedScene" path="res://scenes/ui/case_ending_ui.tscn" id="10_ending_ui"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape_player"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_observation"]
+bg_color = Color(0.015, 0.02, 0.025, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.65, 0.7, 0.55)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_observation"]
+font_size = 20
+font_color = Color(0.9, 0.94, 0.96, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_discovery"]
+font_size = 32
+font_color = Color(0.65, 0.9, 1, 1)
+outline_size = 6
+outline_color = Color(0.01, 0.02, 0.025, 1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape_player")
+
+[node name="BodyDebugMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_player")
+
+[node name="EcholocationAudio" type="Node" parent="."]
+script = ExtResource("8_echo_audio")
+pulse_volume_db = null
+object_echo_volume_db = null
+object_echo_max_distance = null
+object_echo_unit_size = null
+
+[node name="PulsePlayer" type="AudioStreamPlayer" parent="EcholocationAudio"]
+
+[node name="GameplayAudio" type="Node" parent="."]
+script = ExtResource("9_gameplay_audio")
+interaction_volume_db = null
+clue_discovered_volume_db = null
+case_solved_volume_db = null
+
+[node name="InteractionPlayer" type="AudioStreamPlayer" parent="GameplayAudio"]
+
+[node name="ClueDiscoveredPlayer" type="AudioStreamPlayer" parent="GameplayAudio"]
+
+[node name="CaseSolvedPlayer" type="AudioStreamPlayer" parent="GameplayAudio"]
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+
+[node name="EcholocationDetector" type="Node" parent="Head/Camera3D" node_paths=PackedStringArray("camera", "audio_feedback")]
+script = ExtResource("2_detector")
+camera = NodePath("..")
+audio_feedback = NodePath("../../../EcholocationAudio")
+
+[node name="InteractionDetector" type="Node" parent="Head/Camera3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("3_interaction")
+camera = NodePath("..")
+
+[node name="InvestigationState" type="Node" parent="."]
+script = ExtResource("4_investigation")
+
+[node name="CaseUI" parent="." instance=ExtResource("6_case_ui")]
+
+[node name="EndingController" parent="." instance=ExtResource("10_ending_ui")]
+minimum_briefing_duration = null
+intro_lead_in_duration = null
+
+[node name="ObservationDisplay" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("5_observation")
+
+[node name="UIRoot" type="Control" parent="ObservationDisplay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ObservationAnchor" type="VBoxContainer" parent="ObservationDisplay/UIRoot"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_top = -252.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+
+[node name="Panel" type="PanelContainer" parent="ObservationDisplay/UIRoot/ObservationAnchor"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_observation")
+
+[node name="Margin" type="MarginContainer" parent="ObservationDisplay/UIRoot/ObservationAnchor/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="ObservationLabel" type="Label" parent="ObservationDisplay/UIRoot/ObservationAnchor/Panel/Margin"]
+layout_mode = 2
+text = "Observation"
+label_settings = SubResource("LabelSettings_observation")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DiscoveryLabel" type="Label" parent="ObservationDisplay/UIRoot/ObservationAnchor/Panel/Margin/ObservationLabel"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = -72.0
+offset_right = 18.0
+offset_bottom = -24.0
+grow_horizontal = 0
+text = "CLUE DISCOVERED"
+label_settings = SubResource("LabelSettings_discovery")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,1066 @@
+[gd_scene load_steps=96 format=3 uid="uid://cyqlkf8ombw2i"]
+
+[ext_resource type="Script" uid="uid://c4tu1gxqk0qkn" path="res://scripts/environments/cave_main.gd" id="1_cave"]
+[ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://pp1jmhhhgdf3" path="res://assets/Cave GLB format/room-large-variation.glb" id="3_room_large"]
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="3_target"]
+[ext_resource type="PackedScene" uid="uid://bcijk55k1pfmm" path="res://assets/Cave GLB format/room-large.glb" id="4_room_large"]
+[ext_resource type="PackedScene" uid="uid://b5pmct87fo6pu" path="res://assets/Cave GLB format/room-small.glb" id="4_room_small"]
+[ext_resource type="PackedScene" uid="uid://d0y263kphjo3c" path="res://assets/Cave GLB format/corridor-wide.glb" id="5_corridor_wide"]
+[ext_resource type="PackedScene" uid="uid://ca06pjgtaruip" path="res://assets/Cave GLB format/gate-rock.glb" id="6_gate_rock"]
+[ext_resource type="PackedScene" uid="uid://cfs3312tr384f" path="res://assets/Cave GLB format/room-wide.glb" id="6_room_wide"]
+[ext_resource type="PackedScene" uid="uid://bm6538ekx6egs" path="res://assets/Cave GLB format/template-detail.glb" id="7_detail"]
+[ext_resource type="PackedScene" uid="uid://chqdl7igv48cv" path="res://assets/Cave GLB format/stairs.glb" id="7_jk6w0"]
+[ext_resource type="PackedScene" uid="uid://cpfhysci4muj" path="res://assets/Cave GLB format/template-floor-layer-raised.glb" id="8_floor_raised"]
+[ext_resource type="PackedScene" uid="uid://cyrf2fgwdgkcx" path="res://assets/Cave GLB format/corridor.glb" id="9_corridor"]
+[ext_resource type="PackedScene" uid="uid://xipqg4e4bgp1" path="res://assets/Factory GLB format/crane-magnet.glb" id="9_uigw4"]
+[ext_resource type="PackedScene" uid="uid://c76qux43n00l2" path="res://assets/Factory GLB format/hopper-high-round.glb" id="10_82f4e"]
+[ext_resource type="PackedScene" uid="uid://bgimuwj3b15gn" path="res://assets/Cave GLB format/corridor-corner.glb" id="10_corridor_corner"]
+[ext_resource type="PackedScene" uid="uid://djlf0g8owohbx" path="res://assets/Factory GLB format/crane.glb" id="12_yxwai"]
+[ext_resource type="PackedScene" uid="uid://b1ya62enket0h" path="res://assets/Prototype GLB format/number-1.glb" id="19_gy4sn"]
+[ext_resource type="PackedScene" uid="uid://c8yoway8o4umj" path="res://assets/Prototype GLB format/number-9.glb" id="20_jk6w0"]
+[ext_resource type="PackedScene" uid="uid://bimm5isevsalg" path="res://assets/Prototype GLB format/number-3.glb" id="21_28kqr"]
+[ext_resource type="PackedScene" uid="uid://bhe6i2ilgtm4x" path="res://assets/Mini Market GLB format/display-bread.glb" id="21_bread_display"]
+[ext_resource type="PackedScene" uid="uid://dvtpjb3t7iive" path="res://assets/Cave GLB format/template-wall-detail-a.glb" id="23_28kqr"]
+[ext_resource type="PackedScene" uid="uid://dhix2kg3xhbdw" path="res://assets/Cave GLB format/gate-overhang.glb" id="24_jjfba"]
+[ext_resource type="PackedScene" uid="uid://cjclm4w8admcu" path="res://assets/Mini Market GLB format/shelf-boxes.glb" id="26_shelf_boxes"]
+[ext_resource type="PackedScene" uid="uid://cy78g7r42o8jn" path="res://assets/Cave GLB format/corridor-transition.glb" id="27_pxt1n"]
+[ext_resource type="PackedScene" uid="uid://10eh7aa40nte" path="res://assets/Mini Market GLB format/shelf-bags.glb" id="27_shelf_bags"]
+[ext_resource type="PackedScene" uid="uid://os136eyj7evp" path="res://assets/Cave GLB format/template-floor.glb" id="29_r6da6"]
+[ext_resource type="PackedScene" uid="uid://bolpu0pvxw3ir" path="res://assets/Prototype GLB format/wall-window-barred-large.glb" id="30_vb5y2"]
+[ext_resource type="PackedScene" uid="uid://di3unpprxar2g" path="res://assets/Furniture Models/DAE format/kitchenCabinetCornerRound.dae" id="31_8yqn1"]
+[ext_resource type="PackedScene" uid="uid://dv5vdqoddxdfn" path="res://assets/Cave GLB format/template-floor-detail-a.glb" id="31_rsdht"]
+[ext_resource type="PackedScene" uid="uid://e8ptigk1sjjr" path="res://assets/Cave GLB format/template-wall.glb" id="32_1y1cl"]
+[ext_resource type="PackedScene" uid="uid://coj7e7vs0hvb6" path="res://assets/Furniture Models/DAE format/kitchenBar.dae" id="32_gkrh1"]
+[ext_resource type="PackedScene" uid="uid://ck26no2tteg8c" path="res://assets/Cave GLB format/template-wall-top.glb" id="33_gkrh1"]
+[ext_resource type="PackedScene" uid="uid://dhfhvclgyqs7d" path="res://assets/Furniture Models/DAE format/cardboardBoxClosed.dae" id="34_gkrh1"]
+[ext_resource type="PackedScene" uid="uid://d05rqukpgmhhv" path="res://assets/Cave GLB format/template-wall-corner.glb" id="35_tdhfe"]
+[ext_resource type="PackedScene" uid="uid://bptnem3sdyo4d" path="res://assets/Cave GLB format/template-wall-half.glb" id="36_e6gdp"]
+[ext_resource type="PackedScene" uid="uid://b4d7jgj7tj387" path="res://assets/Cave GLB format/template-floor-layer-hole.glb" id="37_e6gdp"]
+[ext_resource type="PackedScene" uid="uid://bc6vrggmul6fg" path="res://assets/Food GLB format/cake.glb" id="38_5yupd"]
+[ext_resource type="PackedScene" uid="uid://rsu685fs81vs" path="res://assets/Food GLB format/cutting-board.glb" id="39_7qe2v"]
+[ext_resource type="PackedScene" uid="uid://dkbj51v7e5un1" path="res://assets/Food GLB format/dim-sum.glb" id="40_cuy2t"]
+[ext_resource type="PackedScene" uid="uid://x5ils6ypbxd4" path="res://assets/Food GLB format/honey.glb" id="41_tqyda"]
+[ext_resource type="PackedScene" uid="uid://soqa6exr06cj" path="res://assets/Food GLB format/knife-block.glb" id="42_wsyjh"]
+[ext_resource type="PackedScene" uid="uid://dxhbsqlmxisr5" path="res://assets/Food GLB format/mincemeat-pie.glb" id="44_o23ln"]
+[ext_resource type="PackedScene" uid="uid://dtqyldowx6i3j" path="res://assets/Food GLB format/pie.glb" id="45_wrlu2"]
+[ext_resource type="PackedScene" uid="uid://bav0cxoafcu5x" path="res://assets/Food GLB format/pizza-box.glb" id="46_umaul"]
+[ext_resource type="PackedScene" uid="uid://c27o3y68ajman" path="res://assets/Food GLB format/whisk.glb" id="48_g6sf2"]
+[ext_resource type="PackedScene" uid="uid://b32io24s0a4cc" path="res://assets/Food GLB format/cooking-knife-chopping.glb" id="49_o23ln"]
+[ext_resource type="PackedScene" uid="uid://dkjrhx1t7ywf" path="res://assets/Food GLB format/cheese-slicer.glb" id="50_pj63v"]
+[ext_resource type="PackedScene" uid="uid://b4040vubsbrgo" path="res://assets/Food GLB format/carton.glb" id="51_pkiki"]
+[ext_resource type="PackedScene" uid="uid://kj6p26p056oy" path="res://assets/Food GLB format/cake-slicer.glb" id="52_vck7p"]
+[ext_resource type="PackedScene" uid="uid://bkftvwtocs86g" path="res://assets/Food GLB format/croissant.glb" id="54_5uxch"]
+[ext_resource type="PackedScene" uid="uid://djed5g15vgqgb" path="res://assets/Food GLB format/pizza-cutter.glb" id="56_8ibtp"]
+[ext_resource type="PackedScene" uid="uid://ii21qigavn2o" path="res://assets/Factory GLB format/cone.glb" id="60_1owwo"]
+[ext_resource type="Script" uid="uid://dgjltlbq04yld" path="res://scripts/puzzles/drain_controller.gd" id="61_drain_controller"]
+[ext_resource type="PackedScene" uid="uid://c2b3d6h7vaxlu" path="res://assets/Mini Market GLB format/cash-register.glb" id="62_1lrl5"]
+[ext_resource type="Script" uid="uid://bbysk7koeilew" path="res://scripts/puzzles/drain_plug_interactable.gd" id="62_drain_plug"]
+[ext_resource type="PackedScene" path="res://scenes/puzzles/office_safe.tscn" id="63_office_safe"]
+[ext_resource type="PackedScene" uid="uid://drl8k10sd8ekg" path="res://assets/Mini Market GLB format/column.glb" id="63_tnpk3"]
+[ext_resource type="PackedScene" uid="uid://do5c6ljk8umo1" path="res://assets/Mini Market GLB format/shelf-end.glb" id="67_rsiy7"]
+[ext_resource type="Script" uid="uid://cv3obewt35dl6" path="res://scripts/case/case_manager.gd" id="68_case_manager"]
+[ext_resource type="Resource" uid="uid://ctq42yhs6rgvn" path="res://resources/cases/case1_case.tres" id="69_case_data"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="70_clue"]
+[ext_resource type="PackedScene" uid="uid://dfqtkf2tle1tv" path="res://assets/Furniture Models/FBX format/kitchenCabinetDrawer.fbx" id="71_2ofjw"]
+[ext_resource type="PackedScene" uid="uid://bwv21m3h5su3k" path="res://scenes/case1/props/trophy_display_case.tscn" id="71_rfmq7"]
+[ext_resource type="PackedScene" uid="uid://olavd2lvjb4q" path="res://assets/Furniture Models/FBX format/kitchenStove.fbx" id="72_2ofjw"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/mole_family_cookbook.tscn" id="72_cookbook"]
+[ext_resource type="PackedScene" path="res://scenes/case1/environment/cave_light_barrier.tscn" id="73_light_barrier"]
+[ext_resource type="PackedScene" uid="uid://bnmitwoq0qnw2" path="res://assets/Furniture Models/FBX format/kitchenSink.fbx" id="73_usmeo"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/honeygrub_mold.tscn" id="74_honeygrub_mold"]
+[ext_resource type="PackedScene" uid="uid://domt20x1u3qrm" path="res://scenes/case1/props/baxters_mallet.tscn" id="75_baxters_mallet"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/badger_toolbox.tscn" id="76_badger_toolbox"]
+[ext_resource type="PackedScene" uid="uid://cclqhihyold5p" path="res://scenes/case1/props/broken_rabbit_bust.tscn" id="77_broken_rabbit_bust"]
+[ext_resource type="PackedScene" uid="uid://bc3m7c05puodx" path="res://scenes/case1/props/bennys_dented_helmet.tscn" id="78_bennys_helmet"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/maintenance_wrench.tscn" id="79_maintenance_wrench"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/red_herring_cooking_knife.tscn" id="80_cooking_knife"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/red_herring_rolling_pin.tscn" id="81_rolling_pin"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/red_herring_frying_pan.tscn" id="82_frying_pan"]
+[ext_resource type="Script" uid="uid://ch15ms2a3jyxc" path="res://scripts/audio/water_footstep_area.gd" id="83_water_footsteps"]
+[ext_resource type="PackedScene" uid="uid://ddthvu5bxeo3p" path="res://scenes/case1/props/bramble_body_outline.tscn" id="84_body_outline"]
+[ext_resource type="PackedScene" path="res://scenes/ui/echolocation_control_hint.tscn" id="85_control_hint"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/easter_egg_letter_m.tscn" id="86_letter_m"]
+[ext_resource type="PackedScene" path="res://scenes/case1/props/easter_egg_letter_w.tscn" id="87_letter_w"]
+
+[sub_resource type="Environment" id="Environment_black"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_energy = 0.0
+reflected_light_source = 2
+
+[sub_resource type="CylinderShape3D" id="Shape_drain_plug"]
+height = 0.55
+radius = 0.58
+
+[sub_resource type="StandardMaterial3D" id="Material_flood_water"]
+transparency = 1
+albedo_color = Color(0.035, 0.16, 0.22, 0.48)
+
+[sub_resource type="PlaneMesh" id="Mesh_flood_water"]
+material = SubResource("Material_flood_water")
+size = Vector2(16.5, 10.5)
+center_offset = Vector3(3, 0, 0)
+
+[sub_resource type="BoxShape3D" id="Shape_water_footsteps"]
+size = Vector3(16.5, 1.6, 10.5)
+
+[sub_resource type="StandardMaterial3D" id="Material_trophy_wood"]
+albedo_color = Color(0.24, 0.085, 0.035, 1)
+roughness = 0.78
+
+[sub_resource type="BoxMesh" id="Mesh_trophy_base_lower"]
+material = SubResource("Material_trophy_wood")
+size = Vector3(0.9, 0.32, 0.58)
+
+[sub_resource type="BoxMesh" id="Mesh_trophy_base_upper"]
+material = SubResource("Material_trophy_wood")
+size = Vector3(0.7, 0.12, 0.46)
+
+[sub_resource type="StandardMaterial3D" id="Material_trophy_plate"]
+albedo_color = Color(0.62, 0.66, 0.68, 1)
+metallic = 0.9
+roughness = 0.24
+
+[sub_resource type="BoxMesh" id="Mesh_trophy_nameplate"]
+material = SubResource("Material_trophy_plate")
+size = Vector3(0.54, 0.14, 0.035)
+
+[sub_resource type="BoxShape3D" id="Shape_golden_whisk_trophy"]
+size = Vector3(0.94, 1.25, 0.62)
+
+[sub_resource type="StyleBoxFlat" id="Style_help"]
+bg_color = Color(0.02, 0.02, 0.03, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="Label_help"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Case1" type="Node3D"]
+script = ExtResource("1_cave")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_black")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="StartingHallway" type="Node3D" parent="Environment"]
+
+[node name="EntranceLightBarrier" parent="Environment/StartingHallway" instance=ExtResource("73_light_barrier")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 25.8)
+
+[node name="RockGate" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("6_gate_rock")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0.104249, -0.00559501, 9.9332)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EntranceOuter" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("5_corridor_wide")]
+transform = Transform3D(-0.00043635, 0, -1, 0, 1, 0, 1, 0, -0.00043635, -0.00296497, 0, 21.9837)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EntranceInner" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("5_corridor_wide")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 14)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="FoundingYear" type="Node3D" parent="Environment/StartingHallway"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01295, 0.424824, -1.42175)
+
+[node name="number-12" parent="Environment/StartingHallway/FoundingYear" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("19_gy4sn")]
+script = ExtResource("3_target")
+
+[node name="number-92" parent="Environment/StartingHallway/FoundingYear" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("20_jk6w0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0202401, -0.00746012, -0.9816)
+script = ExtResource("3_target")
+
+[node name="number-13" parent="Environment/StartingHallway/FoundingYear" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("19_gy4sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0346398, -0.0318401, -1.451)
+script = ExtResource("3_target")
+
+[node name="number-32" parent="Environment/StartingHallway/FoundingYear" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_28kqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00761986, 0.000259876, -0.4681)
+script = ExtResource("3_target")
+
+[node name="EntranceOuter2" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("5_corridor_wide")]
+transform = Transform3D(-0.00043635, 8.74228e-08, 1, 0, -1, 8.74228e-08, 1, 3.81469e-11, 0.00043635, 0.0270183, 8.08457, 21.9837)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EntranceInner2" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("5_corridor_wide")]
+transform = Transform3D(-4.37114e-08, 8.74228e-08, 1, 0, -1, 8.74228e-08, 1, 3.82137e-15, 4.37114e-08, 0.0299833, 8.08457, 14)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RockGate2" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("6_gate_rock")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 0.4, 0.104249, -0.00559501, 25.4937)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="CentralHub" type="Node3D" parent="Environment"]
+
+[node name="ManualBuildConnection" type="Marker3D" parent="Environment/CentralHub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -10)
+
+[node name="room-large2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("4_room_large")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265263, -2.86102e-06, 0.270421)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a9" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, -9.96993, 8.05792, 0.315652)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a10" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 10.7061, 8.05792, 0.315651)
+script = ExtResource("3_target")
+
+[node name="gate-overhang2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("24_jjfba")]
+transform = Transform3D(-0.00626564, 0, 0.99998, 0, 1, 0, -0.99998, 0, -0.00626564, -9.89253, 0, 0.208126)
+script = ExtResource("3_target")
+
+[node name="corridor2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.476113, 0, -11.0842)
+script = ExtResource("3_target")
+
+[node name="corridor3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.476113, 0, -15.0639)
+script = ExtResource("3_target")
+
+[node name="corridor4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2625, 0, 0.266076)
+script = ExtResource("3_target")
+
+[node name="corridor-corner2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("10_corridor_corner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2514, 0, 0.261314)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetCornerRound" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("31_8yqn1")]
+transform = Transform3D(-6.55671e-08, 0, 1.2, 0, 3, 0, -1.5, 0, -5.24537e-08, -4.84119, 0, -1.3731)
+script = ExtResource("3_target")
+
+[node name="kitchenBar" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.45387, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.72977, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.01762, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -4.30649, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.84198, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar6" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.84198, 0, -3.28042)
+script = ExtResource("3_target")
+
+[node name="kitchenBar7" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.84198, 0, -4.47183)
+script = ExtResource("3_target")
+
+[node name="kitchenBar8" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.84198, 0, -5.74371)
+script = ExtResource("3_target")
+
+[node name="kitchenBar9" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.84198, 0, -7.02422)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.62794, -4.76837e-07, -7.47471)
+script = ExtResource("3_target")
+
+[node name="crane2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("12_yxwai")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.85334, 0, 5.28068)
+script = ExtResource("3_target")
+
+[node name="cash-register2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("62_1lrl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26293, 1.25492, -1.87621)
+script = ExtResource("3_target")
+
+[node name="column2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("63_tnpk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73699, 0, -6.91749)
+script = ExtResource("3_target")
+
+[node name="column3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("63_tnpk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73699, 0, -5.43302)
+script = ExtResource("3_target")
+
+[node name="column4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("63_tnpk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73699, 0, -4.02787)
+script = ExtResource("3_target")
+
+[node name="column5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("63_tnpk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73699, 0, -2.78091)
+script = ExtResource("3_target")
+
+[node name="display-bread2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374689, 1.23624, -1.65793)
+script = ExtResource("3_target")
+
+[node name="shelf-boxes2" parent="Environment/CentralHub" instance=ExtResource("26_shelf_boxes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98086, -2.38419e-07, -7.65177)
+
+[node name="shelf-bags2" parent="Environment/CentralHub" instance=ExtResource("27_shelf_bags")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05119, 0, -7.71503)
+
+[node name="shelf-end2" parent="Environment/CentralHub" instance=ExtResource("67_rsiy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04962, 0, -7.47794)
+
+[node name="display-bread3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395948, 1.23624, -1.65793)
+script = ExtResource("3_target")
+
+[node name="display-bread4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16857, 1.23624, -1.65793)
+script = ExtResource("3_target")
+
+[node name="room-large3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("4_room_large")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.265263, 7.93903, 0.270422)
+script = ExtResource("3_target")
+
+[node name="corridor9" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, 0.476114, 7.90213, -11.0842)
+script = ExtResource("3_target")
+
+[node name="corridor10" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, 0.476114, 7.90213, -15.0639)
+script = ExtResource("3_target")
+
+[node name="template-wall-half2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
+transform = Transform3D(-1.7, -8.74228e-08, 0, 1.48619e-07, -1, 0, 0, 0, 1, 0.0455334, 8.09414, 10.2937)
+script = ExtResource("3_target")
+
+[node name="LowerCaveFloodedChamber" type="Node3D" parent="Environment"]
+
+[node name="room-small2" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("4_room_small")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6828, -4.35135, 0.238188)
+script = ExtResource("3_target")
+
+[node name="stairs2" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_jk6w0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7156, -4.32322, 0.264591)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a4" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.8685, -4.33939, 0.255702)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a3" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.654, -4.38006, -6.24693)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a2" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6301, -4.33915, 6.38831)
+script = ExtResource("3_target")
+
+[node name="template-wall-top8" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.2, 0, 1, -8.74228e-09, -11.6842, 4.07407, -1.95951)
+script = ExtResource("3_target")
+
+[node name="template-wall-top9" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(0.880907, 1.40916e-08, 0.147082, 0.956035, -3.21459e-08, -0.135524, 1.83191e-08, 1, -6.42917e-09, -15.3273, 2.21848, -1.95951)
+script = ExtResource("3_target")
+
+[node name="room-small3" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("4_room_small")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -22.6828, -0.38108, 0.238188)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a5" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, -17.634, 3.65069, 0.255702)
+script = ExtResource("3_target")
+
+[node name="DrainPlug" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_uigw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.939, -4.3396, -0.231782)
+script = ExtResource("3_target")
+
+[node name="Interactable" type="StaticBody3D" parent="Environment/LowerCaveFloodedChamber/DrainPlug" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("62_drain_plug")
+display_name = "Drain Plug"
+observation = "You pull the plug from the drain."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/LowerCaveFloodedChamber/DrainPlug/Interactable"]
+shape = SubResource("Shape_drain_plug")
+
+[node name="Drain" parent="Environment/LowerCaveFloodedChamber" groups=["echolocation_target"] instance=ExtResource("10_82f4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9209, -5.71983, -0.274538)
+script = ExtResource("3_target")
+
+[node name="FloodWater" type="MeshInstance3D" parent="Environment/LowerCaveFloodedChamber" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6828, -3.7326, 0.238188)
+mesh = SubResource("Mesh_flood_water")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = Color(0.321569, 0.415686, 0.470588, 1)
+environment_surface_brightness = 0.08
+
+[node name="WaterFootstepArea" type="Area3D" parent="Environment/LowerCaveFloodedChamber/FloodWater"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("83_water_footsteps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/LowerCaveFloodedChamber/FloodWater/WaterFootstepArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.7, 0)
+shape = SubResource("Shape_water_footsteps")
+
+[node name="DrainController" type="Node3D" parent="Environment/LowerCaveFloodedChamber" node_paths=PackedStringArray("plug_visual", "plug_interactable", "water")]
+script = ExtResource("61_drain_controller")
+drained_water_position = Vector3(-22.6828, -7.25, 0.238188)
+plug_visual = NodePath("../DrainPlug")
+plug_interactable = NodePath("../DrainPlug/Interactable")
+water = NodePath("../FloodWater")
+
+[node name="GoldenWhiskTrophy" type="Node3D" parent="Environment/LowerCaveFloodedChamber" groups=["echolocation_target"]]
+transform = Transform3D(-0.9355, 0.353325, 0.00093838, -0.0143368, -0.0353059, -0.999274, -0.353035, -0.934834, 0.0380942, -25.3665, -4.21765, -2.48853)
+script = ExtResource("3_target")
+
+[node name="whisk2" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy" instance=ExtResource("48_g6sf2")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.081358, 0.449631, 0)
+
+[node name="BaseLower" type="MeshInstance3D" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.16, 0)
+mesh = SubResource("Mesh_trophy_base_lower")
+
+[node name="BaseUpper" type="MeshInstance3D" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.244889, -0.00293031)
+mesh = SubResource("Mesh_trophy_base_upper")
+
+[node name="Nameplate" type="MeshInstance3D" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.166006, -0.145477)
+mesh = SubResource("Mesh_trophy_nameplate")
+
+[node name="EvidenceInteraction" type="StaticBody3D" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("70_clue")
+clue_id = &"golden_whisk_damage"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_golden_whisk"])
+display_name = "Golden Whisk Trophy"
+observation = "Bramble's Golden Whisk trophy, awarded for his most recent solo competition victory. One side is visibly damaged, and several coarse strands of bear fur are caught around the impact point."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/LowerCaveFloodedChamber/GoldenWhiskTrophy/EvidenceInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+shape = SubResource("Shape_golden_whisk_trophy")
+
+[node name="Barred Viewing Passage" type="Node3D" parent="Environment"]
+
+[node name="corridor-transition2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("27_pxt1n")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2418, 0, -7.72116)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.8374, -0.472, -16.3481)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised3" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.00876111, 0, 0.799877, 0, 1, 0, -0.499923, 0, 0.0140178, 15.6215, -1.05064, -16.2833)
+script = ExtResource("3_target")
+
+[node name="wall-window-barred-large2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("30_vb5y2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.6368, 2.88999, -17.5812)
+script = ExtResource("3_target")
+
+[node name="wall-window-barred-large3" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("30_vb5y2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.6357, 2.88973, -17.5814)
+script = ExtResource("3_target")
+
+[node name="template-floor-detail-a2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("31_rsdht")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 16.247, 0, -13.7206)
+script = ExtResource("3_target")
+
+[node name="template-wall2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2538, 0, -11.6792)
+script = ExtResource("3_target")
+
+[node name="template-wall3" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2538, 0, -15.6598)
+script = ExtResource("3_target")
+
+[node name="template-wall-top2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-2.5, 0, -3.01992e-08, 0, 1, 0, 3.77489e-07, 0, -0.2, 15.2103, -1.60289, -17.6639)
+script = ExtResource("3_target")
+
+[node name="template-wall4" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.235, 0, -11.6792)
+script = ExtResource("3_target")
+
+[node name="template-wall5" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.235, 0, -15.6783)
+script = ExtResource("3_target")
+
+[node name="template-wall-top3" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-1, 0, -3.01992e-08, 0, 0.225, 0, 1.50996e-07, 0, -0.2, 18.1305, 2.88985, -17.6639)
+script = ExtResource("3_target")
+
+[node name="template-wall-top4" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-0.3, 0, -3.01992e-08, 0, 0.225, 0, 4.52987e-08, 0, -0.2, 13.5419, 2.89366, -17.6639)
+script = ExtResource("3_target")
+
+[node name="template-wall-top7" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-0.55, 0, -3.01992e-08, 0, 0.225, 0, 8.30477e-08, 0, -0.2, 11.3098, 2.89366, -17.6639)
+script = ExtResource("3_target")
+
+[node name="template-wall-top10" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-2, 3.01992e-07, -1.32005e-15, 0, -8.74228e-08, -0.2, -3.01992e-07, -2, 8.74228e-09, 16.2281, 3.86767, -8.51657)
+script = ExtResource("3_target")
+
+[node name="template-wall-top11" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-2, 9.05975e-08, -1.32005e-15, 0, -2.62268e-08, -0.2, -3.01992e-07, -0.6, 8.74228e-09, 16.2281, 3.86767, -5.82647)
+script = ExtResource("3_target")
+
+[node name="template-wall-top12" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-0.0133618, 0.599956, -8.74163e-09, 0, -2.62268e-08, -0.2, -1.09992, -0.00728823, 1.06193e-10, 14.8807, 3.86767, -3.69519)
+script = ExtResource("3_target")
+
+[node name="template-wall-top13" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-1.69999, -0.0020891, 2.60907e-11, 0, -3.0598e-08, -0.2, 0.00507353, -0.699997, 8.74224e-09, 14.1331, 3.86767, 1.62693)
+script = ExtResource("3_target")
+
+[node name="Kitchen" type="Node3D" parent="Environment"]
+
+[node name="room-large-variation3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("3_room_large")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475898, -9.53674e-07, -26.6854)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, 0.359003, 7.99943, -36.765)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a4" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 10.4745, 7.93944, -27.0631)
+script = ExtResource("3_target")
+
+[node name="corridor5" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3939, 0, -26.5673)
+script = ExtResource("3_target")
+
+[node name="corridor6" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1063, 0, -26.5673)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-hole2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("37_e6gdp")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 6.19174, 0, -32.8882)
+script = ExtResource("3_target")
+
+[node name="room-large-variation4" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("3_room_large")]
+transform = Transform3D(-4.37114e-08, 8.74228e-08, -1, 0, -1, -8.74228e-08, -1, -3.82137e-15, 4.37114e-08, 0.475899, 7.95323, -26.6854)
+script = ExtResource("3_target")
+
+[node name="TrophyDisplayCase" parent="Environment/Kitchen" groups=["cave_collision_source"] instance=ExtResource("71_rfmq7")]
+transform = Transform3D(-0.00707709, 0, 0.49995, 0, 0.5, 0, -0.49995, 0, -0.00707709, 7.82339, 4.4894, -32.6449)
+
+[node name="template-wall-detail-a2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.359003, 0, -36.7747)
+script = ExtResource("3_target")
+
+[node name="corridor7" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -14.3939, 7.96496, -26.5673)
+script = ExtResource("3_target")
+
+[node name="corridor8" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11.1063, 7.96496, -26.5673)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.56927, 0, -19.8033)
+script = ExtResource("3_target")
+
+[node name="kitchenStove" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("72_2ofjw")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.2796, 0, -19.8015)
+script = ExtResource("3_target")
+
+[node name="kitchenSink" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("73_usmeo")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -4.94698, 0, -19.8095)
+script = ExtResource("3_target")
+
+[node name="BadgerToolbox" parent="Environment/Kitchen" groups=["cave_collision_source"] instance=ExtResource("76_badger_toolbox")]
+transform = Transform3D(-0.592977, 0, 0.0915328, 0, 0.6, 0, -0.0915328, 0, -0.592977, -2.55408, 1.71396, -18.8788)
+
+[node name="template-floor-layer-raised2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.647753, 0, -33.2689)
+script = ExtResource("3_target")
+
+[node name="StorageShelving" type="Node3D" parent="Environment"]
+
+[node name="template-wall-top5" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, 18.2315, -0.426217, -24.8833)
+script = ExtResource("3_target")
+
+[node name="template-wall-top6" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, 12.4796, -0.426217, -24.8833)
+script = ExtResource("3_target")
+
+[node name="Floor" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("29_r6da6")]
+transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1.75, 15.2389, 0, -28.4972)
+script = ExtResource("3_target")
+
+[node name="RockObstacle1" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1361, 0, -24.8588)
+script = ExtResource("3_target")
+
+[node name="RockObstacle2" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.44268, 0, 0.89668, 0, 1, 0, -0.89668, 0, -0.44268, 16.2693, 0, -25.3248)
+script = ExtResource("3_target")
+
+[node name="template-wall8" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.235, 0, -27.6545)
+script = ExtResource("3_target")
+
+[node name="template-wall11" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.4659, 0, -32.0021)
+script = ExtResource("3_target")
+
+[node name="template-wall12" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.4581, 0, -32.0021)
+script = ExtResource("3_target")
+
+[node name="template-wall-corner2" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("35_tdhfe")]
+transform = Transform3D(-1.5299e-07, 0, 3.5, 0, 1, 0, -3.5, 0, -1.5299e-07, 20.242, 0, -31.9903)
+script = ExtResource("3_target")
+
+[node name="RoomTopHalf" type="Node3D" parent="Environment/StorageShelving"]
+transform = Transform3D(-1, -7.64274e-15, 8.74228e-08, 0, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 30.2257, 8.10669, 0.00682855)
+
+[node name="Roof" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("29_r6da6")]
+transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1.75, 15.2389, 0.127266, -28.4972)
+script = ExtResource("3_target")
+
+[node name="RockObstacle1" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1361, 0, -24.8588)
+script = ExtResource("3_target")
+
+[node name="RockObstacle2" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.44268, 0, 0.89668, 0, 1, 0, -0.89668, 0, -0.44268, 16.2693, 0, -25.3248)
+script = ExtResource("3_target")
+
+[node name="template-wall8" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.97985, -3.38813e-21, -30.0191)
+script = ExtResource("3_target")
+
+[node name="template-wall11" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.4659, 0, -32.0021)
+script = ExtResource("3_target")
+
+[node name="template-wall12" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.4581, 0, -32.0021)
+script = ExtResource("3_target")
+
+[node name="template-wall-corner2" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("35_tdhfe")]
+transform = Transform3D(-1.5299e-07, 0, 3.5, 0, 1, 0, -3.5, 0, -1.5299e-07, 20.242, 0, -31.9903)
+script = ExtResource("3_target")
+
+[node name="template-wall-top8" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-1, 0, 1.74846e-08, -7.64274e-15, -1, -1.74846e-08, 8.74228e-08, -8.74228e-08, 0.2, 11.9942, 4.64156, -24.8901)
+script = ExtResource("3_target")
+
+[node name="template-wall-top9" parent="Environment/StorageShelving/RoomTopHalf" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("33_gkrh1")]
+transform = Transform3D(-1, 0, 1.74846e-08, -7.64274e-15, -1, -1.74846e-08, 8.74228e-08, -8.74228e-08, 0.2, 17.7461, 4.09525, -24.8901)
+script = ExtResource("3_target")
+
+[node name="template-wall9" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.2551, 7.96748, -26.2248)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised2" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(1.7, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 14.1684, 0, -29.5473)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised3" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(1.7, 0, 0, 0, 0.6, 0, 0, 0, 0.5, 14.1684, 0, -29.5473)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised4" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(1.7, 0, 0, 0, 0.6, 0, 0, 0, 0.5, 14.1684, 1.68653, -29.5473)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised5" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-3.93403e-08, 0, 0.25, 0, 0.6, 0, -0.9, 0, -1.09278e-08, 18.2108, 0.408084, -27.139)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised6" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-3.93403e-08, 0, 0.25, 0, 0.2, 0, -0.9, 0, -1.09278e-08, 18.2108, -0.174908, -27.139)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised7" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-3.93403e-08, 0, 0.25, 0, 0.5, 0, -0.9, 0, -1.09278e-08, 18.2108, 2.16176, -27.139)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15.4872, 1.78446, -29.5473)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed3" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 12.075, 0.291347, -29.9788)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed4" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 13.3376, 0.291347, -30.0302)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed5" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 14.752, 0.291347, -29.979)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed6" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 13.3376, 1.75348, -30.1795)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed2" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 13.776, 3.45802, -29.5983)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed7" parent="Environment/StorageShelving" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 12.3705, 3.42955, -30.3611)
+script = ExtResource("3_target")
+
+[node name="OldMoleRoom" type="Node3D" parent="Environment"]
+
+[node name="Floor" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("29_r6da6")]
+transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1.9, 15.2389, 0, -21.4379)
+script = ExtResource("3_target")
+
+[node name="template-wall6" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.235, 0, -19.6803)
+script = ExtResource("3_target")
+
+[node name="template-wall7" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.235, 0, -23.6761)
+script = ExtResource("3_target")
+
+[node name="template-wall9" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2154, 0, -19.6163)
+script = ExtResource("3_target")
+
+[node name="template-wall10" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2154, 0, -22.982)
+script = ExtResource("3_target")
+
+[node name="MoleFamilyCookbook" parent="Environment/OldMoleRoom" instance=ExtResource("72_cookbook")]
+transform = Transform3D(-0.197828, -0.960094, 0.197694, 0.017425, 0.198203, 0.980006, -0.980082, 0.197318, -0.0224805, 18.7144, 0.419306, -23.561)
+
+[node name="template-wall11" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.2551, 7.96748, -22.4713)
+script = ExtResource("3_target")
+
+[node name="template-wall12" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.2551, 7.96748, -19.4336)
+script = ExtResource("3_target")
+
+[node name="template-wall13" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 17.7511, 7.96748, -16.8554)
+script = ExtResource("3_target")
+
+[node name="template-wall14" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 13.7823, 7.96748, -16.8554)
+script = ExtResource("3_target")
+
+[node name="template-wall15" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 12.193, 7.96748, -16.8554)
+script = ExtResource("3_target")
+
+[node name="template-wall16" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, 10.2817, 7.96748, -19.9417)
+script = ExtResource("3_target")
+
+[node name="template-wall17" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_1y1cl")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, 10.2817, 7.96748, -23.3901)
+script = ExtResource("3_target")
+
+[node name="Roof" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("29_r6da6")]
+transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1.9, 15.2389, 7.97076, -21.2536)
+script = ExtResource("3_target")
+
+[node name="Office" type="Node3D" parent="Environment"]
+
+[node name="template-wall-half2" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, -28.3758, 0, -26.4236)
+script = ExtResource("3_target")
+
+[node name="template-wall-half3" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -22.45, 0, -16.5398)
+script = ExtResource("3_target")
+
+[node name="template-wall-half4" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
+transform = Transform3D(-2, 0, -8.74228e-08, 0, 1, 0, 1.74846e-07, 0, -1, -22.45, 0, -36.5895)
+script = ExtResource("3_target")
+
+[node name="OfficeSafe" parent="Environment/Office" instance=ExtResource("63_office_safe")]
+transform = Transform3D(0.605988, 0, -0.795474, 0, 1, 0, 0.795474, 0, 0.605988, -25.4345, 0, -20.1744)
+
+[node name="BaxtersMallet" parent="Environment/Office/OfficeSafe" instance=ExtResource("75_baxters_mallet")]
+transform = Transform3D(0.375254, 0, 0.926922, 0, 1, 0, -0.926922, 0, 0.375254, -0.380941, 0.202517, -0.278693)
+
+[node name="HoneygrubMold" parent="Environment/Office/OfficeSafe" instance=ExtResource("74_honeygrub_mold")]
+transform = Transform3D(0.24638, 0, 0.315114, 0, 0.4, 0, -0.315114, 0, 0.24638, 0.212831, 0.162362, 0.00926304)
+
+[node name="room-wide2" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("6_room_wide")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.3808, 0, -26.5739)
+script = ExtResource("3_target")
+
+[node name="room-wide3" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("6_room_wide")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, -22.3808, 8.02178, -26.5739)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a6" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, -27.5486, 8.02669, -26.4492)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a7" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.3081, 8.02669, -16.3929)
+script = ExtResource("3_target")
+
+[node name="template-wall-detail-a8" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.3081, 8.02669, -36.0855)
+script = ExtResource("3_target")
+
+[node name="BrokenRabbitBust" parent="Environment/Office" instance=ExtResource("77_broken_rabbit_bust")]
+transform = Transform3D(-0.131893, -0.150346, -0.000634484, -0.0050336, 0.00525927, -0.199867, 0.150263, -0.13179, -0.00725221, -24.1701, 0.0836804, -28.0771)
+
+[node name="ItemSpawn" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6335, 0, 28.257)
+
+[node name="template-floor2" parent="Environment/ItemSpawn" instance=ExtResource("29_r6da6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4588, 0, -5.4418)
+
+[node name="cake" parent="Environment/ItemSpawn" instance=ExtResource("38_5yupd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0949, 0, -4.54029)
+
+[node name="cutting-board2" parent="Environment/ItemSpawn" instance=ExtResource("39_7qe2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9601, 0, -5.40893)
+
+[node name="dim-sum2" parent="Environment/ItemSpawn" instance=ExtResource("40_cuy2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8483, 1.19209e-07, -5.35997)
+
+[node name="honey2" parent="Environment/ItemSpawn" instance=ExtResource("41_tqyda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2339, 0, -5.41134)
+
+[node name="knife-block2" parent="Environment/ItemSpawn" instance=ExtResource("42_wsyjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7928, 0, -3.86534)
+
+[node name="mincemeat-pie2" parent="Environment/ItemSpawn" instance=ExtResource("44_o23ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6521, -5.96046e-08, -3.88989)
+
+[node name="pie2" parent="Environment/ItemSpawn" instance=ExtResource("45_wrlu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9857, 5.96046e-08, -4.70839)
+
+[node name="pizza-box2" parent="Environment/ItemSpawn" instance=ExtResource("46_umaul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1571, 0, -4.15035)
+
+[node name="rollingPin2" parent="Environment/ItemSpawn" instance=ExtResource("81_rolling_pin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5791, 0.0435498, -54.1155)
+
+[node name="whisk2" parent="Environment/ItemSpawn" instance=ExtResource("48_g6sf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9815, 0, -4.94994)
+
+[node name="cooking-knife-chopping2" parent="Environment/ItemSpawn" instance=ExtResource("49_o23ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9277, 0, -4.38573)
+
+[node name="cheese-slicer2" parent="Environment/ItemSpawn" instance=ExtResource("50_pj63v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9493, 2.38419e-07, -5.17185)
+
+[node name="carton2" parent="Environment/ItemSpawn" instance=ExtResource("51_pkiki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0709, 0, -3.85271)
+
+[node name="cake-slicer2" parent="Environment/ItemSpawn" instance=ExtResource("52_vck7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9751, 0, -5.42134)
+
+[node name="cooking-knife2" parent="Environment/ItemSpawn" instance=ExtResource("80_cooking_knife")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9921, 0, -54.57)
+
+[node name="croissant2" parent="Environment/ItemSpawn" instance=ExtResource("54_5uxch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1913, 0, -3.83662)
+
+[node name="frying-pan2" parent="Environment/ItemSpawn" instance=ExtResource("82_frying_pan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5817, 0, -55.6918)
+
+[node name="pizza-cutter2" parent="Environment/ItemSpawn" instance=ExtResource("56_8ibtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3526, 0, -3.60694)
+
+[node name="BennysHelmet" parent="Environment/ItemSpawn" instance=ExtResource("78_bennys_helmet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7526, 0, -7.19818)
+
+[node name="MaintenanceWrench" parent="Environment/ItemSpawn" groups=["cave_collision_source"] instance=ExtResource("79_maintenance_wrench")]
+transform = Transform3D(-0.0899943, 0.717906, -0.341339, -0.771309, 0.00424516, 0.212284, 0.192311, 0.352978, 0.691681, 49.2389, 0.466624, -45.1376)
+
+[node name="cone2" parent="Environment/ItemSpawn" instance=ExtResource("60_1owwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1559, 0, -7.19909)
+
+[node name="BrambleBodyOutline" parent="Environment/ItemSpawn" instance=ExtResource("84_body_outline")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -5.6)
+
+[node name="EasterEgg" type="Node3D" parent="Environment/ItemSpawn"]
+transform = Transform3D(0.198838, 0.00350162, -0.021241, 0.000288669, 0.196885, 0.035159, 0.0215258, -0.0349854, 0.195736, 45.1814, 0.827026, -59.4724)
+
+[node name="EasterEggLetterW1" parent="Environment/ItemSpawn/EasterEgg" instance=ExtResource("87_letter_w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.996456, 0, 0)
+
+[node name="EasterEggLetterW2" parent="Environment/ItemSpawn/EasterEgg" instance=ExtResource("87_letter_w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96562, 0, 0)
+
+[node name="EasterEggLetterM" parent="Environment/ItemSpawn/EasterEgg" instance=ExtResource("86_letter_m")]
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 26)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.102672, 24.2296)
+move_speed = 4.0
+jump_velocity = 6.5
+
+[node name="CaseManager" type="Node" parent="." node_paths=PackedStringArray("investigation_state", "case_ui", "gameplay_audio", "ending_controller", "control_hint")]
+script = ExtResource("68_case_manager")
+case_data = ExtResource("69_case_data")
+play_intro_on_start = true
+investigation_state = NodePath("../Player/InvestigationState")
+case_ui = NodePath("../Player/CaseUI")
+gameplay_audio = NodePath("../Player/GameplayAudio")
+ending_controller = NodePath("../Player/EndingController")
+control_hint = NodePath("../EcholocationControlHint")
+
+[node name="DebugLights" type="Node3D" parent="."]
+
+[node name="EntranceLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 21)
+light_energy = 4.0
+shadow_enabled = true
+omni_range = 18.0
+
+[node name="SecondRoomLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6652, 16.3092, -23.2387)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="FirstRoomLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.7142, 0)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight3" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(-1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 13.5042, 2.14984, -27.542)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight2" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0145888, 4.08767, -24.9994)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight4" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1145, 5.47023, -26.4251)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight5" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(-1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 15.3609, 1.30868, -12.3926)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight6" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7891, 1.37551, -20.2662)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight7" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 5.0822e-21, 0, -5.0822e-21, 1, 0, 0, 0, 1, 13.9732, 6.67348, -21.9077)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="FloodedChamberLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.929, -1.63113, 0.889201)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HelpPanel" type="PanelContainer" parent="HUD" groups=["debug_gameplay_hud"]]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 590.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("Style_help")
+
+[node name="Margin" type="MarginContainer" parent="HUD/HelpPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Instructions" type="Label" parent="HUD/HelpPanel/Margin"]
+layout_mode = 2
+text = "WASD  Move     Space  Jump     Mouse  Look     RMB  Echolocation
+Esc  Release mouse     F1  Cave visibility     F2  Debug HUD"
+label_settings = SubResource("Label_help")
+
+[node name="DebugStatus" type="Label" parent="HUD" groups=["debug_gameplay_hud"]]
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 560.0
+offset_bottom = 142.0
+label_settings = SubResource("Label_help")
+
+[node name="Crosshair" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("Label_help")
+
+[node name="EcholocationControlHint" parent="." instance=ExtResource("85_control_hint")]
+
+[node name="template-floor-layer-raised2" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.5, 0, 0, 0, 1.2, 0, 0, 0, 0.5, -2.14457, 0, -29.5202)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised3" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.5, -2.14457, 0, -27.0982)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.8178, 1.96414, -17.2141)
+script = ExtResource("3_target")
+
+[node name="cone2" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63199, 0, 1.67317)
+script = ExtResource("3_target")
+
+[node name="cone3" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63199, 0, -1.15821)
+script = ExtResource("3_target")
+
+[node name="BennysHelmet" parent="." instance=ExtResource("78_bennys_helmet")]
+transform = Transform3D(-1.22865, 0, 0.860472, 0, 1.5, 0, -0.860472, 0, -1.22865, -8.40116, 0.01187, -1.67071)

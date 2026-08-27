@@ -1,0 +1,157 @@
+[gd_scene load_steps=16 format=3 uid="uid://bwv21m3h5su3k"]
+
+[ext_resource type="PackedScene" uid="uid://craapvq7mapn3" path="res://scenes/case1/props/historical_trophy.tscn" id="1_trophy"]
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="2_target"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="3_clue"]
+
+[sub_resource type="StandardMaterial3D" id="Material_frame"]
+albedo_color = Color(0.16, 0.045, 0.018, 1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="Mesh_case_base"]
+material = SubResource("Material_frame")
+size = Vector3(6, 0.22, 1.25)
+
+[sub_resource type="BoxMesh" id="Mesh_case_side"]
+material = SubResource("Material_frame")
+size = Vector3(0.22, 2.2, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Material_back"]
+albedo_color = Color(0.025, 0.03, 0.035, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_case_back"]
+material = SubResource("Material_back")
+size = Vector3(5.56, 2.08, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="Material_glass"]
+transparency = 1
+albedo_color = Color(0.45, 0.75, 0.82, 0.2)
+metallic = 0.08
+roughness = 0.06
+
+[sub_resource type="BoxMesh" id="Mesh_glass_main"]
+material = SubResource("Material_glass")
+size = Vector3(4.36, 1.88, 0.035)
+
+[sub_resource type="BoxMesh" id="Mesh_glass_edge"]
+material = SubResource("Material_glass")
+size = Vector3(0.32, 1.88, 0.035)
+
+[sub_resource type="PrismMesh" id="Mesh_glass_shard"]
+material = SubResource("Material_glass")
+size = Vector3(0.48, 0.56, 0.035)
+
+[sub_resource type="StandardMaterial3D" id="Material_fur"]
+albedo_color = Color(0.15, 0.085, 0.045, 1)
+
+[sub_resource type="SphereMesh" id="Mesh_fur"]
+material = SubResource("Material_fur")
+radius = 0.09
+height = 0.18
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxShape3D" id="Shape_display_case"]
+size = Vector3(6.05, 2.42, 1.32)
+
+[node name="TrophyDisplayCase" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("2_target")
+
+[node name="CaseBody" type="Node3D" parent="."]
+
+[node name="Base" type="MeshInstance3D" parent="CaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+mesh = SubResource("Mesh_case_base")
+
+[node name="LeftFrame" type="MeshInstance3D" parent="CaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89, 1.2, 0)
+mesh = SubResource("Mesh_case_side")
+
+[node name="RightFrame" type="MeshInstance3D" parent="CaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89, 1.2, 0)
+mesh = SubResource("Mesh_case_side")
+
+[node name="TopFrame" type="MeshInstance3D" parent="CaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29, 0)
+mesh = SubResource("Mesh_case_base")
+
+[node name="BackPanel" type="MeshInstance3D" parent="CaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.565)
+mesh = SubResource("Mesh_case_back")
+
+[node name="Glass" type="Node3D" parent="."]
+
+[node name="IntactGlassSections" type="Node3D" parent="Glass"]
+
+[node name="FourTrophyPane" type="MeshInstance3D" parent="Glass/IntactGlassSections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61, 1.2, -0.6425)
+mesh = SubResource("Mesh_glass_main")
+
+[node name="RightEdgePane" type="MeshInstance3D" parent="Glass/IntactGlassSections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67, 1.2, -0.6425)
+mesh = SubResource("Mesh_glass_edge")
+
+[node name="BrokenGlassSection" type="Node3D" parent="Glass"]
+
+[node name="ShardUpperLeft" type="MeshInstance3D" parent="Glass/BrokenGlassSection"]
+transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 1.72, 1.92, -0.65)
+mesh = SubResource("Mesh_glass_shard")
+
+[node name="ShardLowerLeft" type="MeshInstance3D" parent="Glass/BrokenGlassSection"]
+transform = Transform3D(0.819152, -0.573576, 0, 0.573576, 0.819152, 0, 0, 0, 1, 1.79, 0.59, -0.65)
+mesh = SubResource("Mesh_glass_shard")
+
+[node name="ShardUpperRight" type="MeshInstance3D" parent="Glass/BrokenGlassSection"]
+transform = Transform3D(-0.766044, 0.642788, 0, -0.642788, -0.766044, 0, 0, 0, 1, 2.53, 1.91, -0.65)
+mesh = SubResource("Mesh_glass_shard")
+
+[node name="ShardLowerRight" type="MeshInstance3D" parent="Glass/BrokenGlassSection"]
+transform = Transform3D(-0.906308, -0.422618, 0, 0.422618, -0.906308, 0, 0, 0, 1, 2.55, 0.55, -0.65)
+mesh = SubResource("Mesh_glass_shard")
+
+[node name="ShardTop" type="MeshInstance3D" parent="Glass/BrokenGlassSection"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 2.15, 2.03, -0.66)
+mesh = SubResource("Mesh_glass_shard")
+
+[node name="TrophySlots" type="Node3D" parent="."]
+
+[node name="Trophy01" parent="TrophySlots" instance=ExtResource("1_trophy")]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, -2.28, 0.22, 0)
+
+[node name="Trophy02" parent="TrophySlots" instance=ExtResource("1_trophy")]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, -1.14, 0.22, 0)
+
+[node name="Trophy03" parent="TrophySlots" instance=ExtResource("1_trophy")]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 0, 0.22, 0)
+
+[node name="Trophy04" parent="TrophySlots" instance=ExtResource("1_trophy")]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 1.14, 0.22, 0)
+
+[node name="MoleFur" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.62705, 0.815937, -0.642491)
+
+[node name="Tuft01" type="MeshInstance3D" parent="MoleFur"]
+transform = Transform3D(0.7, 0, 0, 0, 1.2, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("Mesh_fur")
+
+[node name="Tuft02" type="MeshInstance3D" parent="MoleFur"]
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, 0.09, 0.04, 0.01)
+mesh = SubResource("Mesh_fur")
+
+[node name="Tuft03" type="MeshInstance3D" parent="MoleFur"]
+transform = Transform3D(0.55, 0, 0, 0, 0.9, 0, 0, 0, 0.55, -0.07, -0.035, 0.018)
+mesh = SubResource("Mesh_fur")
+
+[node name="Collision" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_clue")
+clue_id = &"trophy_display_history"
+reveals_candidate_ids = Array[StringName]([&"motive_professional_betrayal"])
+display_name = "Trophy Display Case"
+observation = "Four older trophies remain inside the case. Each is engraved with the names Bramble Bear and Fiona Fox, marking victories they earned together as a team. The newest position is empty, its glass broken around the missing trophy. A small tuft of coarse fur is caught on one of the jagged edges. It carries the earthy scent of a mole."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21, 0)
+shape = SubResource("Shape_display_case")

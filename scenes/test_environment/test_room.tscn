@@ -1,0 +1,419 @@
+[gd_scene load_steps=15 format=3 uid="uid://dms2ybkn6rgk"]
+
+[ext_resource type="Script" uid="uid://b5728asulxwou" path="res://scripts/test_environment/test_room.gd" id="1_room"]
+[ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="3_target"]
+[ext_resource type="Script" uid="uid://xmje7taotj1x" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" uid="uid://00kwr8hmn8wv" path="res://scripts/investigation/clue.gd" id="5_clue"]
+[ext_resource type="Script" uid="uid://cv3obewt35dl6" path="res://scripts/case/case_manager.gd" id="6_case_manager"]
+[ext_resource type="Resource" uid="uid://c3gefi28l7ppe" path="res://resources/cases/moved_chair_case.tres" id="7_case_data"]
+
+[sub_resource type="Environment" id="Environment_black"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_energy = 0.0
+reflected_light_source = 2
+
+[sub_resource type="StandardMaterial3D" id="Material_room"]
+albedo_color = Color(0.22, 0.25, 0.3, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_chair"]
+albedo_color = Color(0.42, 0.18, 0.08, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Material_bucket"]
+albedo_color = Color(0.18, 0.32, 0.48, 1)
+metallic = 0.35
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Material_ball"]
+albedo_color = Color(0.7, 0.12, 0.12, 1)
+roughness = 0.65
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_help"]
+bg_color = Color(0.02, 0.02, 0.03, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_hud"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TestRoom" type="Node3D"]
+script = ExtResource("1_room")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_black")
+
+[node name="DebugLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 14.0
+
+[node name="RoomGeometry" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(16, 0.2, 14)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = 0.11
+object_wavefront_intensity = null
+environment_wavefront_intensity = 1.5
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = 0.8
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Ceiling" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1, 0)
+use_collision = true
+size = Vector3(16, 0.2, 14)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="NorthWall" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -7)
+use_collision = true
+size = Vector3(16, 5, 0.2)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="SouthWall" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 7)
+use_collision = true
+size = Vector3(16, 5, 0.2)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="WestWall" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, 0)
+use_collision = true
+size = Vector3(0.2, 5, 14)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="EastWall" type="CSGBox3D" parent="RoomGeometry" groups=["echolocation_target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 0)
+use_collision = true
+size = Vector3(0.2, 5, 14)
+material = SubResource("Material_room")
+script = ExtResource("3_target")
+target_type = 0
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="TestObjects" type="Node3D" parent="."]
+
+[node name="Chair" type="Node3D" parent="TestObjects" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="TestObjects/Chair"]
+script = ExtResource("5_clue")
+clue_id = &"chair_scratches"
+display_name = "Chair"
+observation = "There are fresh scratches on one of the chair legs. It looks like the chair was moved recently."
+
+[node name="Seat" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.5, 0.22, 1.5)
+material = SubResource("Material_chair")
+
+[node name="Back" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.65)
+use_collision = true
+collision_layer = 5
+size = Vector3(1.5, 1.7, 0.22)
+material = SubResource("Material_chair")
+
+[node name="FrontLeftLeg" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 0.625, -0.58)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.2, 1.25, 0.2)
+material = SubResource("Material_chair")
+
+[node name="FrontRightLeg" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, 0.625, -0.58)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.2, 1.25, 0.2)
+material = SubResource("Material_chair")
+
+[node name="BackLeftLeg" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 0.625, 0.58)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.2, 1.25, 0.2)
+material = SubResource("Material_chair")
+
+[node name="BackRightLeg" type="CSGBox3D" parent="TestObjects/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, 0.625, 0.58)
+use_collision = true
+collision_layer = 5
+size = Vector3(0.2, 1.25, 0.2)
+material = SubResource("Material_chair")
+
+[node name="Bucket" type="CSGCylinder3D" parent="TestObjects" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7, 0.65, -1)
+use_collision = true
+collision_layer = 5
+radius = 0.65
+height = 1.3
+sides = 24
+cone = true
+material = SubResource("Material_bucket")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="TestObjects/Bucket"]
+script = ExtResource("5_clue")
+clue_id = &"cleaning_bucket"
+display_name = "Bucket"
+observation = "The bucket smells strongly of cleaning chemicals. Someone may have tried to clean something up."
+
+[node name="Ball" type="CSGSphere3D" parent="TestObjects" groups=["echolocation_target", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.6, -5.1)
+use_collision = true
+collision_layer = 5
+radius = 0.6
+radial_segments = 24
+rings = 12
+material = SubResource("Material_ball")
+script = ExtResource("3_target")
+target_type = null
+environment_reveal_color = null
+object_reveal_color = null
+edge_power = null
+object_edge_intensity = null
+environment_edge_intensity = null
+object_surface_brightness = null
+environment_surface_brightness = null
+object_wavefront_intensity = null
+environment_wavefront_intensity = null
+object_wavefront_surface_boost = null
+environment_wavefront_surface_boost = null
+object_trail_intensity = null
+environment_trail_intensity = null
+near_brightness = null
+far_brightness = null
+brightness_falloff = null
+maximum_active_pulses = null
+environment_bounds_sample_grid_size = null
+
+[node name="Interactable" type="Node" parent="TestObjects/Ball"]
+script = ExtResource("4_interactable")
+display_name = "Ball"
+observation = "Just a ball. It doesn't seem relevant to the case."
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 3.8)
+move_speed = null
+acceleration = null
+gravity = null
+jump_velocity = null
+mouse_sensitivity = null
+max_look_angle = null
+
+[node name="CaseManager" type="Node" parent="." node_paths=PackedStringArray("investigation_state", "case_ui", "gameplay_audio", "ending_controller")]
+script = ExtResource("6_case_manager")
+case_data = ExtResource("7_case_data")
+investigation_state = NodePath("../Player/InvestigationState")
+case_ui = NodePath("../Player/CaseUI")
+gameplay_audio = NodePath("../Player/GameplayAudio")
+ending_controller = NodePath("../Player/EndingController")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HelpPanel" type="PanelContainer" parent="HUD"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 387.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBox_help")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/HelpPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Instructions" type="Label" parent="HUD/HelpPanel/MarginContainer"]
+layout_mode = 2
+text = "WASD  Move     Space  Jump     Mouse  Look     LMB  Interact     RMB  Echolocation
+C  Review case     Esc  Release mouse     F1  Toggle debug visibility"
+label_settings = SubResource("LabelSettings_hud")
+
+[node name="DebugStatus" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 500.0
+offset_bottom = 142.0
+label_settings = SubResource("LabelSettings_hud")
+
+[node name="Crosshair" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_hud")

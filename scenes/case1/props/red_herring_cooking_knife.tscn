@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/echolocation/echolocation_target.gd" id="1_target"]
+[ext_resource type="Script" path="res://scripts/investigation/clue.gd" id="2_clue"]
+[ext_resource type="PackedScene" path="res://assets/Food GLB format/cooking-knife.glb" id="3_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_interaction"]
+size = Vector3(0.78, 0.18, 0.2)
+
+[node name="CookingKnife" type="Node3D" groups=["echolocation_target"]]
+script = ExtResource("1_target")
+
+[node name="OriginalModel" parent="." instance=ExtResource("3_model")]
+
+[node name="Interaction" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_clue")
+clue_id = &"red_herring_cooking_knife"
+clue_category = 1
+reveals_candidate_ids = Array[StringName]([&"weapon_cooking_knife"])
+display_name = "Cooking Knife"
+observation = "A sharp cooking knife from the bakery kitchen. Its sturdy blade could cause serious injury."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+shape = SubResource("Shape_interaction")

@@ -1,0 +1,263 @@
+[gd_scene load_steps=19 format=3 uid="uid://hw0nf44vaba0"]
+
+[ext_resource type="Script" uid="uid://c4tu1gxqk0qkn" path="res://scripts/environments/cave_main.gd" id="1_cave"]
+[ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://bptbcatnuhv13" path="res://scripts/echolocation/echolocation_target.gd" id="3_target"]
+[ext_resource type="PackedScene" uid="uid://bcijk55k1pfmm" path="res://assets/Cave GLB format/room-large.glb" id="4_room_large"]
+[ext_resource type="PackedScene" uid="uid://c4mh8gb0wfpip" path="res://assets/Cave GLB format/room-small-variation.glb" id="6_room_small_var"]
+[ext_resource type="PackedScene" uid="uid://cxdu3hccxrgcf" path="res://assets/Cave GLB format/room-wide-variation.glb" id="7_room_wide_var"]
+[ext_resource type="PackedScene" uid="uid://d0y263kphjo3c" path="res://assets/Cave GLB format/corridor-wide.glb" id="8_corridor_wide"]
+[ext_resource type="PackedScene" uid="uid://iatgbgfq2jvc" path="res://assets/Cave GLB format/corridor-wide-corner.glb" id="9_corridor_wide_corner"]
+[ext_resource type="PackedScene" uid="uid://cyrf2fgwdgkcx" path="res://assets/Cave GLB format/corridor.glb" id="10_corridor"]
+[ext_resource type="PackedScene" uid="uid://bgimuwj3b15gn" path="res://assets/Cave GLB format/corridor-corner.glb" id="11_corridor_corner"]
+[ext_resource type="PackedScene" uid="uid://buyjwuo6e1pq3" path="res://assets/Cave GLB format/corridor-end.glb" id="12_corridor_end"]
+[ext_resource type="PackedScene" uid="uid://cy78g7r42o8jn" path="res://assets/Cave GLB format/corridor-transition.glb" id="13_transition"]
+[ext_resource type="PackedScene" uid="uid://ca06pjgtaruip" path="res://assets/Cave GLB format/gate-rock.glb" id="14_gate_rock"]
+[ext_resource type="PackedScene" uid="uid://bm6538ekx6egs" path="res://assets/Cave GLB format/template-detail.glb" id="15_detail"]
+[ext_resource type="PackedScene" uid="uid://cpfhysci4muj" path="res://assets/Cave GLB format/template-floor-layer-raised.glb" id="16_floor_raised"]
+
+[sub_resource type="Environment" id="Environment_black"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_energy = 0.0
+reflected_light_source = 2
+
+[sub_resource type="StyleBoxFlat" id="Style_help"]
+bg_color = Color(0.02, 0.02, 0.03, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="Label_help"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CaveMain" type="Node3D"]
+script = ExtResource("1_cave")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_black")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Entrance" type="Node3D" parent="Environment"]
+
+[node name="RockGate" parent="Environment/Entrance" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("14_gate_rock")]
+transform = Transform3D(1, 0, 0, 0, 1.35, 0, 0, 0, 1, 0, 0, 25.1017)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EntranceOuter" parent="Environment/Entrance" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_corridor_wide")]
+transform = Transform3D(-0.00043635, 0, -1, 0, 1.35, 0, 1, 0, -0.00043635, -0.00296497, 0, 21.9837)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EntranceInner" parent="Environment/Entrance" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_corridor_wide")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.35, 0, 1, 0, -4.37114e-08, 0, 0, 14)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="CentralChamber" type="Node3D" parent="Environment"]
+
+[node name="MainRoom" parent="Environment/CentralChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("4_room_large")]
+transform = Transform3D(1, 0, 0, 0, 1.55, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RaisedShelf" parent="Environment/CentralChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("16_floor_raised")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47949, 0, 5.39266)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EdgeFormationNorthWest" parent="Environment/CentralChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0.8, 0, 0, 0, 1.15, 0, 0, 0, 0.8, -7.2, 0, -7)
+script = ExtResource("3_target")
+
+[node name="EdgeFormationSouthEast" parent="Environment/CentralChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0, 0, -0.7, 0, 1, 0, 0.7, 0, 0, 7.1, 0, 6.5)
+script = ExtResource("3_target")
+
+[node name="TunnelA" type="Node3D" parent="Environment"]
+
+[node name="WestTransition" parent="Environment/TunnelA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("13_transition")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.35, 0, 8.74228e-08, 0, -1, -15.9873, -1.90735e-06, 0.102599)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="WestBend" parent="Environment/TunnelA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor_wide_corner")]
+transform = Transform3D(0, 0, 1, 0, 1.35, 0, -1, 0, 0, -21.9447, 0, 0.114655)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="SouthRunNear" parent="Environment/TunnelA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("10_corridor")]
+transform = Transform3D(-4.37114e-08, 0, 2, 0, 1.35, 0, -1, 0, -8.74228e-08, -21.951, 0, -5.849)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="SouthRunFar" parent="Environment/TunnelA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("10_corridor")]
+transform = Transform3D(-4.37114e-08, 0, 2, 0, 1.35, 0, -1, 0, -8.74228e-08, -21.932, 0, -9.777)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RoomA" type="Node3D" parent="Environment"]
+
+[node name="SmallChamber" parent="Environment/RoomA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("6_room_small_var")]
+transform = Transform3D(2, 0, 0, 0, 1.35, 0, 0, 0, 2, -21.9454, 0, -23.506)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RoomAFormation" parent="Environment/RoomA" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0.7, 0, 0, 0, 0.85, 0, 0, 0, 0.7, -25.5, 0, -19.5)
+script = ExtResource("3_target")
+
+[node name="TunnelB" type="Node3D" parent="Environment"]
+
+[node name="EastRun" parent="Environment/TunnelB" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_corridor_wide")]
+transform = Transform3D(1, 0, 0, 0, 1.35, 0, 0, 0, 1, 14, 0, 0.128772)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="EastBend" parent="Environment/TunnelB" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("9_corridor_wide_corner")]
+transform = Transform3D(0, 0, -1, 0, 1.35, 0, 1, 0, 0, 22, 0, 0.127385)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="NorthRun" parent="Environment/TunnelB" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_corridor_wide")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.35, 0, -1, 0, -4.37114e-08, 22, 0, 8.08803)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RoomB" type="Node3D" parent="Environment"]
+
+[node name="WideChamber" parent="Environment/RoomB" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_room_wide_var")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.35, 0, -1, 0, -4.37114e-08, 22, 0, 21.2064)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="RoomBFormation" parent="Environment/RoomB" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0, 0, -0.85, 0, 1.1, 0, 0.85, 0, 0, 28, 0, 21.5)
+script = ExtResource("3_target")
+
+[node name="SecondaryPassage" type="Node3D" parent="Environment"]
+
+[node name="NorthAlcoveRun" parent="Environment/SecondaryPassage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("10_corridor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.35, 0, -1, 0, -4.37114e-08, 0.0455739, 0, -12)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="NorthAlcoveBend" parent="Environment/SecondaryPassage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("11_corridor_corner")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.35, 0, 8.74228e-08, 0, -1, 0.0454521, 0, -16)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="NorthDeadEnd" parent="Environment/SecondaryPassage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("12_corridor_end")]
+transform = Transform3D(1, 0, 0, 0, 1.35, 0, 0, 0, 1, 3.99475, 0, -16)
+script = ExtResource("3_target")
+target_type = 0
+
+[node name="DecorativeRocks" type="Node3D" parent="."]
+
+[node name="EntranceRock" parent="DecorativeRocks" groups=["echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0.55, 0, 0, 0, 0.75, 0, 0, 0, 0.55, 4.5, 0, 22)
+script = ExtResource("3_target")
+
+[node name="TunnelARock" parent="DecorativeRocks" groups=["echolocation_target"] instance=ExtResource("15_detail")]
+transform = Transform3D(0.45, 0, 0, 0, 0.6, 0, 0, 0, 0.45, -20.2, 0, -7.5)
+script = ExtResource("3_target")
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 26)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 24.7399)
+move_speed = null
+acceleration = null
+gravity = null
+jump_velocity = null
+mouse_sensitivity = null
+max_look_angle = null
+
+[node name="DebugLights" type="Node3D" parent="."]
+
+[node name="EntranceLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 21)
+light_energy = 4.0
+shadow_enabled = true
+omni_range = 18.0
+
+[node name="CentralLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="CentralLight" type="OmniLight3D" parent="DebugLights/CentralLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8599, 1.7153, 0)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="RoomALight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 4, -16)
+light_energy = 3.5
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="RoomBLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 4, 18)
+light_energy = 4.0
+shadow_enabled = true
+omni_range = 18.0
+
+[node name="AlcoveLight" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -17)
+light_energy = 2.5
+shadow_enabled = true
+omni_range = 11.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HelpPanel" type="PanelContainer" parent="HUD"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 590.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("Style_help")
+
+[node name="Margin" type="MarginContainer" parent="HUD/HelpPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Instructions" type="Label" parent="HUD/HelpPanel/Margin"]
+layout_mode = 2
+text = "WASD  Move     Space  Jump     Mouse  Look     RMB  Echolocation
+Esc  Release mouse     F1  Toggle cave debug visibility"
+label_settings = SubResource("Label_help")
+
+[node name="DebugStatus" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 560.0
+offset_bottom = 142.0
+label_settings = SubResource("Label_help")
+
+[node name="Crosshair" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("Label_help")

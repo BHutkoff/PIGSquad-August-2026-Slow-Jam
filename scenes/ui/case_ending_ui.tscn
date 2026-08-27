@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/case/ending_controller.gd" id="1_ending"]
+[ext_resource type="PackedScene" path="res://scenes/ui/screen_transition.tscn" id="2_transition"]
+
+[sub_resource type="StyleBoxEmpty" id="Style_empty"]
+
+[node name="EndingController" type="CanvasLayer"]
+layer = 90
+script = ExtResource("1_ending")
+
+[node name="Overlay" type="Control" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Backdrop" type="ColorRect" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="IntroCenter" type="CenterContainer" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroContent" type="VBoxContainer" parent="Overlay/IntroCenter"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="CaseNumber" type="Label" parent="Overlay/IntroCenter/IntroContent"]
+layout_mode = 2
+text = "CASE 1"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.7, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 34
+
+[node name="Victim" type="Label" parent="Overlay/IntroCenter/IntroContent"]
+layout_mode = 2
+text = "VICTIM: BRAMBLE BEAR"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 23
+
+[node name="Briefing" type="Label" parent="Overlay/IntroCenter/IntroContent"]
+layout_mode = 2
+text = "You're the department's best detective — a reputation earned by seeing what others can't.\nThat happens to be especially useful when you're a bat.\n\nBramble Bear, owner of the local bakery, was found dead inside his family's cave.\nThe initial investigation has ruled his death a homicide.\n\nCause of death: Severe blunt-force trauma to the head.\n\nFive individuals were seen entering and leaving the cave that day.\n\nYour assignment is simple:\nInvestigate the cave. Determine what killed Bramble. Determine why. Determine who was responsible.\n\nBuild your theory carefully. An accusation without enough connecting evidence won't hold up."
+horizontal_alignment = 1
+autowrap_mode = 2
+theme_override_colors/font_color = Color(0.84, 0.87, 0.89, 1)
+theme_override_font_sizes/font_size = 17
+
+[node name="Continue" type="Button" parent="Overlay/IntroCenter/IntroContent"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "CONTINUE AVAILABLE SHORTLY"
+disabled = true
+
+[node name="EndingCenter" type="CenterContainer" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndingContent" type="VBoxContainer" parent="Overlay/EndingCenter"]
+visible = false
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Overlay/EndingCenter/EndingContent"]
+layout_mode = 2
+text = "CASE SOLVED"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.7, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 36
+
+[node name="Message" type="Label" parent="Overlay/EndingCenter/EndingContent"]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+text = "Ending placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+theme_override_colors/font_color = Color(0.84, 0.87, 0.89, 1)
+theme_override_font_sizes/font_size = 19
+
+[node name="WinContinue" type="Button" parent="Overlay/EndingCenter/EndingContent"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "CONTINUE"
+
+[node name="LossButtons" type="HBoxContainer" parent="Overlay/EndingCenter/EndingContent"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="RetryCase" type="Button" parent="Overlay/EndingCenter/EndingContent/LossButtons"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RETRY CASE"
+
+[node name="MainMenu" type="Button" parent="Overlay/EndingCenter/EndingContent/LossButtons"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAIN MENU"
+
+[node name="ScreenTransition" parent="." instance=ExtResource("2_transition")]
+
+[node name="IntroVoiceover" type="AudioStreamPlayer" parent="."]

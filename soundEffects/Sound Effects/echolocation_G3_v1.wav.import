@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci1cs5e7nb407"
+path="res://.godot/imported/echolocation_G3_v1.wav-b31995d5e974f86d9828a09f9f92c569.sample"
+
+[deps]
+
+source_file="res://soundEffects/Sound Effects/echolocation_G3_v1.wav"
+dest_files=["res://.godot/imported/echolocation_G3_v1.wav-b31995d5e974f86d9828a09f9f92c569.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pwftti1y3181"
+path="res://.godot/imported/writing_v1.wav-bd5ce8d04bc1a969983224a65fe3ae1c.sample"
+
+[deps]
+
+source_file="res://soundEffects/Sound Effects/writing_v1.wav"
+dest_files=["res://.godot/imported/writing_v1.wav-bd5ce8d04bc1a969983224a65fe3ae1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/credits.gd" id="1_credits"]
+
+[sub_resource type="StyleBoxEmpty" id="Style_empty"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_credits")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(620, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_empty")
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CaseClosed" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "CASE CLOSED"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.7, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 34
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "BAT DETECTIVE"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+
+[node name="Jam" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Created for [Game Jam / placeholder]"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="Team" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "[Team Credits Placeholder]"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="Thanks" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Thank you for playing."
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.84, 0.86, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="Spacer" type="Control" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MainMenu" type="Button" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "MAIN MENU"
