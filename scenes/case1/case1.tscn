@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://cyqlkf8ombw2i"]
+[gd_scene load_steps=135 format=3 uid="uid://cyqlkf8ombw2i"]
 
 [ext_resource type="Script" uid="uid://c4tu1gxqk0qkn" path="res://scripts/environments/cave_main.gd" id="1_cave"]
 [ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
@@ -45,9 +45,12 @@
 [ext_resource type="PackedScene" uid="uid://dxhbsqlmxisr5" path="res://assets/Food GLB format/mincemeat-pie.glb" id="44_o23ln"]
 [ext_resource type="PackedScene" uid="uid://dtqyldowx6i3j" path="res://assets/Food GLB format/pie.glb" id="45_wrlu2"]
 [ext_resource type="PackedScene" uid="uid://bav0cxoafcu5x" path="res://assets/Food GLB format/pizza-box.glb" id="46_umaul"]
+[ext_resource type="PackedScene" uid="uid://ba3ubasmhb5qw" path="res://assets/Furniture Models/DAE format/kitchenFridge.dae" id="47_i3nty"]
 [ext_resource type="PackedScene" uid="uid://c27o3y68ajman" path="res://assets/Food GLB format/whisk.glb" id="48_g6sf2"]
 [ext_resource type="PackedScene" uid="uid://b32io24s0a4cc" path="res://assets/Food GLB format/cooking-knife-chopping.glb" id="49_o23ln"]
+[ext_resource type="PackedScene" uid="uid://cjq4lt8apm6sy" path="res://assets/Furniture Models/DAE format/coatRack.dae" id="50_c6k80"]
 [ext_resource type="PackedScene" uid="uid://dkjrhx1t7ywf" path="res://assets/Food GLB format/cheese-slicer.glb" id="50_pj63v"]
+[ext_resource type="PackedScene" uid="uid://cycjfcv167dkk" path="res://assets/Furniture Models/DAE format/rugRectangle.dae" id="51_jlv6g"]
 [ext_resource type="PackedScene" uid="uid://b4040vubsbrgo" path="res://assets/Food GLB format/carton.glb" id="51_pkiki"]
 [ext_resource type="PackedScene" uid="uid://kj6p26p056oy" path="res://assets/Food GLB format/cake-slicer.glb" id="52_vck7p"]
 [ext_resource type="PackedScene" uid="uid://bkftvwtocs86g" path="res://assets/Food GLB format/croissant.glb" id="54_5uxch"]
@@ -58,6 +61,7 @@
 [ext_resource type="Script" uid="uid://bbysk7koeilew" path="res://scripts/puzzles/drain_plug_interactable.gd" id="62_drain_plug"]
 [ext_resource type="PackedScene" path="res://scenes/puzzles/office_safe.tscn" id="63_office_safe"]
 [ext_resource type="PackedScene" uid="uid://drl8k10sd8ekg" path="res://assets/Mini Market GLB format/column.glb" id="63_tnpk3"]
+[ext_resource type="PackedScene" uid="uid://dtt2846so48tj" path="res://assets/Furniture Models/DAE format/cabinetBedDrawerTable.dae" id="66_bcrer"]
 [ext_resource type="PackedScene" uid="uid://do5c6ljk8umo1" path="res://assets/Mini Market GLB format/shelf-end.glb" id="67_rsiy7"]
 [ext_resource type="Script" uid="uid://cv3obewt35dl6" path="res://scripts/case/case_manager.gd" id="68_case_manager"]
 [ext_resource type="Resource" uid="uid://ctq42yhs6rgvn" path="res://resources/cases/case1_case.tres" id="69_case_data"]
@@ -79,9 +83,44 @@
 [ext_resource type="PackedScene" path="res://scenes/case1/props/red_herring_frying_pan.tscn" id="82_frying_pan"]
 [ext_resource type="Script" uid="uid://ch15ms2a3jyxc" path="res://scripts/audio/water_footstep_area.gd" id="83_water_footsteps"]
 [ext_resource type="PackedScene" uid="uid://ddthvu5bxeo3p" path="res://scenes/case1/props/bramble_body_outline.tscn" id="84_body_outline"]
+[ext_resource type="PackedScene" uid="uid://ddy1r5o10yl82" path="res://assets/Furniture Models/DAE format/kitchenMicrowave.dae" id="84_pb7e2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/echolocation_control_hint.tscn" id="85_control_hint"]
+[ext_resource type="PackedScene" uid="uid://c5ysso4b2ay1j" path="res://assets/Furniture Models/DAE format/chair.dae" id="85_oq8et"]
 [ext_resource type="PackedScene" path="res://scenes/case1/props/easter_egg_letter_m.tscn" id="86_letter_m"]
 [ext_resource type="PackedScene" path="res://scenes/case1/props/easter_egg_letter_w.tscn" id="87_letter_w"]
+[ext_resource type="PackedScene" uid="uid://0eaaf14mrny3" path="res://assets/Furniture Models/DAE format/plantSmall3.dae" id="88_jlv6g"]
+[ext_resource type="PackedScene" uid="uid://b7kowrlyg0vum" path="res://assets/Furniture Models/DAE format/kitchenCabinetUpperDouble.dae" id="90_j4op7"]
+[ext_resource type="PackedScene" uid="uid://bth03k7px1nik" path="res://assets/Building GLB format/column-thin.glb" id="92_fdqhp"]
+[ext_resource type="PackedScene" uid="uid://chgrf5ribeewm" path="res://assets/Furniture Models/DAE format/floorHalf.dae" id="92_j4op7"]
+[ext_resource type="PackedScene" uid="uid://5k6x6ybs81id" path="res://assets/Cave GLB format/ladder.glb" id="93_fdqhp"]
+[ext_resource type="PackedScene" uid="uid://nf325sg2je1u" path="res://assets/Furniture Models/DAE format/bedDouble.dae" id="93_rr837"]
+[ext_resource type="PackedScene" uid="uid://bycisrw32xuc3" path="res://assets/Cave GLB format/gate.glb" id="94_rr837"]
+[ext_resource type="PackedScene" uid="uid://dshba52scr1a6" path="res://assets/Furniture Models/DAE format/plantSmall1.dae" id="95_en3pv"]
+[ext_resource type="PackedScene" uid="uid://bneofp527ka14" path="res://assets/Furniture Models/DAE format/lampRoundFloor.dae" id="97_iclm1"]
+[ext_resource type="PackedScene" uid="uid://c2d6yccfol7yl" path="res://assets/Furniture Models/DAE format/lampRoundTable.dae" id="98_kgax3"]
+[ext_resource type="PackedScene" uid="uid://dqet68fl0oj6y" path="res://assets/Furniture Models/DAE format/televisionModern.dae" id="99_kcymk"]
+[ext_resource type="PackedScene" uid="uid://c63557mks0ku8" path="res://assets/Furniture Models/DAE format/loungeSofa.dae" id="100_ymnaw"]
+[ext_resource type="PackedScene" uid="uid://b175pyiee5d8i" path="res://assets/Furniture Models/GLTF format/cabinetTelevisionDoors.glb" id="101_odvuh"]
+[ext_resource type="PackedScene" uid="uid://iis2lntxgext" path="res://assets/Furniture Models/DAE format/bookcaseClosedDoors.dae" id="102_ymnaw"]
+[ext_resource type="PackedScene" uid="uid://mrwadvibbkkc" path="res://assets/Furniture Models/FBX format/pottedPlant.fbx" id="103_odvuh"]
+[ext_resource type="PackedScene" uid="uid://dpfujcm17d827" path="res://assets/Food GLB format/mushroom.glb" id="104_81mj2"]
+[ext_resource type="PackedScene" uid="uid://dmvel11rqomp7" path="res://assets/Building GLB format/roof-flat-center.glb" id="105_vsboe"]
+[ext_resource type="PackedScene" uid="uid://h0kvf5itsloj" path="res://assets/Building GLB format/column.glb" id="106_omsxw"]
+[ext_resource type="PackedScene" uid="uid://b57r60q0usjys" path="res://assets/Building GLB format/barricade-window-a.glb" id="107_vyb2q"]
+[ext_resource type="PackedScene" uid="uid://bemnwf8ayfug7" path="res://assets/Furniture Models/DAE format/tableCrossCloth.dae" id="109_snkr6"]
+[ext_resource type="PackedScene" uid="uid://4ganlhvqtrfv" path="res://assets/Furniture Models/DAE format/tableRound.dae" id="110_oaaoc"]
+[ext_resource type="PackedScene" uid="uid://b8f4pr86ksua" path="res://assets/Furniture Models/GLTF format/lampRoundTable.glb" id="110_vhp7b"]
+[ext_resource type="PackedScene" uid="uid://by1kxj4ex3puc" path="res://assets/Furniture Models/GLTF format/lampSquareTable.glb" id="112_n4npm"]
+[ext_resource type="PackedScene" uid="uid://dvrhvoqx5pkig" path="res://assets/Furniture Models/DAE format/pottedPlant.dae" id="113_sok3j"]
+[ext_resource type="PackedScene" uid="uid://cx8ace0wmk3a6" path="res://assets/Furniture Models/DAE format/bookcaseOpen.dae" id="114_6p2l4"]
+[ext_resource type="PackedScene" uid="uid://c3c5rt082d0fe" path="res://assets/Furniture Models/DAE format/ceilingFan.dae" id="114_n4npm"]
+[ext_resource type="PackedScene" uid="uid://bpg6nk8jaweer" path="res://assets/Food GLB format/pizza.glb" id="115_n4npm"]
+[ext_resource type="PackedScene" uid="uid://brjkkmh56gu4" path="res://assets/Furniture Models/DAE format/bookcaseOpenLow.dae" id="116_sok3j"]
+[ext_resource type="PackedScene" uid="uid://b0kqcpyolhkbt" path="res://assets/Food GLB format/cup-coffee.glb" id="117_gfoq4"]
+[ext_resource type="PackedScene" uid="uid://b8juvy2ms5mc2" path="res://assets/Food GLB format/cup-saucer.glb" id="118_ad8py"]
+[ext_resource type="PackedScene" uid="uid://bjpm6dnd7ky3w" path="res://assets/Food GLB format/cup-tea.glb" id="119_c7gni"]
+[ext_resource type="PackedScene" uid="uid://cxq0pccp2hrdd" path="res://assets/Furniture Models/DAE format/table.dae" id="120_ad8py"]
+[ext_resource type="AudioStream" uid="uid://ddnfouteugfh2" path="res://soundEffects/Sound Effects/cave_sfx_loop_v1.wav" id="121_c7gni"]
 
 [sub_resource type="Environment" id="Environment_black"]
 background_mode = 1
@@ -203,6 +242,42 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 0.4, 0.104249, -0.00559501, 25.4
 script = ExtResource("3_target")
 target_type = 0
 
+[node name="RockObstacle7" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1.03538, 0, -0.174583, 0, 1.05, 0, 0.174583, 0, 1.03538, -2.38428, 0, 10.5932)
+script = ExtResource("3_target")
+
+[node name="RockObstacle8" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1.03538, 0, -0.174583, 0, 1.05, 0, 0.174583, 0, 1.03538, 2.60383, 0, 10.5932)
+script = ExtResource("3_target")
+
+[node name="gate2" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("94_rr837")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135772, -2.38419e-07, 10.721)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(4.27005, 0, -3.55313, 0, 5.555, 0, 3.55313, 0, 4.27005, 2.43785, 4.76837e-07, 19.3281)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/StartingHallway/Mushroom cluster" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/StartingHallway/Mushroom cluster" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster2" parent="Environment/StartingHallway" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(4.74415, 0, 2.88982, 0, 5.555, 0, -2.88982, 0, 4.74415, -2.30285, 4.76837e-07, 12.8116)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/StartingHallway/Mushroom cluster2" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/StartingHallway/Mushroom cluster2" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
 [node name="CentralHub" type="Node3D" parent="Environment"]
 
 [node name="ManualBuildConnection" type="Marker3D" parent="Environment/CentralHub"]
@@ -281,15 +356,15 @@ transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -4.841
 script = ExtResource("3_target")
 
 [node name="cardboardBoxClosed" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.62794, -4.76837e-07, -7.47471)
+transform = Transform3D(2.70041, 0, -1.30682, 0, 3, 0, 1.30682, 0, 2.70041, -1.21866, -4.76837e-07, -8.08025)
 script = ExtResource("3_target")
 
 [node name="crane2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("12_yxwai")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.85334, 0, 5.28068)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.40111, 0, 5.28068)
 script = ExtResource("3_target")
 
 [node name="cash-register2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("62_1lrl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26293, 1.25492, -1.87621)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43152, 1.16778, -2.37453)
 script = ExtResource("3_target")
 
 [node name="column2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("63_tnpk3")]
@@ -311,15 +386,6 @@ script = ExtResource("3_target")
 [node name="display-bread2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374689, 1.23624, -1.65793)
 script = ExtResource("3_target")
-
-[node name="shelf-boxes2" parent="Environment/CentralHub" instance=ExtResource("26_shelf_boxes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98086, -2.38419e-07, -7.65177)
-
-[node name="shelf-bags2" parent="Environment/CentralHub" instance=ExtResource("27_shelf_bags")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05119, 0, -7.71503)
-
-[node name="shelf-end2" parent="Environment/CentralHub" instance=ExtResource("67_rsiy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04962, 0, -7.47794)
 
 [node name="display-bread3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395948, 1.23624, -1.65793)
@@ -343,6 +409,405 @@ script = ExtResource("3_target")
 
 [node name="template-wall-half2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
 transform = Transform3D(-1.7, -8.74228e-08, 0, 1.48619e-07, -1, 0, 0, 0, 1, 0.0455334, 8.09414, 10.2937)
+script = ExtResource("3_target")
+
+[node name="cone2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.225, 0, 0, 0, 2.225, 0, 0, 0, 2.225, -8.63199, 0, 1.67317)
+script = ExtResource("3_target")
+
+[node name="cone3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.22, 0, 0, 0, 2.22, 0, 0, 0, 2.22, -8.63199, 0, -1.15821)
+script = ExtResource("3_target")
+
+[node name="BennysHelmet" parent="Environment/CentralHub" instance=ExtResource("78_bennys_helmet")]
+transform = Transform3D(-1.6424, -0.482379, 1.04396, 0, 1.82009, 0.841002, -1.15002, 0.688908, -1.49093, -8.56458, 0.558546, -1.07361)
+
+[node name="roof-flat-center2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("105_vsboe")]
+transform = Transform3D(3.24354, 2.25432, 0, -2.25432, 3.24354, 0, 0, 0, 5.47, 3.46326, 5.60009, -5.11946)
+script = ExtResource("3_target")
+
+[node name="roof-flat-center3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("105_vsboe")]
+transform = Transform3D(-3.24354, -2.25432, -8.25947e-07, -2.25432, 3.24354, -2.24625e-14, 4.89761e-07, 3.40393e-07, -5.47, -3.00657, 5.60009, -5.11946)
+script = ExtResource("3_target")
+
+[node name="column6" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("106_omsxw")]
+transform = Transform3D(1, 0, 0, 0, 2.04, 0, 0, 0, 1, -4.39932, -0.0212417, -0.99402)
+script = ExtResource("3_target")
+
+[node name="column7" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("106_omsxw")]
+transform = Transform3D(1, 0, 0, 0, 2.04, 0, 0, 0, 1, 4.75543, -0.0212417, -0.99402)
+script = ExtResource("3_target")
+
+[node name="cone4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.225, 0, 0, 0, 2.225, 0, 0, 0, 2.225, -8.09432, 0, 3.03482)
+script = ExtResource("3_target")
+
+[node name="cone5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.225, 0, 0, 0, 2.225, 0, 0, 0, 2.225, -8.09432, 0.254705, 3.03482)
+script = ExtResource("3_target")
+
+[node name="cone6" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.225, 0, 0, 0, 2.225, 0, 0, 0, 2.225, -8.09432, 0.503455, 3.03482)
+script = ExtResource("3_target")
+
+[node name="cone7" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(2.225, 0, 0, 0, 2.225, 0, 0, 0, 2.225, -8.09432, 0.503455, 3.03482)
+script = ExtResource("3_target")
+
+[node name="cone8" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
+transform = Transform3D(0.597743, 1.50206, 1.52877, 2.06732, -0.822686, 0, 0.565258, 1.42043, -1.61663, -7.39065, 0.318725, 3.71507)
+script = ExtResource("3_target")
+
+[node name="barricade-window-a2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("107_vyb2q")]
+transform = Transform3D(-2.405, 0, -3.63145e-07, 0, 2.405, 0, 3.63145e-07, 0, -2.405, -9.36395, 0.724301, 0.273729)
+script = ExtResource("3_target")
+
+[node name="tableCrossCloth" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("109_snkr6")]
+transform = Transform3D(3.96186, 0, 0.254123, 0, 3.97, 0, -0.254123, 0, 3.96186, 2.83052, -0.000293404, -8.13867)
+script = ExtResource("3_target")
+
+[node name="shelf-boxes2" parent="Environment/CentralHub/tableCrossCloth" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("26_shelf_boxes")]
+transform = Transform3D(0.188386, 0, 0.167209, 0, 0.251889, 0, -0.167209, 0, 0.188386, 0.163387, 0.353107, 0.196207)
+script = ExtResource("3_target")
+
+[node name="shelf-bags2" parent="Environment/CentralHub/tableCrossCloth" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("27_shelf_bags")]
+transform = Transform3D(0.251877, 0, 0.00247043, 0, 0.251889, 0, -0.00247043, 0, 0.251877, 0.467844, 0.350258, 0.122096)
+script = ExtResource("3_target")
+
+[node name="shelf-end2" parent="Environment/CentralHub/tableCrossCloth" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("67_rsiy7")]
+transform = Transform3D(0.228554, 0, -0.105883, 0, 0.251889, 0, 0.105883, 0, 0.228554, 0.704151, 0.34857, 0.23837)
+script = ExtResource("3_target")
+
+[node name="tableRound" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("110_oaaoc")]
+transform = Transform3D(2.0979, 0, 3.37042, 0, 3.97, 0, -3.37042, 0, 2.0979, 2.6967, 1.14453, 5.81174)
+script = ExtResource("3_target")
+
+[node name="chair" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(3.64897, 0, 1.56395, 0, 3.97, 0, -1.56395, 0, 3.64897, 5.13385, 0, 6.98425)
+script = ExtResource("3_target")
+
+[node name="chair2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-1.94212, 0, 3.46252, 0, 3.97, 0, -3.46252, 0, -1.94212, 6.84759, 0.00720263, 4.90918)
+script = ExtResource("3_target")
+
+[node name="chair3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-3.65719, 0, -1.54463, 0, 3.97, 0, 1.54463, 0, -3.65719, 4.63654, 0, 3.85821)
+script = ExtResource("3_target")
+
+[node name="chair4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-3.65719, 0, -1.54463, 0, 3.97, 0, 1.54463, 0, -3.65719, 4.63654, 0, 3.85821)
+script = ExtResource("3_target")
+
+[node name="chair5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(3.26848, -2.25343, 9.85004e-08, 0, -1.73534e-07, -3.97, 2.25343, 3.26848, -1.4287e-07, 3.01743, 0.815429, 6.95944)
+script = ExtResource("3_target")
+
+[node name="tableRound2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("110_oaaoc")]
+transform = Transform3D(2.0979, 0, 3.37042, 0, 3.97, 0, -3.37042, 0, 2.0979, -5.02912, 1.14453, 4.79128)
+script = ExtResource("3_target")
+
+[node name="chair6" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-0.300221, 0, -3.95863, 0, 3.97, 0, 3.95863, 0, -0.300221, -4.6957, 0, 3.85821)
+script = ExtResource("3_target")
+
+[node name="chair7" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-3.65719, 0, -1.54463, 0, 3.97, 0, 1.54463, 0, -3.65719, -3.28582, 0, 2.58379)
+script = ExtResource("3_target")
+
+[node name="chair8" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(3.47382, 0, -1.92184, 0, 3.97, 0, 1.92184, 0, 3.47382, -3.89249, 0, 5.87528)
+script = ExtResource("3_target")
+
+[node name="chair9" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(2.24932, 0, 3.27131, 0, 3.97, 0, -3.27131, 0, 2.24932, -1.86794, 0, 5.86353)
+script = ExtResource("3_target")
+
+[node name="lampRoundTable" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("110_vhp7b")]
+transform = Transform3D(2.49, 0, 0, 0, 2.49, 0, 0, 0, 2.49, -3.30899, 1.54036, 4.78998)
+script = ExtResource("3_target")
+
+[node name="lampSquareTable" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("112_n4npm")]
+transform = Transform3D(2.49, 0, 0, 0, 2.49, 0, 0, 0, 2.49, 4.84391, 1.5362, 5.73133)
+script = ExtResource("3_target")
+
+[node name="pottedPlant" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("113_sok3j")]
+transform = Transform3D(1.17, 0, 0, 0, 1.17, 0, 0, 0, 1.17, 4.7008, 1.53406, 5.21621)
+script = ExtResource("3_target")
+
+[node name="plantSmall1" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("95_en3pv")]
+transform = Transform3D(4.035, 0, 0, 0, 4.035, 0, 0, 0, 4.035, -2.90092, 1.51251, 4.18777)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(-2.37029, 0, -5.02392, 0, 5.555, 0, 5.02392, 0, -2.37029, 7.73107, 4.76837e-07, 8.00343)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/CentralHub/Mushroom cluster" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/CentralHub/Mushroom cluster" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(5.42299, 0, -1.20384, 0, 5.555, 0, 1.20384, 0, 5.42299, 0.895302, 4.76837e-07, -0.749503)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/CentralHub/Mushroom cluster2" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/CentralHub/Mushroom cluster2" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(5.55325, 0, -0.139501, 0, 5.555, 0, 0.139501, 0, 5.55325, -7.39589, 4.76837e-07, -7.51739)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/CentralHub/Mushroom cluster3" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/CentralHub/Mushroom cluster3" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(3.94813, 0, 5.91908, 0, 7.115, 0, -5.91908, 0, 3.94813, -6.82666, 9.53674e-07, 7.85125)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/CentralHub/Mushroom cluster4" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/CentralHub/Mushroom cluster4" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="column8" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("106_omsxw")]
+transform = Transform3D(1.19249e-08, 2.04, 0, -1, 2.43268e-08, 0, 0, 0, 1, -4.5572, 4.60286, -0.99402)
+script = ExtResource("3_target")
+
+[node name="column7" parent="Environment/CentralHub/column8" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("106_omsxw")]
+transform = Transform3D(1, 6.48445e-08, -1.04251e-15, 1.55816e-08, -1, -4.28543e-08, -3.82137e-15, 1.78342e-07, -1, 0, 4.66041, 0)
+script = ExtResource("3_target")
+
+[node name="kitchenBar10" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.10473, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar11" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.39113, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar12" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.12772, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="kitchenBar13" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("32_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.41486, 0, -2.00359)
+script = ExtResource("3_target")
+
+[node name="floorHalf" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_j4op7")]
+transform = Transform3D(-7.49649e-08, 0, 1.715, 0, 1.715, 0, -1.715, 0, -7.49649e-08, 5.54075, 1.22341, -1.26412)
+script = ExtResource("3_target")
+
+[node name="bookcaseOpen" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("114_6p2l4")]
+transform = Transform3D(4.995, 0, 0, 0, 4.995, 0, 0, 0, 4.995, -3.5779, 0, -8.20552)
+script = ExtResource("3_target")
+
+[node name="pie4" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.167216, 0, -0.110087, 0, 0.2002, 0, 0.110087, 0, 0.167216, 0.285888, 0.128681, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie4" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie5" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.127838, 0, 0.15407, 0, 0.2002, 0, -0.15407, 0, -0.127838, 0.0944985, 0.370549, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie6" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.199821, 0, -0.0123196, 0, 0.2002, 0, 0.0123196, 0, -0.199821, 0.290314, 0.370549, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie6" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed3" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(0.540623, 0, -0.261626, 0, 0.600601, 0, 0.261626, 0, 0.540623, 0.0918798, 0.850689, 0.025079)
+script = ExtResource("3_target")
+
+[node name="pie7" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.200184, 0, 0.00252271, 0, 0.2002, 0, -0.00252271, 0, 0.200184, 0.0944985, 0.610101, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie7" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie8" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.0267964, 0, 0.198399, 0, 0.2002, 0, -0.198399, 0, -0.0267964, 0.290314, 0.609917, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie8" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie3" parent="Environment/CentralHub/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.2002, 0, 0, 0, 0.2002, 0, 0, 0, 0.2002, 0.0944984, 0.128681, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/bookcaseOpen/pie3" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(0.746526, 0, -2.90563, 0, 3, 0, 2.90563, 0, 0.746526, -0.300984, -4.76837e-07, -8.83188)
+script = ExtResource("3_target")
+
+[node name="ceilingFan" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("114_n4npm")]
+transform = Transform3D(7.39, 0, 0, 0, 7.39, 0, 0, 0, 7.39, 0.235179, 4.85118, -4.61683)
+script = ExtResource("3_target")
+
+[node name="column-thin2" parent="Environment/CentralHub/ceilingFan" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(0.0588633, 0, 0, 0, 0.0588633, 0, 0, 0, 0.0588633, 0.000163883, -0.0187572, 0.00054419)
+script = ExtResource("3_target")
+
+[node name="column-thin3" parent="Environment/CentralHub/ceilingFan" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(0.0588633, 0, 0, 0, 0.0588633, 0, 0, 0, 0.0588633, 0.000163883, 0.121482, 0.00054419)
+script = ExtResource("3_target")
+
+[node name="column-thin4" parent="Environment/CentralHub/ceilingFan" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(0.0588633, 0, 0, 0, 0.0588633, 0, 0, 0, 0.0588633, 0.000163883, 0.262946, 0.00054419)
+script = ExtResource("3_target")
+
+[node name="floorHalf2" parent="Environment/CentralHub" groups=["cave_collision_source"] instance=ExtResource("92_j4op7")]
+transform = Transform3D(0.585875, 0, -0.26977, 0, 0.645, 0, 0.26977, 0, 0.585875, 2.15072, 4.96085, 1.16518)
+script = ExtResource("3_target")
+
+[node name="pizza" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("115_n4npm")]
+transform = Transform3D(0.82094, 0.571015, 0, -0.571015, 0.82094, 0, 0, 0, 1, 1.71491, 7.31409, -8.01184)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(4.73566, 0, -2.90372, 0, 5.555, 0, 2.90372, 0, 4.73566, 8.51796, 7.15256e-07, -6.38932)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/CentralHub/Mushroom cluster5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/CentralHub/Mushroom cluster5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="bookcaseOpenLow" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("116_sok3j")]
+transform = Transform3D(-1.94734e-07, 0, 4.455, 0, 3.082, 0, -4.455, 0, -1.94734e-07, -1.12682, -2.38419e-07, -3.72038)
+script = ExtResource("3_target")
+
+[node name="bookcaseOpenLow2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("116_sok3j")]
+transform = Transform3D(-1.94734e-07, 0, 4.455, 0, 3.082, 0, -4.455, 0, -1.94734e-07, -0.193585, -2.38419e-07, -3.72038)
+script = ExtResource("3_target")
+
+[node name="pie3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.477864, 0, -0.878434, 0, 1, 0, 0.878434, 0, -0.477864, -0.563117, 1.13861, -4.25708)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/pie3" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="display-bread5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374689, 0.297627, -4.11215)
+script = ExtResource("3_target")
+
+[node name="display-bread6" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574935, 0.297627, -4.11215)
+script = ExtResource("3_target")
+
+[node name="display-bread7" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(-0.999897, 0, -0.0143811, 0, 1, 0, 0.0143811, 0, -0.999897, 0.374689, 0.297627, -5.02596)
+script = ExtResource("3_target")
+
+[node name="display-bread8" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("21_bread_display")]
+transform = Transform3D(-0.999897, 0, -0.0143811, 0, 1, 0, 0.0143811, 0, -0.999897, -0.634355, 0.297627, -5.02596)
+script = ExtResource("3_target")
+
+[node name="pie4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.984417, 0, -0.175848, 0, 1, 0, 0.175848, 0, 0.984417, 0.308037, 1.13861, -4.94905)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/CentralHub/pie4" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="RockObstacle5" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.5412, 0, -0.341617, 0, 0.64, 0, 0.341617, 0, -0.5412, 9.19777, 0, -3.54242)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.287, 0, 0, 0, 0.287, 0, 0, 0, 0.287, 0.842741, -0.0383567, -2.87859)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.287, 0, 0, 0, 0.287, 0, 0, 0, 0.287, -0.364495, -0.0383567, -2.87859)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.287, 0, 0, 0, 0.287, 0, 0, 0, 0.287, -1.59677, -0.0383567, -2.87859)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.287, 0, 0, 0, 0.287, 0, 0, 0, 0.287, -2.81759, -0.0383567, -2.87859)
+script = ExtResource("3_target")
+
+[node name="honey2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("41_tqyda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363779, 1.15841, -2.16816)
+script = ExtResource("3_target")
+
+[node name="honey3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("41_tqyda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0217062, 1.15841, -2.16816)
+script = ExtResource("3_target")
+
+[node name="honey4" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("41_tqyda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426245, 1.15841, -2.16816)
+script = ExtResource("3_target")
+
+[node name="cutting-board2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("39_7qe2v")]
+transform = Transform3D(0.0607523, 0, -0.998153, 0, 1, 0, 0.998153, 0, 0.0607523, -2.39265, 1.17201, -2.46246)
+script = ExtResource("3_target")
+
+[node name="cup-coffee2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("117_gfoq4")]
+transform = Transform3D(0.57025, 0, -1.38738, 0, 1.5, 0, 1.38738, 0, 0.57025, 5.01194, 1.53244, 4.67467)
+script = ExtResource("3_target")
+
+[node name="cup-saucer2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("118_ad8py")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.50927, 1.21728, -4.9089)
+script = ExtResource("3_target")
+
+[node name="cup-tea2" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("119_c7gni")]
+transform = Transform3D(-1.4979, 0, 0.0792882, 0, 1.5, 0, -0.0792882, 0, -1.4979, -4.37313, 1.26756, -4.26517)
+script = ExtResource("3_target")
+
+[node name="cup-saucer3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("118_ad8py")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.71495, 1.49784, 4.94207)
+script = ExtResource("3_target")
+
+[node name="cup-coffee3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("117_gfoq4")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.47138, 1.26456, -6.25439)
+script = ExtResource("3_target")
+
+[node name="cup-tea3" parent="Environment/CentralHub" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("119_c7gni")]
+transform = Transform3D(0.124108, 0, -1.49486, 0, 1.5, 0, 1.49486, 0, 0.124108, -3.75879, 1.53539, 3.90658)
 script = ExtResource("3_target")
 
 [node name="LowerCaveFloodedChamber" type="Node3D" parent="Environment"]
@@ -459,6 +924,58 @@ observation = "Bramble's Golden Whisk trophy, awarded for his most recent solo c
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
 shape = SubResource("Shape_golden_whisk_trophy")
 
+[node name="crane2" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("12_yxwai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9528, -4.32983, 2.5413)
+script = ExtResource("3_target")
+
+[node name="column-thin2" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(-0.3, 2.62268e-08, 0, -2.62268e-08, -0.3, 0, 0, 0, 0.3, -22.9647, -1.18184, -0.238159)
+script = ExtResource("3_target")
+
+[node name="column-thin3" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(-0.3, 2.62268e-08, 0, -2.62268e-08, -0.3, 0, 0, 0, 0.3, -22.9626, -1.89501, -0.238159)
+script = ExtResource("3_target")
+
+[node name="column-thin4" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(-0.3, 2.62268e-08, 0, -2.62268e-08, -0.3, 0, 0, 0, 0.3, -22.9606, -2.60231, -0.238159)
+script = ExtResource("3_target")
+
+[node name="column-thin5" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_fdqhp")]
+transform = Transform3D(-0.3, 2.62268e-08, 0, -2.62268e-08, -0.3, 0, 0, 0, 0.3, -22.9587, -3.25926, -0.238159)
+script = ExtResource("3_target")
+
+[node name="RockObstacle5" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.185011, -1.61742e-08, -0.27326, -2.88495e-08, -0.33, 0, -0.27326, 2.38891e-08, -0.185011, -20.1041, -0.381641, -2.27752)
+script = ExtResource("3_target")
+
+[node name="RockObstacle6" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.21981, 3.31904e-08, -0.119094, -3.7749e-08, -0.25, -2.01859e-15, -0.119094, 1.79827e-08, 0.21981, -25.3563, -0.381641, -1.39653)
+script = ExtResource("3_target")
+
+[node name="RockObstacle7" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.21981, 3.31904e-08, -0.119094, -3.7749e-08, -0.25, -2.01859e-15, -0.119094, 1.79827e-08, 0.21981, -20.935, -0.381641, 3.73391)
+script = ExtResource("3_target")
+
+[node name="RockObstacle8" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.185011, -1.61742e-08, -0.27326, -2.88495e-08, -0.33, 0, -0.27326, 2.38891e-08, -0.185011, -24.2368, -0.381641, 1.12521)
+script = ExtResource("3_target")
+
+[node name="RockObstacle9" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.104663, -1.58037e-08, 0.626315, -9.58823e-08, -0.635, 3.41814e-15, 0.626315, -9.4571e-08, -0.104663, -25.4138, -0.381641, 2.8408)
+script = ExtResource("3_target")
+
+[node name="RockObstacle10" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.104663, -1.58037e-08, 0.626315, -9.58823e-08, -0.635, 3.41814e-15, 0.626315, -9.4571e-08, -0.104663, -22.9451, -0.381641, -3.97855)
+script = ExtResource("3_target")
+
+[node name="RockObstacle11" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.218649, -3.30151e-08, -0.322944, -5.88884e-08, -0.39, 1.04967e-15, -0.322944, 4.87631e-08, -0.218649, -19.6734, -0.381641, 0.745204)
+script = ExtResource("3_target")
+
+[node name="RockObstacle12" parent="Environment/LowerCaveFloodedChamber" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.21981, 3.31904e-08, -0.119094, -3.7749e-08, -0.25, -2.01859e-15, -0.119094, 1.79827e-08, 0.21981, -22.8465, -0.381641, -1.82683)
+script = ExtResource("3_target")
+
 [node name="Barred Viewing Passage" type="Node3D" parent="Environment"]
 
 [node name="corridor-transition2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("27_pxt1n")]
@@ -470,7 +987,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.8374, -0.472, -16.34
 script = ExtResource("3_target")
 
 [node name="template-floor-layer-raised3" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
-transform = Transform3D(0.00876111, 0, 0.799877, 0, 1, 0, -0.499923, 0, 0.0140178, 15.6215, -1.05064, -16.2833)
+transform = Transform3D(0.00876111, 0, 0.799877, 0, 1, 0, -0.499923, 0, 0.0140178, 15.6215, -0.950897, -16.2833)
 script = ExtResource("3_target")
 
 [node name="wall-window-barred-large2" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("30_vb5y2")]
@@ -533,6 +1050,58 @@ script = ExtResource("3_target")
 transform = Transform3D(-1.69999, -0.0020891, 2.60907e-11, 0, -3.0598e-08, -0.2, 0.00507353, -0.699997, 8.74224e-09, 14.1331, 3.86767, 1.62693)
 script = ExtResource("3_target")
 
+[node name="RockObstacle4" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 13.8437, 0, -10.742)
+script = ExtResource("3_target")
+
+[node name="RockObstacle5" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.588671, 0, -0.869463, 0, 1.05, 0, 0.869463, 0, -0.588671, 16.2014, 0, -8.03254)
+script = ExtResource("3_target")
+
+[node name="RockObstacle6" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 17.956, 0, -11.993)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.8178, 1.96414, -17.2141)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster5" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(4.73566, 0, -2.90372, 0, 5.555, 0, 2.90372, 0, 4.73566, 18.1373, 7.15256e-07, -7.89408)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/Barred Viewing Passage/Mushroom cluster5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/Barred Viewing Passage/Mushroom cluster5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster6" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(4.90678, 0, 2.60415, 0, 5.555, 0, -2.60415, 0, 4.90678, 14.8536, 7.15256e-07, -16.6311)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/Barred Viewing Passage/Mushroom cluster6" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/Barred Viewing Passage/Mushroom cluster6" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
+[node name="Mushroom cluster7" parent="Environment/Barred Viewing Passage" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(-0.632179, 0, -3.83322, 0, 3.885, 0, 3.83322, 0, -0.632179, 18.7741, 7.15256e-07, -13.9232)
+script = ExtResource("3_target")
+
+[node name="mushroom3" parent="Environment/Barred Viewing Passage/Mushroom cluster7" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.284152, 0, -0.33731, 0, 0.441044, 0, 0.33731, 0, 0.284152, -0.000494003, 0, 0.120227)
+script = ExtResource("3_target")
+
+[node name="mushroom2" parent="Environment/Barred Viewing Passage/Mushroom cluster7" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("104_81mj2")]
+transform = Transform3D(0.640864, 0, 0, 0, 0.640864, 0, 0, 0, 0.640864, 0.101224, 0, 0.0963497)
+script = ExtResource("3_target")
+
 [node name="Kitchen" type="Node3D" parent="Environment"]
 
 [node name="room-large-variation3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("3_room_large")]
@@ -564,7 +1133,7 @@ transform = Transform3D(-4.37114e-08, 8.74228e-08, -1, 0, -1, -8.74228e-08, -1, 
 script = ExtResource("3_target")
 
 [node name="TrophyDisplayCase" parent="Environment/Kitchen" groups=["cave_collision_source"] instance=ExtResource("71_rfmq7")]
-transform = Transform3D(-0.00707709, 0, 0.49995, 0, 0.5, 0, -0.49995, 0, -0.00707709, 7.82339, 4.4894, -32.6449)
+transform = Transform3D(-0.00707706, 0, 0.49995, 0, 0.5, 0, -0.49995, 0, -0.00707706, 7.82339, 4.4894, -32.6449)
 
 [node name="template-wall-detail-a2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("23_28kqr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.359003, 0, -36.7747)
@@ -594,7 +1163,239 @@ script = ExtResource("3_target")
 transform = Transform3D(-0.592977, 0, 0.0915328, 0, 0.6, 0, -0.0915328, 0, -0.592977, -2.55408, 1.71396, -18.8788)
 
 [node name="template-floor-layer-raised2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
-transform = Transform3D(0.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.647753, 0, -33.2689)
+transform = Transform3D(-0.473884, 0, 0.318959, 0, 1.5, 0, -0.15948, 0, -0.947768, 4.60478, 0.0106292, -24.3686)
+script = ExtResource("3_target")
+
+[node name="kitchenFridge" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("47_i3nty")]
+transform = Transform3D(0.372155, 0, -4.25375, 0, 4.27, 0, 4.25375, 0, 0.372155, -7.0404, -0.00294751, -21.7699)
+script = ExtResource("3_target")
+
+[node name="kitchenMicrowave" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("84_pb7e2")]
+transform = Transform3D(0.404838, 0, -4.62732, 0, 4.645, 0, 4.62732, 0, 0.404838, -7.55332, 1.68038, -23.5038)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.4, 0, 0.398478, 0, 0.0348623, -6.72874, 0.00275189, -21.8414)
+script = ExtResource("3_target")
+
+[node name="chair" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(3.97, 0, 0, 0, 3.88891, -0.798279, 0, 0.798279, 3.88891, -8.07557, 0.156375, -24.6425)
+script = ExtResource("3_target")
+
+[node name="coatRack" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("50_c6k80")]
+transform = Transform3D(5.405, 0, 0, 0, 5.405, 0, 0, 0, 5.405, -6.27383, 2.97851, -18.4062)
+script = ExtResource("3_target")
+
+[node name="rugRectangle" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("51_jlv6g")]
+transform = Transform3D(2.915, 0, 0, 0, 2.915, 0, 0, 0, 2.915, -6.414, 0.027, -22.855)
+script = ExtResource("3_target")
+
+[node name="plantSmall3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("88_jlv6g")]
+transform = Transform3D(5.52967, 0, 4.24307, 0, 6.97, 0, -4.24307, 0, 5.52967, -8.10091, 2.5141, -22.6349)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised4" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-2.18557e-08, 0, 1, 0, 1.5, 0, -0.5, 0, -4.37114e-08, 0.127336, 0, -18.5629)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised5" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-2.18557e-08, 0, 1, 0, 1.5, 0, -0.5, 0, -4.37114e-08, 0.634851, 0, -13.8922)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised6" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(-2.18557e-08, 0, 1, 0, 1.5, 0, -0.5, 0, -4.37114e-08, 0.634851, 0, -10.4016)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.13446, 0, 0.481581, 0, 1.2, 0, -0.481581, 0, 0.13446, -3.43174, 0, -29.022)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetUpperDouble" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("90_j4op7")]
+transform = Transform3D(-4.51276, 0, -0.394816, 0, 4.53, 0, 0.394816, 0, -4.51276, 2.97999, 3.27619, -35.0186)
+script = ExtResource("3_target")
+
+[node name="template-detail2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.85681, 7.95753, -28.1914)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised7" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18813, 1.477, -32.8877)
+script = ExtResource("3_target")
+
+[node name="floorHalf" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_j4op7")]
+transform = Transform3D(1.67499, 0, -0.368271, 0, 1.715, 0, 0.368271, 0, 1.67499, 5.78999, 5.17548, -29.1187)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed6" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 4.31909, 4.4384, -24.6133)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed7" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, -1.73155, 4.4187, -17.4352)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed8" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, -0.548324, 4.42585, -18.6777)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed9" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3.98265, 2.4184, 0, -3.023, 3.18612, 0, 0, 0, 5, 0.0977814, 5.62555, -19.0065)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed10" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, -0.189021, 4.39069, -13.4487)
+script = ExtResource("3_target")
+
+[node name="ladder2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("93_fdqhp")]
+transform = Transform3D(-0.97946, -0.330714, 0.771613, 0, 1.18568, 0.508185, -0.839499, 0.38585, -0.900256, -1.5146, 0, -30.7504)
+script = ExtResource("3_target")
+
+[node name="ladder3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("93_fdqhp")]
+transform = Transform3D(-0.886343, -0.937281, -5.50723e-08, 2.90418e-08, 4.83337e-08, -1.29, 0.937281, -0.886343, -1.21084e-08, 8.00994, 0, -29.5557)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed11" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, -4.11184, 3.54231, -29.6537)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed12" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 5, 4.32026, 4.4384, -34.7412)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed13" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(4.53889, 0, -2.09726, 0, 4, 0, 2.09726, 0, 4.53889, 6.40847, 4.4384, -32.2988)
+script = ExtResource("3_target")
+
+[node name="kitchenStove2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("72_2ofjw")]
+transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.4, 0, 0.398478, 0, 0.0348623, 1.50992, 0, -31.9906)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer3" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(-0.398478, 0, -0.0348623, 0, 0.4, 0, 0.0348623, 0, -0.398478, -0.354913, 0, -33.606)
+script = ExtResource("3_target")
+
+[node name="kitchenSink2" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("73_usmeo")]
+transform = Transform3D(-0.398478, 0, -0.0348623, 0, 0.4, 0, 0.0348623, 0, -0.398478, 1.35443, 0, -33.7579)
+script = ExtResource("3_target")
+
+[node name="kitchenCabinetDrawer4" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("71_2ofjw")]
+transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.4, 0, 0.398478, 0, 0.0348623, 1.35359, 0, -33.7003)
+script = ExtResource("3_target")
+
+[node name="plantSmall4" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("88_jlv6g")]
+transform = Transform3D(5.52967, 0, 4.24307, 0, 6.97, 0, -4.24307, 0, 5.52967, 0.231853, 1.6957, -34.8883)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed14" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, 1.40474, 3.51243, -21.7749)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed15" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, 3.76045, -0.0114514, -23.6268)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed16" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, 7.64195, -0.0114514, -32.8591)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed17" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, 7.4696, -0.0114514, -31.7365)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed18" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 4, 0, -5, 0, -2.18557e-07, 7.74337, 0.873227, -32.2975)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed19" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(4.93428, 0, -0.808019, 0, 4, 0, 0.808019, 0, 4.93428, 6.47324, -0.0114514, -35.1283)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed20" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-0.539997, 0, -4.97076, 0, 4, 0, 4.97076, 0, -0.539997, 6.2339, -0.0114514, -34.8149)
+script = ExtResource("3_target")
+
+[node name="template-floor-layer-raised8" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
+transform = Transform3D(0.323395, 0, -0.381334, 0, 1.2, 0, 0.381334, 0, 0.323395, 1.43507, 0, -22.2136)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed21" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(-2.09758, 0, 4.53874, 0, 4, 0, -4.53874, 0, -2.09758, -0.372361, 4.39069, -9.5964)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed22" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(4.90156, 0, 0.987261, 0, 4, 0, -0.987261, 0, 4.90156, -1.26092, 5.35455, -18.3963)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed23" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(4.9936, 0, 0.252878, 0, 4, 0, -0.252878, 0, 4.9936, -0.322237, 6.32471, -18.7976)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed24" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(3.91462, 0, 3.11059, 0, 4, 0, -3.11059, 0, 3.91462, -1.47295, 6.32471, -17.7685)
+script = ExtResource("3_target")
+
+[node name="bookcaseOpen" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("114_6p2l4")]
+transform = Transform3D(-0.329559, 0, 4.98412, 0, 4.995, 0, -4.98412, 0, -0.329559, 3.11783, 0, -33.3032)
+script = ExtResource("3_target")
+
+[node name="pie4" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.167216, 0, -0.110087, 0, 0.2002, 0, 0.110087, 0, 0.167216, 0.285888, 0.128681, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie4" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie3" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.2002, 0, 0, 0, 0.2002, 0, 0, 0, 0.2002, 0.0944985, 0.128681, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie3" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie6" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.199821, 0, -0.0123196, 0, 0.2002, 0, 0.0123196, 0, -0.199821, 0.290314, 0.370549, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie6" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="cardboardBoxClosed3" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
+transform = Transform3D(0.540623, 0, -0.261626, 0, 0.600601, 0, 0.261626, 0, 0.540623, 0.0918798, 0.850689, 0.025079)
+script = ExtResource("3_target")
+
+[node name="pie7" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.200184, 0, 0.00252271, 0, 0.2002, 0, -0.00252271, 0, 0.200184, 0.0944985, 0.610101, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie7" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie8" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.0267964, 0, 0.198399, 0, 0.2002, 0, -0.198399, 0, -0.0267964, 0.290314, 0.609917, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie8" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie5" parent="Environment/Kitchen/bookcaseOpen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(-0.127838, 0, 0.15407, 0, 0.2002, 0, -0.15407, 0, -0.127838, 0.0944986, 0.370549, 0.117189)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/bookcaseOpen/pie5" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
+script = ExtResource("3_target")
+
+[node name="pie6" parent="Environment/Kitchen" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("45_wrlu2")]
+transform = Transform3D(0.228283, 0, -0.973595, 0, 1, 0, 0.973595, 0, 0.228283, 0.422552, 1.76511, -32.7422)
+script = ExtResource("3_target")
+
+[node name="croissant2" parent="Environment/Kitchen/pie6" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.087092, 0.0236702)
 script = ExtResource("3_target")
 
 [node name="StorageShelving" type="Node3D" parent="Environment"]
@@ -787,6 +1588,38 @@ script = ExtResource("3_target")
 transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1.9, 15.2389, 7.97076, -21.2536)
 script = ExtResource("3_target")
 
+[node name="RockObstacle1" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788, 12.2455, -0.00711823, -18.1422)
+script = ExtResource("3_target")
+
+[node name="RockObstacle2" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.905432, 0, 1.33732, 0, 1.615, 0, -1.33732, 0, -0.905432, 18.6715, 0, -18.7305)
+script = ExtResource("3_target")
+
+[node name="RockObstacle3" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 11.3025, 0, -24.1706)
+script = ExtResource("3_target")
+
+[node name="RockObstacle4" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 14.0491, 0, -17.7732)
+script = ExtResource("3_target")
+
+[node name="RockObstacle5" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(-0.244033, 0, 0.613228, 0, 0.66, 0, -0.613228, 0, -0.244033, 16.2341, 0, -17.7732)
+script = ExtResource("3_target")
+
+[node name="RockObstacle6" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("7_detail")]
+transform = Transform3D(0.640322, 0, 0.755042, 0, 0.99, 0, -0.755042, 0, 0.640322, 14.6654, 0, -21.4034)
+script = ExtResource("3_target")
+
+[node name="table" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("120_ad8py")]
+transform = Transform3D(-0.565066, -2.23973, -0.0198277, -0.161077, 0.0202392, 2.30429, -2.23402, 0.565052, -0.161128, 12.6979, 0.17055, -19.6465)
+script = ExtResource("3_target")
+
+[node name="chair" parent="Environment/OldMoleRoom" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("85_oq8et")]
+transform = Transform3D(-1.20643e-07, 2.76, 0, -2.76, -1.20643e-07, 0, 0, 0, 2.76, 14.8261, 0.555187, -19.4339)
+script = ExtResource("3_target")
+
 [node name="Office" type="Node3D" parent="Environment"]
 
 [node name="template-wall-half2" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("36_e6gdp")]
@@ -831,7 +1664,63 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.30
 script = ExtResource("3_target")
 
 [node name="BrokenRabbitBust" parent="Environment/Office" instance=ExtResource("77_broken_rabbit_bust")]
-transform = Transform3D(-0.131893, -0.150346, -0.000634484, -0.0050336, 0.00525927, -0.199867, 0.150263, -0.13179, -0.00725221, -24.1701, 0.0836804, -28.0771)
+transform = Transform3D(-0.427147, 0.203673, -0.08039, 0.0592951, -0.0620487, -0.472265, -0.210782, -0.430195, 0.0300566, -18.639, 0.248583, -30.2742)
+
+[node name="cabinetBedDrawerTable" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("66_bcrer")]
+transform = Transform3D(-6.08867, 0, 0.618465, 0, 6.12, 0, -0.618465, 0, -6.08867, -17.9685, 0, -32.3865)
+script = ExtResource("3_target")
+
+[node name="floorHalf" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("92_j4op7")]
+transform = Transform3D(-2.24494e-15, 5.13581e-08, -2.58579, -2.58579, -1.13029e-07, 0, -1.13029e-07, 2.58579, 5.13581e-08, -20.8553, 3.65398, -35.6568)
+script = ExtResource("3_target")
+
+[node name="gate2" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("94_rr837")]
+transform = Transform3D(1.32946, 0, 8.45176e-08, 0, 1.32946, 0, -8.45176e-08, 0, 1.32946, -22.1245, -0.00127033, -35.6772)
+script = ExtResource("3_target")
+
+[node name="bedDouble" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("93_rr837")]
+transform = Transform3D(-5.145, 0, -7.76873e-07, 0, 5.145, 0, 7.76873e-07, 0, -5.145, -19.5901, 0.00385582, -29.8685)
+script = ExtResource("3_target")
+
+[node name="plantSmall1" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("95_en3pv")]
+transform = Transform3D(16.89, 0, 0, 0, 16.89, 0, 0, 0, 16.89, -26.4092, -0.00874063, -31.9739)
+script = ExtResource("3_target")
+
+[node name="lampRoundFloor" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("97_iclm1")]
+transform = Transform3D(4.89, 0, 0, 0, 4.89, 0, 0, 0, 4.89, -25.8988, 0, -34.0947)
+script = ExtResource("3_target")
+
+[node name="lampRoundTable" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("98_kgax3")]
+transform = Transform3D(4.39, 0, 0, 0, 4.39, 0, 0, 0, 4.39, -18.6206, 1.64646, -33.559)
+script = ExtResource("3_target")
+
+[node name="rugRectangle" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("51_jlv6g")]
+transform = Transform3D(-3.12974e-07, 0, 7.16, 0, 7.16, 0, -7.16, 0, -3.12974e-07, -25.337, 0.03, -22.027)
+script = ExtResource("3_target")
+
+[node name="televisionModern" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("99_kcymk")]
+transform = Transform3D(-1.61713, 0, -3.77305, 0, 4.105, 0, 3.77305, 0, -1.61713, -26.1961, 1.74539, -25.331)
+script = ExtResource("3_target")
+
+[node name="loungeSofa" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("100_ymnaw")]
+transform = Transform3D(3.75019, 0, 3.55879, 0, 5.17, 0, -3.55879, 0, 3.75019, -22.8282, 0, -19.2191)
+script = ExtResource("3_target")
+
+[node name="cabinetTelevisionDoors" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("101_odvuh")]
+transform = Transform3D(-2.3779e-07, 0, 5.44, 0, 5.44, 0, -5.44, 0, -2.3779e-07, -25.5908, 4.76837e-07, -23.2293)
+script = ExtResource("3_target")
+
+[node name="bookcaseClosedDoors" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("102_ymnaw")]
+transform = Transform3D(-0.347573, 0, -6.8612, 0, 6.87, 0, 6.8612, 0, -0.347573, -25.6097, 0, -30.6815)
+script = ExtResource("3_target")
+
+[node name="lampRoundFloor2" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("97_iclm1")]
+transform = Transform3D(4.89, 0, 0, 0, 4.89, 0, 0, 0, 4.89, -18.3553, 0, -22.4718)
+script = ExtResource("3_target")
+
+[node name="pottedPlant" parent="Environment/Office" groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("103_odvuh")]
+transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -26.2093, 0, -22.2649)
+script = ExtResource("3_target")
 
 [node name="ItemSpawn" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6335, 0, 28.257)
@@ -864,7 +1753,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9857, 5.96046e-08, -4.7083
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1571, 0, -4.15035)
 
 [node name="rollingPin2" parent="Environment/ItemSpawn" instance=ExtResource("81_rolling_pin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5791, 0.0435498, -54.1155)
+transform = Transform3D(-0.560639, 0, 0.82806, 0, 1, 0, -0.82806, 0, -0.560639, 29.9216, 3.61565, -57.2296)
 
 [node name="whisk2" parent="Environment/ItemSpawn" instance=ExtResource("48_g6sf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9815, 0, -4.94994)
@@ -882,13 +1771,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0709, 0, -3.85271)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9751, 0, -5.42134)
 
 [node name="cooking-knife2" parent="Environment/ItemSpawn" instance=ExtResource("80_cooking_knife")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9921, 0, -54.57)
+transform = Transform3D(-0.857167, 0, 0.515038, 0, 1, 0, -0.515038, 0, -0.857167, 33.6981, 4.40601, -38.4286)
 
 [node name="croissant2" parent="Environment/ItemSpawn" instance=ExtResource("54_5uxch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1913, 0, -3.83662)
 
 [node name="frying-pan2" parent="Environment/ItemSpawn" instance=ExtResource("82_frying_pan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5817, 0, -55.6918)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 26.9082, 2.60211, -46.039)
 
 [node name="pizza-cutter2" parent="Environment/ItemSpawn" instance=ExtResource("56_8ibtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3526, 0, -3.60694)
@@ -915,6 +1804,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.996456, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96562, 0, 0)
 
 [node name="EasterEggLetterM" parent="Environment/ItemSpawn/EasterEgg" instance=ExtResource("86_letter_m")]
+
+[node name="pie3" parent="Environment/ItemSpawn" instance=ExtResource("45_wrlu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1909, 5.96046e-08, -6.43468)
+
+[node name="croissant2" parent="Environment/ItemSpawn/pie3" instance=ExtResource("54_5uxch")]
+transform = Transform3D(0.773873, 0, 0.63334, 0, 1, 0, -0.63334, 0, 0.773873, -0.0296326, 0.0925906, 0.0236702)
 
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 26)
@@ -943,13 +1838,7 @@ shadow_enabled = true
 omni_range = 18.0
 
 [node name="SecondRoomLight" type="OmniLight3D" parent="DebugLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6652, 16.3092, -23.2387)
-light_energy = 5.0
-shadow_enabled = true
-omni_range = 24.0
-
-[node name="FirstRoomLight" type="OmniLight3D" parent="DebugLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.7142, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1702, 16.3092, -59.4656)
 light_energy = 5.0
 shadow_enabled = true
 omni_range = 24.0
@@ -961,19 +1850,19 @@ shadow_enabled = true
 omni_range = 24.0
 
 [node name="SecondRoomLight2" type="OmniLight3D" parent="DebugLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0145888, 4.08767, -24.9994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24168, 7.28252, -28.126)
 light_energy = 5.0
 shadow_enabled = true
 omni_range = 24.0
 
 [node name="SecondRoomLight4" type="OmniLight3D" parent="DebugLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1145, 5.47023, -26.4251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1145, 4.65804, -26.4251)
 light_energy = 5.0
 shadow_enabled = true
 omni_range = 24.0
 
 [node name="SecondRoomLight5" type="OmniLight3D" parent="DebugLights"]
-transform = Transform3D(-1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 15.3609, 1.30868, -12.3926)
+transform = Transform3D(-1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 15.3609, 2.28974, -11.1949)
 light_energy = 5.0
 shadow_enabled = true
 omni_range = 24.0
@@ -992,6 +1881,12 @@ omni_range = 24.0
 
 [node name="FloodedChamberLight" type="OmniLight3D" parent="DebugLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.929, -1.63113, 0.889201)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="SecondRoomLight8" type="OmniLight3D" parent="DebugLights"]
+transform = Transform3D(-1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, -2.24698, 4.11419, -3.06861)
 light_energy = 5.0
 shadow_enabled = true
 omni_range = 24.0
@@ -1042,25 +1937,7 @@ label_settings = SubResource("Label_help")
 
 [node name="EcholocationControlHint" parent="." instance=ExtResource("85_control_hint")]
 
-[node name="template-floor-layer-raised2" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
-transform = Transform3D(0.5, 0, 0, 0, 1.2, 0, 0, 0, 0.5, -2.14457, 0, -29.5202)
-script = ExtResource("3_target")
-
-[node name="template-floor-layer-raised3" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("8_floor_raised")]
-transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.5, -2.14457, 0, -27.0982)
-script = ExtResource("3_target")
-
-[node name="cardboardBoxClosed" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("34_gkrh1")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.8178, 1.96414, -17.2141)
-script = ExtResource("3_target")
-
-[node name="cone2" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63199, 0, 1.67317)
-script = ExtResource("3_target")
-
-[node name="cone3" parent="." groups=["cave_collision_source", "echolocation_target"] instance=ExtResource("60_1owwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63199, 0, -1.15821)
-script = ExtResource("3_target")
-
-[node name="BennysHelmet" parent="." instance=ExtResource("78_bennys_helmet")]
-transform = Transform3D(-1.22865, 0, 0.860472, 0, 1.5, 0, -0.860472, 0, -1.22865, -8.40116, 0.01187, -1.67071)
+[node name="CaveAmbiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("121_c7gni")
+volume_db = -10.0
+autoplay = true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eqxin1x3bg06"
+path="res://.godot/imported/Gameplay Loop - BatDetective.wav-c04961f715c942c794ffa887d6c428d8.sample"
+
+[deps]
+
+source_file="res://soundEffects/Sound Effects/Gameplay Loop - BatDetective.wav"
+dest_files=["res://.godot/imported/Gameplay Loop - BatDetective.wav-c04961f715c942c794ffa887d6c428d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
