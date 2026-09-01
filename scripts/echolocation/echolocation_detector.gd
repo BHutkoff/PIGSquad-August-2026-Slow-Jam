@@ -11,7 +11,7 @@ extends Node
 
 @export_category("Wave Visualization")
 @export_range(0.05, 5.0, 0.05) var wave_band_width: float = 0.8
-@export_range(0.0, 5.0, 0.05) var trail_hold_duration: float = 2.25
+@export_range(0.0, 5.0, 0.05) var trail_hold_duration: float = 3.5
 @export_range(0.1, 5.0, 0.05) var trail_fade_duration: float = 1.0
 @export_range(0.1, 4.0, 0.1) var fade_duration_multiplier: float = 2 #100% increase
 

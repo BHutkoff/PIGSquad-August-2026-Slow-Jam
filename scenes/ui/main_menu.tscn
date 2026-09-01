@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://kxuisbydabvu"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://b33s7qwpdp7c5" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="AudioStream" uid="uid://eqxin1x3bg06" path="res://soundEffects/Sound Effects/Gameplay Loop - BatDetective.wav" id="2_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://detojofd7bx13" path="res://assets/Artwork/BatDetective_Art1.png" id="3_1g8jr"]
 
 [sub_resource type="StyleBoxEmpty" id="Style_panel"]
 
@@ -33,7 +35,9 @@ grow_vertical = 2
 color = Color(0.002, 0.004, 0.007, 1)
 
 [node name="Center" type="CenterContainer" parent="."]
+z_index = 1
 layout_mode = 1
+anchors_preset = -1
 anchor_right = 0.42
 anchor_bottom = 1.0
 offset_left = 32.0
@@ -69,29 +73,36 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Center/Panel/Margin/Layout/MainPanel"]
 layout_mode = 2
-text = "BAT DETECTIVE"
+text = "ECHODENCE"
 label_settings = SubResource("Label_title")
-horizontal_alignment = 0
+horizontal_alignment = 1
+
 [node name="Subtitle" type="Label" parent="Center/Panel/Margin/Layout/MainPanel"]
+visible = false
 layout_mode = 2
 text = "LISTEN TO THE DARK"
 label_settings = SubResource("Label_heading")
-horizontal_alignment = 0
+horizontal_alignment = 1
+
 [node name="Spacer" type="Control" parent="Center/Panel/Margin/Layout/MainPanel"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+
 [node name="Play" type="Button" parent="Center/Panel/Margin/Layout/MainPanel"]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 text = "PLAY"
+
 [node name="LevelSelect" type="Button" parent="Center/Panel/Margin/Layout/MainPanel"]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 text = "LEVEL SELECT"
+
 [node name="Settings" type="Button" parent="Center/Panel/Margin/Layout/MainPanel"]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 text = "SETTINGS"
+
 [node name="Quit" type="Button" parent="Center/Panel/Margin/Layout/MainPanel"]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
@@ -107,15 +118,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 18
 alignment = 1
+
 [node name="Title" type="Label" parent="Center/Panel/Margin/Layout/LevelSelectPanel"]
 layout_mode = 2
 text = "LEVEL SELECT"
 label_settings = SubResource("Label_heading")
 horizontal_alignment = 1
+
 [node name="Case1" type="Button" parent="Center/Panel/Margin/Layout/LevelSelectPanel"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "CASE 1"
+
 [node name="Back" type="Button" parent="Center/Panel/Margin/Layout/LevelSelectPanel"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -123,57 +137,69 @@ text = "BACK"
 
 [node name="SettingsPanel" type="VBoxContainer" parent="Center/Panel/Margin/Layout"]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+z_index = 1
+offset_top = 125.0
+offset_right = 373.0
+offset_bottom = 432.0
 theme_override_constants/separation = 20
+
 [node name="Title" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
 text = "SETTINGS"
 label_settings = SubResource("Label_heading")
 horizontal_alignment = 1
+
 [node name="MasterVolume" type="HBoxContainer" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
+
 [node name="Name" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/MasterVolume"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0, 0, 1)
 text = "Master Volume"
+
 [node name="Slider" type="HSlider" parent="Center/Panel/Margin/Layout/SettingsPanel/MasterVolume"]
 layout_mode = 2
 size_flags_horizontal = 3
-max_value = 100.0
 value = 100.0
+
 [node name="Value" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/MasterVolume"]
 custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 text = "100%"
 horizontal_alignment = 2
+
 [node name="Brightness" type="HBoxContainer" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
+
 [node name="Name" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/Brightness"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0, 0, 1)
 text = "Brightness"
+
 [node name="Slider" type="HSlider" parent="Center/Panel/Margin/Layout/SettingsPanel/Brightness"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 75.0
 max_value = 125.0
 value = 100.0
+
 [node name="Value" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/Brightness"]
 custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 text = "100%"
 horizontal_alignment = 2
+
 [node name="MouseSensitivity" type="HBoxContainer" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
+
 [node name="Name" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/MouseSensitivity"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0, 0, 1)
 text = "Mouse Sensitivity"
+
 [node name="Slider" type="HSlider" parent="Center/Panel/Margin/Layout/SettingsPanel/MouseSensitivity"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -181,18 +207,34 @@ min_value = 0.04
 max_value = 0.3
 step = 0.01
 value = 0.12
+
 [node name="Value" type="Label" parent="Center/Panel/Margin/Layout/SettingsPanel/MouseSensitivity"]
 custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 text = "0.12"
 horizontal_alignment = 2
+
 [node name="Fullscreen" type="CheckButton" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.941176, 0, 0, 1)
 text = "Fullscreen"
+
 [node name="Spacer" type="Control" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 layout_mode = 2
 size_flags_vertical = 3
+
 [node name="Back" type="Button" parent="Center/Panel/Margin/Layout/SettingsPanel"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "BACK"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fe2o3")
+volume_db = -8.0
+autoplay = true
+
+[node name="BatDetectiveArt1" type="Sprite2D" parent="."]
+position = Vector2(640.5, 361)
+scale = Vector2(0.547986, 0.332407)
+texture = ExtResource("3_1g8jr")

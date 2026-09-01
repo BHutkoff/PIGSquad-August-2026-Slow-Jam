@@ -1,7 +1,7 @@
 class_name ObservationDisplay
 extends CanvasLayer
 
-@export_range(0.5, 10.0, 0.1) var display_duration: float = 4.5
+@export_range(0.5, 10.0, 0.1) var display_duration: float = 7.0
 @export_range(0.1, 3.0, 0.1) var fade_duration: float = 0.5
 
 @export_category("Layout")
@@ -10,12 +10,12 @@ extends CanvasLayer
 @export_range(8.0, 96.0, 2.0) var bottom_margin: float = 32.0
 @export_range(8, 40, 1) var content_padding: int = 18
 @export_range(240.0, 480.0, 8.0) var banner_width: float = 360.0
-@export_range(36.0, 72.0, 2.0) var banner_height: float = 48.0
+@export_range(36.0, 96.0, 2.0) var banner_height: float = 76.0
 @export_range(0.0, 24.0, 1.0) var banner_gap: float = 6.0
 
 @export_category("Text")
 @export_range(14, 30, 1) var observation_font_size: int = 20
-@export_range(24, 44, 1) var banner_font_size: int = 32
+@export_range(24, 44, 1) var banner_font_size: int = 28
 
 @onready var observation_anchor: VBoxContainer = $UIRoot/ObservationAnchor
 @onready var panel: PanelContainer = $UIRoot/ObservationAnchor/Panel
@@ -52,7 +52,12 @@ func _process(delta: float) -> void:
 func show_observation(message: String, clue_discovered: bool = false) -> void:
 	observation_label.text = message
 	discovery_label.visible = clue_discovered
-	discovery_label.text = "CLUE DISCOVERED"
+
+	if clue_discovered:
+		discovery_label.text = "CLUE DISCOVERED - C Key - Open Case Review"
+	else:
+		discovery_label.text = ""
+
 	_apply_content_padding()
 	_time_remaining = display_duration
 	panel.modulate.a = 1.0

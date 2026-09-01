@@ -32,6 +32,7 @@ class PulseState:
 @export var target_type: TargetType = TargetType.OBJECT
 @export var environment_reveal_color: Color = CANONICAL_ENVIRONMENT_REVEAL_COLOR
 @export var object_reveal_color: Color = Color(1.0, 1.0, 1.0, 1.0)
+@export var interactable_reveal_color: Color = Color(1.0, 0.82, 0.28, 1.0)
 
 @export_category("Edge Style")
 @export_range(0.25, 8.0, 0.05) var edge_power: float = 2.5
@@ -268,11 +269,15 @@ func _upload_pulse_parameters() -> void:
 
 
 func _apply_visual_parameters() -> void:
-	var reveal_color: Color = (
-		environment_reveal_color
-		if target_type == TargetType.ENVIRONMENT
-		else object_reveal_color
-	)
+	var reveal_color: Color
+
+	if target_type == TargetType.ENVIRONMENT:
+		reveal_color = environment_reveal_color
+	elif _has_interactable_descendant(self):
+		reveal_color = interactable_reveal_color
+	else:
+		reveal_color = object_reveal_color
+		
 	var edge_intensity: float = (
 		environment_edge_intensity
 		if target_type == TargetType.ENVIRONMENT
@@ -318,3 +323,13 @@ func _collect_visuals(node: Node) -> void:
 	var children: Array[Node] = node.get_children()
 	for child in children:
 		_collect_visuals(child)
+
+func _has_interactable_descendant(node: Node) -> bool:
+	if node.is_in_group("interactable"):
+		return true
+
+	for child in node.get_children():
+		if _has_interactable_descendant(child):
+			return true
+
+	return false

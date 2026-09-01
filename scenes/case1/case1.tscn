@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://cyqlkf8ombw2i"]
+[gd_scene load_steps=135 format=3 uid="uid://cyqlkf8ombw2i"]
 
 [ext_resource type="Script" uid="uid://c4tu1gxqk0qkn" path="res://scripts/environments/cave_main.gd" id="1_cave"]
 [ext_resource type="PackedScene" uid="uid://c71ssqgb4e45v" path="res://scenes/player/player.tscn" id="2_player"]
@@ -120,6 +120,7 @@
 [ext_resource type="PackedScene" uid="uid://b8juvy2ms5mc2" path="res://assets/Food GLB format/cup-saucer.glb" id="118_ad8py"]
 [ext_resource type="PackedScene" uid="uid://bjpm6dnd7ky3w" path="res://assets/Food GLB format/cup-tea.glb" id="119_c7gni"]
 [ext_resource type="PackedScene" uid="uid://cxq0pccp2hrdd" path="res://assets/Furniture Models/DAE format/table.dae" id="120_ad8py"]
+[ext_resource type="AudioStream" uid="uid://ddnfouteugfh2" path="res://soundEffects/Sound Effects/cave_sfx_loop_v1.wav" id="121_c7gni"]
 
 [sub_resource type="Environment" id="Environment_black"]
 background_mode = 1
@@ -1935,3 +1936,8 @@ text = "+"
 label_settings = SubResource("Label_help")
 
 [node name="EcholocationControlHint" parent="." instance=ExtResource("85_control_hint")]
+
+[node name="CaveAmbiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("121_c7gni")
+volume_db = -10.0
+autoplay = true
